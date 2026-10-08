@@ -1,0 +1,21 @@
+{
+  "name": "Fruit Tree Grafting Guide",
+  "short_name": "GraftingGuide",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b1f12",
+  "theme_color": "#174d2a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/1-mango.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "images/1-mango.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
