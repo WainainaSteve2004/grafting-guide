@@ -1,6 +1,5 @@
-const CACHE_NAME = 'grafting-cache-v2';
+const CACHE_NAME = 'grafting-cache-v3';
 const ASSETS_TO_CACHE = [
-  './',
   './manifest.json',
   './images/hero-bg.jpg',
   './images/1-mango.jpg',
@@ -15,17 +14,13 @@ const ASSETS_TO_CACHE = [
   './images/method-side-veneer.jpg'
 ];
 
-// Install Event
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE))
   );
 });
 
-// Activate Event: Clear old cache versions automatically
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -40,7 +35,6 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event: Network First strategy for HTML pages
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(
@@ -49,8 +43,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
