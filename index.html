@@ -17,7 +17,7 @@
 
   <!-- Primary SEO Tags -->
   <meta name="description" content="Master fruit tree grafting with step-by-step guides, techniques, compatibility matrices, and interactive quiz games.">
-  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, avocado grafting, citrus grafting">
+  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, avocado grafting, citrus grafting, passion fruit grafting, guava grafting">
   <meta name="author" content="Wainaina Steve">
 
   <!-- Open Graph / Facebook / WhatsApp -->
@@ -25,14 +25,14 @@
   <meta property="og:url" content="https://wainainasteve2004.github.io/grafting-guide/">
   <meta property="og:title" content="Fruit Tree Grafting Guide & Interactive Tools">
   <meta property="og:description" content="Learn step-by-step grafting methods, test tree compatibility, check seasonal timing, and play interactive horticulture quizzes.">
-  <meta property="og:image" content="https://wainainasteve2004.github.io/grafting-guide/images/1-mango.jpg">
+  <meta property="og:image" content="https://wainainasteve2004.github.io/grafting-guide/images/hero-bg.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://wainainasteve2004.github.io/grafting-guide/">
   <meta name="twitter:title" content="Fruit Tree Grafting Guide & Interactive Tools">
   <meta name="twitter:description" content="Master fruit tree grafting with step-by-step guides, compatibility matrices, and interactive quiz games.">
-  <meta name="twitter:image" content="https://wainainasteve2004.github.io/grafting-guide/images/1-mango.jpg">
+  <meta name="twitter:image" content="https://wainainasteve2004.github.io/grafting-guide/images/hero-bg.jpg">
 
   <!-- PWA Theme Color & Manifest Link -->
   <meta name="theme-color" content="#174d2a">
@@ -130,7 +130,7 @@
       background: var(--accent-hover);
     }
 
-    /* HERO SECTION WITH BRIGHT & VISIBLE BACKGROUND IMAGE */
+    /* HERO SECTION WITH HIGH-VISIBILITY BACKGROUND IMAGE */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -541,7 +541,7 @@
 
   <!-- SEARCH FILTER BAR -->
   <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange)...">
+    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Guava)...">
   </div>
 
   <!-- SECTION 1: FEATURED FRUIT TREES -->
@@ -613,6 +613,50 @@
           <h3>Coffee Grafting</h3>
           <p>Graft Robusta rootstocks with Arabica scions to withstand root-knot nematodes.</p>
           <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Guava Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/guava-grafting.jpg" alt="Guava Tree">
+        </div>
+        <div class="card-content">
+          <h3>Guava Grafting</h3>
+          <p>Master approach grafting and bark budding for high-yielding guava orchards.</p>
+          <button onclick="openModal('guava')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Passion Fruit Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/passion-grafting.jpg" alt="Passion Fruit Vine">
+        </div>
+        <div class="card-content">
+          <h3>Passion Fruit Grafting</h3>
+          <p>Graft purple passion fruit scions onto yellow disease-resistant rootstocks.</p>
+          <button onclick="openModal('passion')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Papaya Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/papaya-grafting.jpg" alt="Papaya Tree">
+        </div>
+        <div class="card-content">
+          <h3>Papaya Grafting</h3>
+          <p>Propagate true-to-type hermaphrodite papaya plants using specialized cleft cuts.</p>
+          <button onclick="openModal('papaya')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Macadamia Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/macadamia-grafting.jpg" alt="Macadamia Nut Tree">
+        </div>
+        <div class="card-content">
+          <h3>Macadamia Grafting</h3>
+          <p>Apply whip-and-tongue or cleft grafting to produce top-quality macadamia nuts.</p>
+          <button onclick="openModal('macadamia')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
     </div>
@@ -728,6 +772,7 @@
           <option value="mango">Mango</option>
           <option value="avocado">Avocado</option>
           <option value="apple">Apple</option>
+          <option value="passion">Purple Passion Fruit</option>
         </select>
 
         <label>Select Rootstock Base:</label>
@@ -736,6 +781,7 @@
           <option value="wild-mango">Wild / Seedling Mango</option>
           <option value="avocado-seedling">Avocado Seedling</option>
           <option value="crabapple">Crabapple / M9 Rootstock</option>
+          <option value="yellow-passion">Yellow Passion Fruit Rootstock</option>
           <option value="peach">Peach Rootstock</option>
         </select>
 
@@ -757,9 +803,9 @@
         </select>
 
         <ul id="season-list" style="list-style: none;">
-          <li data-season="spring" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Late Winter / Spring:</strong> Apples, Pears, Plums, Peaches (Cleft & Whip Grafting)</li>
-          <li data-season="summer" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Mid/Late Summer:</strong> Citrus, Mangoes, Avocados (T-Budding & Side-Veneer)</li>
-          <li data-season="autumn" style="padding: 8px 0;"><strong>Early Autumn:</strong> Tropical & Subtropical active sap flow budding</li>
+          <li data-season="spring" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Late Winter / Spring:</strong> Apples, Pears, Plums, Peaches, Macadamia (Cleft & Whip Grafting)</li>
+          <li data-season="summer" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Mid/Late Summer:</strong> Citrus, Mangoes, Avocados, Guava, Passion Fruit (T-Budding & Side-Veneer)</li>
+          <li data-season="autumn" style="padding: 8px 0;"><strong>Early Autumn:</strong> Tropical & Subtropical active sap flow budding (Papaya & Young Saplings)</li>
         </ul>
       </div>
 
@@ -914,7 +960,8 @@
         (scion === "sweet-orange" && rootstock === "lemon") ||
         (scion === "mango" && rootstock === "wild-mango") ||
         (scion === "avocado" && rootstock === "avocado-seedling") ||
-        (scion === "apple" && rootstock === "crabapple")
+        (scion === "apple" && rootstock === "crabapple") ||
+        (scion === "passion" && rootstock === "yellow-passion")
       ) {
         resultDiv.style.background = "#d4edda";
         resultDiv.style.color = "#155724";
@@ -1023,6 +1070,58 @@
           </ul>
         `
       },
+      guava: {
+        title: "Guava Grafting Guide",
+        image: "images/guava-grafting.jpg",
+        content: `
+          <p><strong>Recommended Method:</strong> Approach Grafting / Bark Budding.</p>
+          <p><strong>Best Time:</strong> Warm active growing season.</p>
+          <ul>
+            <li>Select vigorous, disease-free seedling rootstocks.</li>
+            <li>Perform precise bark budding cuts to join cambium layers cleanly.</li>
+            <li>Wrap firmly with grafting tape and shelter from harsh direct sunlight.</li>
+          </ul>
+        `
+      },
+      passion: {
+        title: "Passion Fruit Grafting Guide",
+        image: "images/passion-grafting.jpg",
+        content: `
+          <p><strong>Recommended Method:</strong> Splice or Cleft Grafting.</p>
+          <p><strong>Best Time:</strong> Spring or early summer.</p>
+          <ul>
+            <li>Graft sweet purple passion fruit scions onto yellow passion fruit rootstocks.</li>
+            <li>Yellow rootstocks provide natural resistance to soil-borne Fusarium wilt.</li>
+            <li>Secure graft union with small clips and keep under humid shade.</li>
+          </ul>
+        `
+      },
+      papaya: {
+        title: "Papaya Grafting Guide",
+        image: "images/papaya-grafting.jpg",
+        content: `
+          <p><strong>Recommended Method:</strong> Cleft Grafting on Young Shoots.</p>
+          <p><strong>Best Time:</strong> Warm, humid growing periods.</p>
+          <ul>
+            <li>Graft high-yielding hermaphrodite side shoots onto young rootstocks.</li>
+            <li>Eliminates unwanted male trees before field planting.</li>
+            <li>Maintain high humidity with plastic covers until union takes.</li>
+          </ul>
+        `
+      },
+      macadamia: {
+        title: "Macadamia Grafting Guide",
+        image: "images/macadamia-grafting.jpg",
+        content: `
+          <p><strong>Recommended Method:</strong> Whip & Tongue or Cleft Grafting.</p>
+          <p><strong>Best Time:</strong> Early spring before bud break.</p>
+          <ul>
+            <li>Select mature scion wood with well-developed buds.</li>
+            <li>Ensure sharp cuts to cut through tough macadamia stem tissues.</li>
+            <li>Seal all exposed cuts with grafting wax to prevent desiccation.</li>
+          </ul>
+        `
+      },
       cleft: {
         title: "Cleft Grafting Technique",
         image: "images/method-cleft.jpg",
@@ -1096,7 +1195,7 @@
       }
     }
 
-    /* QUIZ GAME ENGINE */
+    /* EXPANDED QUIZ GAME ENGINE */
     const quizData = [
       {
         question: "What layer of tissues must align for a graft to be successful?",
@@ -1112,6 +1211,26 @@
         question: "What is the primary function of Parafilm or grafting tape?",
         options: ["To prevent moisture loss", "To add fertilizer", "To repel insects", "To block sunlight"],
         answer: 0
+      },
+      {
+        question: "Why are purple passion fruit varieties frequently grafted onto yellow passion fruit rootstocks?",
+        options: ["To increase fruit sweetness", "To provide resistance against Fusarium wilt", "To make vines grow shorter", "To eliminate leaves"],
+        answer: 1
+      },
+      {
+        question: "What is 'top-working' in fruit tree grafting?",
+        options: ["Grafting roots underground", "Replacing an established tree's canopy with new scion varieties", "Pruning top leaves only", "Applying fertilizer to upper branches"],
+        answer: 1
+      },
+      {
+        question: "What condition is essential for scion wood collection during dormancy?",
+        options: ["Healthy, disease-free terminal wood with dormant buds", "Flowering stems with active fruits", "Dead dried branches", "Roots from seedling bases"],
+        answer: 0
+      },
+      {
+        question: "How long should grafting tape usually remain before checking for union success?",
+        options: ["1 to 2 days", "3 to 6 weeks", "1 to 2 years", "10 minutes"],
+        answer: 1
       }
     ];
 
