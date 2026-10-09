@@ -48,9 +48,6 @@
       --accent-hover: #7cb342;
       --border-color: #254d30;
       --card-shadow: rgba(0, 0, 0, 0.4);
-      --badge-easy: #2e7d32;
-      --badge-med: #f57c00;
-      --badge-hard: #c62828;
     }
 
     [data-theme="light"] {
@@ -62,9 +59,6 @@
       --accent-hover: #1b5e20;
       --border-color: #c8e6c9;
       --card-shadow: rgba(0, 0, 0, 0.08);
-      --badge-easy: #388e3c;
-      --badge-med: #ef6c00;
-      --badge-hard: #d32f2f;
     }
 
     * {
@@ -138,21 +132,24 @@
 
     .hero {
       text-align: center;
-      padding: 80px 20px 60px 20px;
-      background: radial-gradient(circle at center, var(--card-bg) 0%, var(--bg-color) 100%);
+      padding: 90px 20px 70px 20px;
+      background: linear-gradient(180deg, rgba(11, 31, 18, 0.82) 0%, var(--bg-color) 100%), 
+                  url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
       border-bottom: 1px solid var(--border-color);
     }
 
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 15px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
 
     .hero p {
       font-size: 1.2rem;
-      color: var(--text-muted);
+      color: var(--text-main);
       max-width: 650px;
       margin: 0 auto 30px auto;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     }
 
     .hero-buttons {
@@ -277,23 +274,6 @@
     .card:hover .card-img-wrapper img {
       transform: scale(1.05);
     }
-
-    .badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-      letter-spacing: 0.5px;
-    }
-
-    .badge-easy { background-color: var(--badge-easy); }
-    .badge-med { background-color: var(--badge-med); }
-    .badge-hard { background-color: var(--badge-hard); }
 
     .card-content {
       padding: 20px;
@@ -525,7 +505,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO SECTION WITH NURSERY BACKGROUND -->
   <section class="hero">
     <h1>Master Fruit Tree Grafting</h1>
     <p>Learn step-by-step grafting techniques for various fruit trees and test your knowledge!</p>
@@ -550,7 +530,6 @@
       <div class="card search-item" data-title="Mango Grafting">
         <div class="card-img-wrapper">
           <img src="images/1-mango.jpg" alt="Mango Tree">
-          <span class="badge badge-med">Intermediate</span>
         </div>
         <div class="card-content">
           <h3>Mango Grafting</h3>
@@ -562,7 +541,6 @@
       <div class="card search-item" data-title="Orange Grafting">
         <div class="card-img-wrapper">
           <img src="images/2-orange.jpg" alt="Orange Tree">
-          <span class="badge badge-easy">Beginner</span>
         </div>
         <div class="card-content">
           <h3>Sweet Orange Grafting</h3>
@@ -574,7 +552,6 @@
       <div class="card search-item" data-title="Lemon Grafting">
         <div class="card-img-wrapper">
           <img src="images/3-lemon.jpg" alt="Lemon Tree">
-          <span class="badge badge-easy">Beginner</span>
         </div>
         <div class="card-content">
           <h3>Lemon & Lime Grafting</h3>
@@ -586,7 +563,6 @@
       <div class="card search-item" data-title="Avocado Grafting">
         <div class="card-img-wrapper">
           <img src="images/4-avocado.jpg" alt="Avocado Tree">
-          <span class="badge badge-med">Intermediate</span>
         </div>
         <div class="card-content">
           <h3>Avocado Grafting</h3>
@@ -598,7 +574,6 @@
       <div class="card search-item" data-title="Apple Grafting">
         <div class="card-img-wrapper">
           <img src="images/5-apple.jpg" alt="Apple Tree">
-          <span class="badge badge-easy">Beginner</span>
         </div>
         <div class="card-content">
           <h3>Apple Grafting</h3>
@@ -610,7 +585,6 @@
       <div class="card search-item" data-title="Coffee Grafting">
         <div class="card-img-wrapper">
           <img src="images/6-coffee.jpg" alt="Coffee Plants">
-          <span class="badge badge-hard">Advanced</span>
         </div>
         <div class="card-content">
           <h3>Coffee Grafting</h3>
@@ -630,7 +604,6 @@
       <div class="card search-item" data-title="Cleft Grafting Method">
         <div class="card-img-wrapper">
           <img src="images/method-cleft.jpg" alt="Cleft Grafting Technique">
-          <span class="badge badge-easy">Spring</span>
         </div>
         <div class="card-content">
           <h3>Cleft Grafting</h3>
@@ -642,7 +615,6 @@
       <div class="card search-item" data-title="T-Budding Grafting Method">
         <div class="card-img-wrapper">
           <img src="images/method-budding.jpg" alt="T-Budding Technique">
-          <span class="badge badge-med">Summer</span>
         </div>
         <div class="card-content">
           <h3>T-Budding</h3>
@@ -654,7 +626,6 @@
       <div class="card search-item" data-title="Whip & Tongue Grafting Method">
         <div class="card-img-wrapper">
           <img src="images/method-whip-tongue.jpg" alt="Whip & Tongue Technique">
-          <span class="badge badge-easy">Late Winter</span>
         </div>
         <div class="card-content">
           <h3>Whip & Tongue</h3>
@@ -666,7 +637,6 @@
       <div class="card search-item" data-title="Side Veneer Grafting Method">
         <div class="card-img-wrapper">
           <img src="images/method-side-veneer.jpg" alt="Side Veneer Technique">
-          <span class="badge badge-med">Warm Seasons</span>
         </div>
         <div class="card-content">
           <h3>Side Veneer</h3>
@@ -947,7 +917,7 @@
       });
     }
 
-    /* MODAL GUIDES DATA WITHOUT YOUTUBE VIDEOS */
+    /* MODAL GUIDES DATA */
     const guides = {
       mango: {
         title: "Mango Grafting Guide",
