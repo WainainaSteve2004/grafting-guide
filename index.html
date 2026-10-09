@@ -130,7 +130,7 @@
       background: var(--accent-hover);
     }
 
-    /* HERO SECTION WITH CRYSTAL CLEAR BACKGROUND IMAGE */
+    /* HERO SECTION WITH CLEAR GRAFTING BACKGROUND IMAGE */
     .hero {
       text-align: center;
       padding: 90px 20px 70px 20px;
@@ -1136,12 +1136,20 @@
 
     loadQuiz();
 
-    /* REGISTER PWA SERVICE WORKER */
+    /* REGISTER PWA SERVICE WORKER WITH AUTO-UPDATE */
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('Service Worker Registered!', reg))
-          .catch(err => console.error('Service Worker Registration Failed!', err));
+        navigator.serviceWorker.register('./sw.js').then(reg => {
+          reg.update();
+          reg.onupdatefound = () => {
+            const installingWorker = reg.installing;
+            installingWorker.onstatechange = () => {
+              if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                window.location.reload();
+              }
+            };
+          };
+        }).catch(err => console.error('Service Worker Registration Failed!', err));
       });
     }
   </script>
