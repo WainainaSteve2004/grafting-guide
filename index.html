@@ -3,35 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruit Tree Grafting Guide & Mini-Game</title>
+  <title>Fruit Tree Grafting Guide & Interactive Tools</title>
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Primary SEO Tags -->
+  <meta name="description" content="Master fruit tree grafting with step-by-step guides, techniques, compatibility matrices, video tutorials, and interactive quiz games.">
+  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, avocado grafting, citrus grafting">
+  <meta name="author" content="Wainaina Steve">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wainainasteve2004.github.io/grafting-guide/">
+  <meta property="og:title" content="Fruit Tree Grafting Guide & Interactive Tools">
+  <meta property="og:description" content="Learn step-by-step grafting methods, test tree compatibility, check seasonal timing, and play interactive horticulture quizzes.">
+  <meta property="og:image" content="https://wainainasteve2004.github.io/grafting-guide/images/1-mango.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://wainainasteve2004.github.io/grafting-guide/">
+  <meta name="twitter:title" content="Fruit Tree Grafting Guide & Interactive Tools">
+  <meta name="twitter:description" content="Master fruit tree grafting with step-by-step guides, compatibility matrices, and interactive quiz games.">
+  <meta name="twitter:image" content="https://wainainasteve2004.github.io/grafting-guide/images/1-mango.jpg">
+
+  <!-- PWA Theme Color & Manifest Link -->
+  <meta name="theme-color" content="#174d2a">
+  <link rel="manifest" href="manifest.json">
+
   <style>
     :root {
-      --bg-color: #f5f8f2;
-      --card-bg: #ffffff;
-      --text-main: #243b24;
-      --text-muted: #596659;
-      --header-bg: #174d2a;
-      --sec-bg-alt: #eaf2e6;
-      --card-shadow: rgba(0, 0, 0, 0.08);
-      --border-color: #8bc34a;
+      --bg-color: #0b1f12;
+      --card-bg: #132e1c;
+      --text-main: #e8f5e9;
+      --text-muted: #a3c2a8;
+      --accent-color: #8bc34a;
+      --accent-hover: #7cb342;
+      --border-color: #254d30;
+      --card-shadow: rgba(0, 0, 0, 0.4);
+      --badge-easy: #2e7d32;
+      --badge-med: #f57c00;
+      --badge-hard: #c62828;
     }
 
-    /* DARK MODE OVERRIDES */
-    body.dark-mode {
-      --bg-color: #121c15;
-      --card-bg: #1e2e23;
-      --text-main: #e2f0d9;
-      --text-muted: #a3c2a3;
-      --header-bg: #0d2a17;
-      --sec-bg-alt: #16241b;
-      --card-shadow: rgba(0, 0, 0, 0.4);
-      --border-color: #5b8a2c;
+    [data-theme="light"] {
+      --bg-color: #f4f8f5;
+      --card-bg: #ffffff;
+      --text-main: #1b3d22;
+      --text-muted: #4a6b51;
+      --accent-color: #2e7d32;
+      --accent-hover: #1b5e20;
+      --border-color: #c8e6c9;
+      --card-shadow: rgba(0, 0, 0, 0.08);
+      --badge-easy: #388e3c;
+      --badge-med: #ef6c00;
+      --badge-hard: #d32f2f;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -39,27 +78,30 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: var(--bg-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
       color: var(--text-main);
-      transition: background 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
-      background: var(--header-bg);
-      color: white;
-      padding: 18px 7%;
+      background-color: var(--card-bg);
+      padding: 20px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: bold;
+      color: var(--text-main);
+      text-decoration: none;
     }
 
     nav {
@@ -69,243 +111,209 @@
     }
 
     nav a {
-      color: white;
+      color: var(--text-main);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: #b9e68c;
+      color: var(--accent-color);
     }
 
-    /* DARK MODE TOGGLE BUTTON */
-    .theme-toggle-btn {
-      background: var(--border-color);
-      color: #102f1a;
+    .theme-toggle {
+      background: var(--accent-color);
+      color: #fff;
       border: none;
       padding: 8px 16px;
       border-radius: 20px;
-      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
+      font-weight: bold;
+      transition: background-color 0.2s;
     }
 
-    .theme-toggle-btn:hover {
-      background: #a2d862;
+    .theme-toggle:hover {
+      background: var(--accent-hover);
     }
 
     .hero {
-      min-height: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 40px 7%;
-      background: var(--header-bg);
       text-align: center;
-      color: white;
+      padding: 80px 20px 60px 20px;
+      background: radial-gradient(circle at center, var(--card-bg) 0%, var(--bg-color) 100%);
+      border-bottom: 1px solid var(--border-color);
     }
 
     .hero h1 {
-      font-size: 32px;
-      margin-bottom: 5px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 600px;
-      color: #e2f0d9;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 30px auto;
     }
 
     .hero-buttons {
       display: flex;
+      justify-content: center;
       gap: 15px;
       flex-wrap: wrap;
-      justify-content: center;
     }
 
-    .button {
+    .btn {
       display: inline-block;
-      background: #8bc34a;
-      color: #17351f;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
       border: none;
       cursor: pointer;
     }
 
-    .button:hover {
-      background: #a2d862;
+    .btn-primary {
+      background-color: var(--accent-color);
+      color: #fff;
     }
 
-    .button-secondary {
-      background: transparent;
-      border: 2px solid #8bc34a;
-      color: #ffffff;
+    .btn-primary:hover {
+      background-color: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .button-secondary:hover {
-      background: #8bc34a;
-      color: #17351f;
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid var(--accent-color);
+      color: var(--text-main);
     }
 
-    /* SEARCH BAR */
+    .btn-secondary:hover {
+      background-color: var(--accent-color);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
     .search-container {
-      max-width: 500px;
-      margin: -25px auto 30px;
+      max-width: 600px;
+      margin: -25px auto 40px auto;
       padding: 0 20px;
-      position: relative;
-      z-index: 10;
     }
 
     .search-input {
       width: 100%;
-      padding: 14px 20px;
-      font-size: 16px;
+      padding: 15px 25px;
       border-radius: 30px;
-      border: 2px solid var(--border-color);
+      border: 1px solid var(--border-color);
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      font-size: 1rem;
       outline: none;
       box-shadow: 0 4px 15px var(--card-shadow);
-      background: var(--card-bg);
-      color: var(--text-main);
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
-    .search-input::placeholder {
-      color: #888888;
+    .search-input:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 10px var(--accent-color);
     }
 
-    .trees-section, .methods-section, .checklist-section, .game-section {
-      padding: 60px 7%;
+    section {
+      padding: 50px 7%;
+    }
+
+    .section-title {
       text-align: center;
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
-    .trees-section {
-      background: var(--bg-color);
-    }
-
-    .methods-section {
-      background: var(--sec-bg-alt);
-    }
-
-    .checklist-section {
-      background: var(--card-bg);
-    }
-
-    .game-section {
-      background: #102f1a;
-      color: white;
-    }
-
-    .trees-section h2, .methods-section h2, .checklist-section h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-      color: var(--text-main);
-    }
-
-    .game-section h2 {
-      font-size: 36px;
-      margin-bottom: 15px;
-      color: #8bc34a;
-    }
-
-    .section-intro {
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
+    .section-subtitle {
+      text-align: center;
       color: var(--text-muted);
-      font-size: 18px;
+      margin-bottom: 40px;
     }
 
-    .game-section .section-intro {
-      color: #d1e2cd;
-    }
-
-    .tree-container {
+    .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
+      gap: 25px;
     }
 
-    .tree-card {
-      background: var(--card-bg);
+    .card {
+      background-color: var(--card-bg);
       border-radius: 12px;
       overflow: hidden;
-      padding: 25px 20px;
-      box-shadow: 0 5px 20px var(--card-shadow);
-      text-align: center;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 15px var(--card-shadow);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
     }
 
-    .tree-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 25px var(--card-shadow);
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px var(--card-shadow);
     }
 
-    .tree-image {
+    .card-img-wrapper {
+      position: relative;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      display: block;
+      height: 200px;
+      overflow: hidden;
     }
 
-    .tree-card h3 {
-      color: var(--text-main);
-      font-size: 22px;
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .badge-easy { background-color: var(--badge-easy); }
+    .badge-med { background-color: var(--badge-med); }
+    .badge-hard { background-color: var(--badge-hard); }
+
+    .card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
       margin-bottom: 10px;
     }
 
-    .tree-card p {
+    .card-content p {
       color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 15px;
-      margin-bottom: 20px;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
     }
 
-    .tree-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #166534;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .tree-button:hover {
-      background-color: #14532d;
-    }
-
-    .more-card {
-      background: var(--card-bg);
-      border: 2px dashed var(--border-color);
-    }
-
-    .other-fruits-banner {
-      max-width: 1100px;
-      margin: 35px auto 0;
-      padding: 16px 20px;
-      background-color: var(--sec-bg-alt);
-      border-radius: 8px;
-      color: var(--text-main);
-      font-size: 16px;
-    }
-
-    /* CHECKLIST STYLES */
+    /* CHECKLIST GRID & STYLES */
     .checklist-grid {
       max-width: 800px;
       margin: 0 auto;
@@ -316,88 +324,116 @@
     }
 
     .checklist-item {
-      background: var(--sec-bg-alt);
+      background: var(--card-bg);
       padding: 15px 20px;
       border-radius: 8px;
-      border-left: 4px solid #166534;
+      border-left: 4px solid var(--accent-color);
       display: flex;
       align-items: center;
       gap: 12px;
       cursor: pointer;
-      transition: background 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .checklist-item:hover {
+      transform: translateY(-2px);
     }
 
     .checklist-item input[type="checkbox"] {
       width: 18px;
       height: 18px;
-      accent-color: #166534;
+      accent-color: var(--accent-color);
       cursor: pointer;
     }
 
     .checklist-item label {
       cursor: pointer;
-      font-size: 16px;
+      font-size: 1rem;
       color: var(--text-main);
       font-weight: 600;
+      transition: text-decoration 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     }
 
-    /* MINI GAME STYLES */
-    .game-box {
-      max-width: 700px;
-      background: #174d2a;
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-muted);
+      opacity: 0.75;
+    }
+
+    .tools-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 30px;
+    }
+
+    .tool-box {
+      flex: 1;
+      min-width: 300px;
+      background: var(--card-bg);
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      text-align: center;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 20px var(--card-shadow);
+      text-align: left;
     }
 
-    .game-question {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #ffffff;
-      font-weight: bold;
-    }
-
-    .game-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .option-btn {
-      background: #245e38;
-      color: white;
-      border: 2px solid #3d8b56;
-      padding: 12px 15px;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .option-btn:hover {
-      background: #8bc34a;
-      color: #102f1a;
-      border-color: #8bc34a;
-    }
-
-    .game-score {
-      font-size: 18px;
-      margin-top: 15px;
-      color: #8bc34a;
-      font-weight: bold;
-    }
-
-    .game-feedback {
-      min-height: 30px;
-      font-size: 18px;
-      font-weight: bold;
+    .tool-box h3 {
       margin-bottom: 15px;
     }
 
-    /* MODAL DETAILED GUIDES STYLES */
+    .tool-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .tool-box select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 15px;
+      background: var(--bg-color);
+      color: var(--text-main);
+    }
+
+    .quiz-card {
+      max-width: 700px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 20px var(--card-shadow);
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .quiz-opt {
+      padding: 12px 20px;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+
+    .quiz-opt:hover {
+      background: var(--border-color);
+    }
+
+    /* MODAL STYLES */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -422,11 +458,12 @@
       overflow-y: auto;
       text-align: left;
       position: relative;
+      border: 1px solid var(--border-color);
     }
 
     .modal-content h3 {
       color: var(--text-main);
-      font-size: 26px;
+      font-size: 1.6rem;
       margin-bottom: 15px;
     }
 
@@ -464,227 +501,314 @@
     }
 
     footer {
-      background: #0d2615;
-      color: white;
+      background-color: var(--card-bg);
       text-align: center;
       padding: 25px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
     }
   </style>
 </head>
-<body>
+<body data-theme="dark">
 
+  <!-- HEADER NAVIGATION -->
   <header>
-    <div class="logo">Grafting Guide</div>
+    <a href="#" class="logo">Grafting Guide</a>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#trees">Fruit Trees</a>
+      <a href="#fruit-trees">Fruit Trees</a>
       <a href="#methods">Methods</a>
       <a href="#checklist">Tools Checklist</a>
-      <a href="#game">Quiz Game</a>
-      <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">Dark Mode</button>
+      <a href="#interactive-tools">Tools & Calendar</a>
+      <a href="#quiz">Quiz Game</a>
+      <a href="#feedback">Feedback</a>
+      <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Light Mode</button>
     </nav>
   </header>
 
-  <section class="hero" id="home">
+  <!-- HERO SECTION -->
+  <section class="hero">
     <h1>Master Fruit Tree Grafting</h1>
     <p>Learn step-by-step grafting techniques for various fruit trees and test your knowledge!</p>
     <div class="hero-buttons">
-      <a href="#trees" class="button">Explore Trees</a>
-      <a href="#methods" class="button button-secondary">Grafting Methods</a>
-      <a href="#game" class="button">Play Grafting Quiz</a>
+      <a href="#fruit-trees" class="btn btn-primary">Explore Trees</a>
+      <a href="#methods" class="btn btn-secondary">Grafting Methods</a>
+      <a href="#quiz" class="btn btn-primary">Play Grafting Quiz</a>
     </div>
   </section>
 
   <!-- SEARCH FILTER BAR -->
   <div class="search-container">
-    <input type="text" id="search-bar" class="search-input" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange)..." onkeyup="filterCards()">
+    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange)...">
   </div>
 
-  <!-- SECTION 1: FRUIT TREES -->
-  <section id="trees" class="trees-section">
-    <h2>Featured Fruit Trees</h2>
-    <p class="section-intro">
-      Explore key step-by-step guides for popular fruit varieties below. The techniques shared here also apply to dozens of other fruit trees worldwide!
-    </p>
-
-    <div class="tree-container">
-      
-      <!-- 1. MANGO GRAFTING -->
-      <div class="tree-card" data-title="Mango Grafting">
-        <div>
-          <img src="images/1-mango.jpg" alt="Mango Grafting" class="tree-image">
-          <h3>1. Mango Grafting</h3>
-          <p>Learn about mango grafting, care, and how to produce healthy mango trees.</p>
+  <!-- SECTION 1: FEATURED FRUIT TREES -->
+  <section id="fruit-trees">
+    <h2 class="section-title">Featured Fruit Trees</h2>
+    <p class="section-subtitle">Explore key step-by-step guides for popular fruit varieties below. The techniques shared here also apply to dozens of other fruit trees worldwide!</p>
+    
+    <div class="card-grid" id="treesGrid">
+      <div class="card search-item" data-title="Mango Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/1-mango.jpg" alt="Mango Tree">
+          <span class="badge badge-med">Intermediate</span>
         </div>
-        <button class="tree-button" onclick="openModal('mango')">Learn More</button>
+        <div class="card-content">
+          <h3>Mango Grafting</h3>
+          <p>Learn veneer and cleft grafting techniques for high-yield mango propagation.</p>
+          <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
 
-      <!-- 2. ORANGE GRAFTING -->
-      <div class="tree-card" data-title="Orange Grafting">
-        <div>
-          <img src="images/2-orange.jpg" alt="Orange Grafting" class="tree-image">
-          <h3>2. Orange Grafting</h3>
-          <p>Discover grafting techniques for productive and healthy orange trees.</p>
+      <div class="card search-item" data-title="Orange Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/2-orange.jpg" alt="Orange Tree">
+          <span class="badge badge-easy">Beginner</span>
         </div>
-        <button class="tree-button" onclick="openModal('orange')">Learn More</button>
+        <div class="card-content">
+          <h3>Sweet Orange Grafting</h3>
+          <p>Master T-budding and cleft grafting on hardy citrus rootstocks.</p>
+          <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
 
-      <!-- 3. LEMON GRAFTING -->
-      <div class="tree-card" data-title="Lemon Grafting">
-        <div>
-          <img src="images/3-lemon.jpg" alt="Lemon Grafting" class="tree-image">
-          <h3>3. Lemon Grafting</h3>
-          <p>Learn how grafting can help you grow strong and productive lemon trees.</p>
+      <div class="card search-item" data-title="Lemon Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/3-lemon.jpg" alt="Lemon Tree">
+          <span class="badge badge-easy">Beginner</span>
         </div>
-        <button class="tree-button" onclick="openModal('lemon')">Learn More</button>
+        <div class="card-content">
+          <h3>Lemon & Lime Grafting</h3>
+          <p>Propagate pest-resistant lemons with top-working techniques.</p>
+          <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
 
-      <!-- 4. AVOCADO GRAFTING -->
-      <div class="tree-card" data-title="Avocado Grafting">
-        <div>
-          <img src="images/4-avocado.jpg" alt="Avocado Grafting" class="tree-image">
-          <h3>4. Avocado Grafting</h3>
-          <p>Explore avocado grafting and the steps needed to establish healthy seedlings.</p>
+      <div class="card search-item" data-title="Avocado Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/4-avocado.jpg" alt="Avocado Tree">
+          <span class="badge badge-med">Intermediate</span>
         </div>
-        <button class="tree-button" onclick="openModal('avocado')">Learn More</button>
+        <div class="card-content">
+          <h3>Avocado Grafting</h3>
+          <p>Step-by-step instructions on side-tongue and cleft grafting Hass avocados.</p>
+          <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
 
-      <!-- 5. APPLE GRAFTING -->
-      <div class="tree-card" data-title="Apple Grafting">
-        <div>
-          <img src="images/5-apple.jpg" alt="Apple Grafting" class="tree-image">
-          <h3>5. Apple Grafting</h3>
-          <p>Learn the basics of grafting and caring for apple trees.</p>
+      <div class="card search-item" data-title="Apple Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/5-apple.jpg" alt="Apple Tree">
+          <span class="badge badge-easy">Beginner</span>
         </div>
-        <button class="tree-button" onclick="openModal('apple')">Learn More</button>
+        <div class="card-content">
+          <h3>Apple Grafting</h3>
+          <p>Learn bench grafting and whip-and-tongue methods for dwarf apple varieties.</p>
+          <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
 
-      <!-- 6. COFFEE GRAFTING -->
-      <div class="tree-card" data-title="Coffee Grafting">
-        <div>
-          <img src="images/6-coffee.jpg" alt="Coffee Grafting" class="tree-image">
-          <h3>6. Coffee Grafting</h3>
-          <p>Learn about coffee propagation, grafting, and how to grow healthy coffee plants.</p>
+      <div class="card search-item" data-title="Coffee Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/6-coffee.jpg" alt="Coffee Plants">
+          <span class="badge badge-hard">Advanced</span>
         </div>
-        <button class="tree-button" onclick="openModal('coffee')">Learn More</button>
-      </div>
-
-      <!-- 7. MORE FRUIT TREES CARD -->
-      <div class="tree-card more-card" data-title="And Many More Fruit Varieties">
-        <div>
-          <img src="images/more-fruits.jpg" alt="Various Fruit Species" class="tree-image">
-          <h3>And Many More!</h3>
-          <p>Grafting principles apply to peaches, plums, pears, guavas, macadamia, persimmons, and dozens of other species!</p>
+        <div class="card-content">
+          <h3>Coffee Grafting</h3>
+          <p>Graft Robusta rootstocks with Arabica scions to withstand root-knot nematodes.</p>
+          <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
         </div>
-        <a href="#game" class="tree-button">Test Knowledge</a>
       </div>
-
-    </div>
-
-    <div class="other-fruits-banner">
-      <p><strong>Other Compatible Species:</strong> Peaches • Plums • Pears • Cherries • Guavas • Macadamia • Persimmons & More</p>
     </div>
   </section>
 
   <!-- SECTION 2: GRAFTING METHODS -->
-  <section id="methods" class="methods-section">
-    <h2>Grafting Techniques & Methods</h2>
-    <p class="section-intro">
-      Master step-by-step techniques used by horticulturists to graft different woody plants and fruit trees successfully.
-    </p>
+  <section id="methods" style="background-color: var(--card-bg);">
+    <h2 class="section-title">Grafting Methods</h2>
+    <p class="section-subtitle">Choose the right technical method for your stem diameter and season.</p>
 
-    <div class="tree-container">
-      
-      <!-- CLEFT GRAFTING -->
-      <div class="tree-card" data-title="Cleft Grafting Method">
-        <div>
-          <img src="images/method-cleft.jpg" alt="Cleft Grafting Technique" class="tree-image">
+    <div class="card-grid" id="methodsGrid">
+      <div class="card search-item" data-title="Cleft Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-cleft.jpg" alt="Cleft Grafting Technique">
+          <span class="badge badge-easy">Spring</span>
+        </div>
+        <div class="card-content">
           <h3>Cleft Grafting</h3>
-          <p>Ideal for top-working mature trees or joining scions to larger rootstocks.</p>
+          <p>Ideal for top-working older rootstocks or branches with larger stem diameters.</p>
+          <button onclick="openModal('cleft')" class="btn btn-primary">Learn Method</button>
         </div>
-        <button class="tree-button" onclick="openModal('cleft')">Learn Method</button>
       </div>
 
-      <!-- WHIP & TONGUE GRAFTING -->
-      <div class="tree-card" data-title="Whip & Tongue Grafting Method">
-        <div>
-          <img src="images/method-whip-tongue.jpg" alt="Whip & Tongue Technique" class="tree-image">
-          <h3>Whip & Tongue</h3>
-          <p>A strong structural join used when scion and rootstock are equal in diameter.</p>
+      <div class="card search-item" data-title="T-Budding Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-budding.jpg" alt="T-Budding Technique">
+          <span class="badge badge-med">Summer</span>
         </div>
-        <button class="tree-button" onclick="openModal('whip')">Learn Method</button>
-      </div>
-
-      <!-- BUD GRAFTING -->
-      <div class="tree-card" data-title="T-Budding Grafting Method">
-        <div>
-          <img src="images/method-budding.jpg" alt="T-Budding Technique" class="tree-image">
+        <div class="card-content">
           <h3>T-Budding</h3>
-          <p>A fast, popular technique ideal for citrus trees during active growth seasons.</p>
+          <p>Popular for citrus and stone fruits during active spring/summer sap flow.</p>
+          <button onclick="openModal('budding')" class="btn btn-primary">Learn Method</button>
         </div>
-        <button class="tree-button" onclick="openModal('budding')">Learn Method</button>
       </div>
 
-      <!-- SIDE GRAFTING -->
-      <div class="tree-card" data-title="Side Veneer Grafting Method">
-        <div>
-          <img src="images/method-side-veneer.jpg" alt="Side Veneer Grafting Technique" class="tree-image">
-          <h3>Side Veneer Grafting</h3>
-          <p>Popular for mangoes and evergreen species where the rootstock stem is preserved.</p>
+      <div class="card search-item" data-title="Whip & Tongue Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-whip-tongue.jpg" alt="Whip & Tongue Technique">
+          <span class="badge badge-easy">Late Winter</span>
         </div>
-        <button class="tree-button" onclick="openModal('side')">Learn Method</button>
+        <div class="card-content">
+          <h3>Whip & Tongue</h3>
+          <p>Provides strong cambium contact for young branches of identical thickness.</p>
+          <button onclick="openModal('whip')" class="btn btn-primary">Learn Method</button>
+        </div>
       </div>
 
+      <div class="card search-item" data-title="Side Veneer Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-side-veneer.jpg" alt="Side Veneer Technique">
+          <span class="badge badge-med">Warm Seasons</span>
+        </div>
+        <div class="card-content">
+          <h3>Side Veneer</h3>
+          <p>Excellent for evergreen fruit trees like mangoes and avocados in warm weather.</p>
+          <button onclick="openModal('side')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- SECTION 3: GRAFTING EQUIPMENT CHECKLIST -->
-  <section id="checklist" class="checklist-section">
-    <h2>Essential Grafting Equipment Checklist</h2>
-    <p class="section-intro">Check off key tools and supplies before starting your grafting process to guarantee clean cuts and high success rates.</p>
+  <section id="checklist">
+    <h2 class="section-title">Essential Grafting Equipment Checklist</h2>
+    <p class="section-subtitle">Check off key tools and supplies before starting your grafting process to guarantee clean cuts and high success rates.</p>
     
+    <!-- Progress Bar Container -->
+    <div style="max-width: 800px; margin: 0 auto 25px auto; text-align: center;">
+      <p id="checklist-progress-text" style="font-weight: bold; margin-bottom: 8px; color: var(--text-muted);">0 of 6 tools ready (0%)</p>
+      <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
+        <div id="checklist-progress-bar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.3s ease;"></div>
+      </div>
+    </div>
+
     <div class="checklist-grid">
       <div class="checklist-item">
-        <input type="checkbox" id="tool1">
-        <label for="tool1">Razor-Sharp Grafting Knife</label>
+        <input type="checkbox" id="tool1" onchange="updateChecklistProgress()">
+        <label for="tool1">🔪 Razor-Sharp Grafting Knife</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="tool2">
-        <label for="tool2">Parafilm / Grafting Tape</label>
+        <input type="checkbox" id="tool2" onchange="updateChecklistProgress()">
+        <label for="tool2">🩹 Parafilm / Grafting Tape</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="tool3">
-        <label for="tool3">Rubbing Alcohol (Sanitizer)</label>
+        <input type="checkbox" id="tool3" onchange="updateChecklistProgress()">
+        <label for="tool3">🧼 Rubbing Alcohol (Sanitizer)</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="tool4">
-        <label for="tool4">Pruning Shears / Secateurs</label>
+        <input type="checkbox" id="tool4" onchange="updateChecklistProgress()">
+        <label for="tool4">✂️ Pruning Shears / Secateurs</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="tool5">
-        <label for="tool5">Grafting Sealant / Wax</label>
+        <input type="checkbox" id="tool5" onchange="updateChecklistProgress()">
+        <label for="tool5">🪵 Grafting Sealant / Wax</label>
       </div>
       <div class="checklist-item">
-        <input type="checkbox" id="tool6">
-        <label for="tool6">Plant Identification Tags</label>
+        <input type="checkbox" id="tool6" onchange="updateChecklistProgress()">
+        <label for="tool6">🏷️ Plant Identification Tags</label>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: GRAFTING QUIZ GAME -->
-  <section id="game" class="game-section">
-    <h2>Interactive Grafting Quiz Game</h2>
-    <p class="section-intro">Test your grafting knowledge! Select the correct option to earn points.</p>
+  <!-- SECTION 4: INTERACTIVE TOOLS & SEASONAL CALENDAR -->
+  <section id="interactive-tools" style="background-color: var(--card-bg);">
+    <h2 class="section-title">Grafting Tools & Seasonal Calendar</h2>
+    <p class="section-subtitle">Check stem compatibility and ideal timing before attempting your graft.</p>
 
-    <div class="game-box">
-      <div id="game-feedback" class="game-feedback">Ready? Click an option below to start!</div>
-      <div id="game-question" class="game-question">Which technique is best when scion and rootstock have equal thickness?</div>
+    <div class="tools-container">
       
-      <div id="game-options" class="game-options"></div>
+      <!-- TOOL 1: COMPATIBILITY CHECKER -->
+      <div class="tool-box">
+        <h3>Compatibility Checker</h3>
+        
+        <label>Select Scion (Desired Fruit):</label>
+        <select id="scion-select">
+          <option value="sweet-orange">Sweet Orange</option>
+          <option value="mango">Mango</option>
+          <option value="avocado">Avocado</option>
+          <option value="apple">Apple</option>
+        </select>
 
-      <div class="game-score">Score: <span id="score-val">0</span> / <span id="total-val">0</span></div>
-      <button class="button" style="margin-top: 15px;" id="next-btn" onclick="nextQuestion()">Next Question ➔</button>
+        <label>Select Rootstock Base:</label>
+        <select id="rootstock-select">
+          <option value="lemon">Lemon / Trifoliate Orange</option>
+          <option value="wild-mango">Wild / Seedling Mango</option>
+          <option value="avocado-seedling">Avocado Seedling</option>
+          <option value="crabapple">Crabapple / M9 Rootstock</option>
+          <option value="peach">Peach Rootstock</option>
+        </select>
+
+        <button onclick="checkCompatibility()" class="btn btn-primary" style="width: 100%;">Check Match</button>
+
+        <div id="compatibility-result" style="margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-weight: bold; text-align: center;"></div>
+      </div>
+
+      <!-- TOOL 2: SEASONAL CALENDAR -->
+      <div class="tool-box">
+        <h3>Seasonal Grafting Window</h3>
+        
+        <label>Select Season / Timing:</label>
+        <select id="season-select" onchange="filterSeason()">
+          <option value="all">Show All Seasons</option>
+          <option value="spring">Early Spring (Dormant Break)</option>
+          <option value="summer">Active Summer Growth</option>
+          <option value="autumn">Late Summer / Early Autumn</option>
+        </select>
+
+        <ul id="season-list" style="list-style: none;">
+          <li data-season="spring" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Late Winter / Spring:</strong> Apples, Pears, Plums, Peaches (Cleft & Whip Grafting)</li>
+          <li data-season="summer" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Mid/Late Summer:</strong> Citrus, Mangoes, Avocados (T-Budding & Side-Veneer)</li>
+          <li data-season="autumn" style="padding: 8px 0;"><strong>Early Autumn:</strong> Tropical & Subtropical active sap flow budding</li>
+        </ul>
+      </div>
+
     </div>
+  </section>
+
+  <!-- SECTION 5: INTERACTIVE QUIZ GAME -->
+  <section id="quiz">
+    <h2 class="section-title">Grafting Knowledge Quiz</h2>
+    <p class="section-subtitle">Test your skills before taking a knife to your trees!</p>
+
+    <div class="quiz-card">
+      <h3 id="quiz-question">Loading Question...</h3>
+      <div class="quiz-options" id="quiz-options"></div>
+      <p id="quiz-feedback" style="margin-top: 15px; font-weight: bold; min-height: 24px;"></p>
+      <button id="next-btn" class="btn btn-primary" style="margin-top: 15px; display: none;" onclick="nextQuestion()">Next Question</button>
+    </div>
+  </section>
+
+  <!-- SECTION 6: USER FEEDBACK & SUGGESTIONS -->
+  <section id="feedback" style="background-color: var(--card-bg);">
+    <h2 class="section-title">Feedback & Suggestions</h2>
+    <p class="section-subtitle">Have suggestions for new fruit trees or feature updates? Let us know!</p>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name:</label>
+        <input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
+      </div>
+
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Email:</label>
+        <input type="email" name="email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
+      </div>
+
+      <div>
+        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message / Suggestion:</label>
+        <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="cursor: pointer; width: 100%;">Send Feedback</button>
+    </form>
   </section>
 
   <!-- MODAL POPUP FOR DETAILED GUIDES -->
@@ -695,162 +819,135 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Grafting Guide. All Rights Reserved.</p>
+    <p>&copy; 2026 Grafting Guide by Wainaina Steve. Built with HTML, CSS, and JS.</p>
   </footer>
 
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    /* 1. DARK MODE TOGGLE */
+    /* THEME SWITCHER LOGIC WITH LOCALSTORAGE PERSISTENCE */
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.body.setAttribute('data-theme', savedTheme);
+      document.getElementById('themeBtn').innerText = savedTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+    }
+
     function toggleTheme() {
-      document.body.classList.toggle("dark-mode");
-      const isDark = document.body.classList.contains("dark-mode");
-      document.getElementById("theme-btn").textContent = isDark ? "Light Mode" : "Dark Mode";
-      localStorage.setItem("themePreference", isDark ? "dark" : "light");
+      const body = document.body;
+      const btn = document.getElementById("themeBtn");
+      const currentTheme = body.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+      body.setAttribute("data-theme", newTheme);
+      localStorage.setItem('theme', newTheme);
+      btn.innerText = newTheme === "dark" ? "Light Mode" : "Dark Mode";
     }
 
-    // Load theme preference
-    if (localStorage.getItem("themePreference") === "dark") {
-      document.body.classList.add("dark-mode");
-      document.getElementById("theme-btn").textContent = "Light Mode";
-    }
+    initTheme();
 
-    /* 2. SEARCH FILTER FUNCTION */
-    function filterCards() {
-      const filter = document.getElementById("search-bar").value.toLowerCase();
-      const cards = document.querySelectorAll(".tree-card");
+    /* CHECKLIST PROGRESS & PERSISTENCE */
+    function updateChecklistProgress() {
+      const checkboxes = document.querySelectorAll('.checklist-grid input[type="checkbox"]');
+      let checkedCount = 0;
 
-      cards.forEach(card => {
-        const title = card.getAttribute("data-title") ? card.getAttribute("data-title").toLowerCase() : "";
-        const text = card.innerText.toLowerCase();
-        if (title.includes(filter) || text.includes(filter)) {
-          card.style.display = "flex";
+      checkboxes.forEach((cb, index) => {
+        if (cb.checked) {
+          checkedCount++;
+          localStorage.setItem(`tool_${index + 1}`, 'true');
         } else {
-          card.style.display = "none";
+          localStorage.removeItem(`tool_${index + 1}`);
+        }
+      });
+
+      const total = checkboxes.length;
+      const percentage = Math.round((checkedCount / total) * 100);
+
+      document.getElementById('checklist-progress-bar').style.width = `${percentage}%`;
+      document.getElementById('checklist-progress-text').innerText = `${checkedCount} of ${total} tools ready (${percentage}%)`;
+    }
+
+    function loadChecklistState() {
+      const checkboxes = document.querySelectorAll('.checklist-grid input[type="checkbox"]');
+      checkboxes.forEach((cb, index) => {
+        if (localStorage.getItem(`tool_${index + 1}`) === 'true') {
+          cb.checked = true;
+        }
+      });
+      updateChecklistProgress();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadChecklistState);
+
+    /* SEARCH FILTER LOGIC WITH EMPTY STATE MESSAGE */
+    function filterContent() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const items = document.querySelectorAll(".search-item");
+      let matches = 0;
+
+      items.forEach(item => {
+        const title = item.getAttribute("data-title") ? item.getAttribute("data-title").toLowerCase() : "";
+        const text = item.innerText.toLowerCase();
+        if (title.includes(input) || text.includes(input)) {
+          item.style.display = "flex";
+          matches++;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      let noResultMsg = document.getElementById("no-results-msg");
+      if (!noResultMsg) {
+        noResultMsg = document.createElement("p");
+        noResultMsg.id = "no-results-msg";
+        noResultMsg.style.textAlign = "center";
+        noResultMsg.style.color = "var(--text-muted)";
+        noResultMsg.style.margin = "20px 0";
+        noResultMsg.style.gridColumn = "1 / -1";
+        document.getElementById("treesGrid").appendChild(noResultMsg);
+      }
+
+      noResultMsg.innerText = matches === 0 ? "No fruit trees or grafting methods matched your search." : "";
+    }
+
+    /* COMPATIBILITY CHECKER LOGIC */
+    function checkCompatibility() {
+      const scion = document.getElementById("scion-select").value;
+      const rootstock = document.getElementById("rootstock-select").value;
+      const resultDiv = document.getElementById("compatibility-result");
+      resultDiv.style.display = "block";
+
+      if (
+        (scion === "sweet-orange" && rootstock === "lemon") ||
+        (scion === "mango" && rootstock === "wild-mango") ||
+        (scion === "avocado" && rootstock === "avocado-seedling") ||
+        (scion === "apple" && rootstock === "crabapple")
+      ) {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Excellent match for robust growth.";
+      } else {
+        resultDiv.style.background = "#f8d7da";
+        resultDiv.style.color = "#721c24";
+        resultDiv.innerHTML = "Incompatible or Low Success! Interspecies graft union may fail.";
+      }
+    }
+
+    /* SEASONAL CALENDAR FILTER */
+    function filterSeason() {
+      const selected = document.getElementById("season-select").value;
+      const items = document.querySelectorAll("#season-list li");
+
+      items.forEach(item => {
+        if (selected === "all" || item.getAttribute("data-season") === selected) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
         }
       });
     }
 
-    /* 3. QUIZ DATA */
-    const quizData = [
-      {
-        question: "Which technique is best when the scion and rootstock have equal thickness?",
-        options: ["Whip & Tongue Grafting", "Bark Grafting", "Bridge Grafting"],
-        correct: 0
-      },
-      {
-        question: "Which method is commonly used for propagating Citrus trees (like oranges and lemons)?",
-        options: ["Approach Grafting", "T-Budding", "Hypocotyl Grafting"],
-        correct: 1
-      },
-      {
-        question: "What is the lower rooted part of the plant used during grafting called?",
-        options: ["Scion", "Rootstock", "Cambium"],
-        correct: 1
-      },
-      {
-        question: "What green layer must align perfectly between scion and rootstock for success?",
-        options: ["Epidermis", "Cambium Layer", "Pith"],
-        correct: 1
-      },
-      {
-        question: "Which method is best for side-joining mango trees without cutting the main stem top immediately?",
-        options: ["Side Veneer Grafting", "T-Budding", "Whip Grafting"],
-        correct: 0
-      },
-      {
-        question: "When is the ideal time to collect dormant scion wood for fruit tree grafting?",
-        options: ["Mid Summer", "Late Winter / Early Spring", "Late Autumn"],
-        correct: 1
-      },
-      {
-        question: "What tool material is used to wrap and seal the graft union from air and moisture?",
-        options: ["Parafilm / Grafting Tape", "Duct Tape", "Paper Ribbon"],
-        correct: 0
-      },
-      {
-        question: "What is the upper detached shoot segment containing desirable buds called?",
-        options: ["Rootstock", "Scion", "Sucker"],
-        correct: 1
-      },
-      {
-        question: "Which grafting technique involves cutting a vertical cleft in a severed trunk/branch?",
-        options: ["Cleft Grafting", "T-Budding", "Splice Grafting"],
-        correct: 0
-      },
-      {
-        question: "What should be removed from the rootstock below the graft union during growth?",
-        options: ["Flowers", "Rootstock Suckers", "Dormant Buds"],
-        correct: 1
-      }
-    ];
-
-    let currentIdx = 0;
-    let score = 0;
-    let totalAsked = 0;
-
-    function loadQuestion() {
-      const q = quizData[currentIdx];
-      document.getElementById("game-question").textContent = `Q${currentIdx + 1}: ${q.question}`;
-      const optsContainer = document.getElementById("game-options");
-      optsContainer.innerHTML = "";
-      
-      q.options.forEach((opt, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "option-btn";
-        btn.textContent = opt;
-        btn.onclick = () => checkAnswer(idx);
-        optsContainer.appendChild(btn);
-      });
-    }
-
-    function checkAnswer(selectedIdx) {
-      const q = quizData[currentIdx];
-      const feedback = document.getElementById("game-feedback");
-      
-      totalAsked++;
-      if (selectedIdx === q.correct) {
-        score++;
-        feedback.textContent = "Correct! Well done.";
-        feedback.style.color = "#8bc34a";
-      } else {
-        feedback.textContent = "Incorrect. Correct answer: " + q.options[q.correct];
-        feedback.style.color = "#ff8a8a";
-      }
-
-      document.getElementById("score-val").textContent = score;
-      document.getElementById("total-val").textContent = totalAsked;
-
-      const btns = document.querySelectorAll(".option-btn");
-      btns.forEach(b => b.disabled = true);
-    }
-
-    function nextQuestion() {
-      if (currentIdx < quizData.length - 1) {
-        currentIdx++;
-        document.getElementById("game-feedback").textContent = "";
-        loadQuestion();
-      } else {
-        document.getElementById("game-question").textContent = "Quiz Completed!";
-        document.getElementById("game-options").innerHTML = `<p style="color:#d1e2cd; font-size:18px;">Final Score: ${score} out of ${quizData.length}!</p>`;
-        document.getElementById("game-feedback").textContent = score > 7 ? "Great job! You are a Grafting Expert!" : "Good effort! Review the guide & try again.";
-        document.getElementById("next-btn").textContent = "Restart Quiz";
-        document.getElementById("next-btn").onclick = restartQuiz;
-      }
-    }
-
-    function restartQuiz() {
-      currentIdx = 0;
-      score = 0;
-      totalAsked = 0;
-      document.getElementById("score-val").textContent = 0;
-      document.getElementById("total-val").textContent = 0;
-      document.getElementById("next-btn").textContent = "Next Question ➔";
-      document.getElementById("next-btn").onclick = nextQuestion;
-      document.getElementById("game-feedback").textContent = "";
-      loadQuestion();
-    }
-
-    /* 4. MODAL DETAILED GUIDES */
+    /* MODAL GUIDES DATA WITH VIDEO EMBEDS */
     const guides = {
       mango: {
         title: "Mango Grafting Guide",
@@ -858,7 +955,9 @@
         content: `
           <p><strong>Recommended Method:</strong> Side Veneer Grafting or Cleft Grafting.</p>
           <p><strong>Best Time:</strong> Late Spring / Early Summer during warm growth periods.</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; border-radius: 8px;">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
+          </div>
           <ul>
             <li>Select healthy, pencil-thick rootstocks and mature terminal scions.</li>
             <li>Make a shallow 1-2 inch downward slice into the side of rootstock.</li>
@@ -873,7 +972,9 @@
         content: `
           <p><strong>Recommended Method:</strong> T-Budding or Chip Budding.</p>
           <p><strong>Best Time:</strong> Active growth season when bark slips easily.</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 15px 0; border-radius: 8px;">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
+          </div>
           <ul>
             <li>Cut a vertical T-shape incision on the rootstock trunk.</li>
             <li>Slice a healthy single bud shield from target orange scion wood.</li>
@@ -888,7 +989,6 @@
         content: `
           <p><strong>Recommended Method:</strong> T-Budding or Cleft Grafting.</p>
           <p><strong>Best Time:</strong> Spring or Autumn when rootstock bark is active.</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
           <ul>
             <li>Select hardy disease-resistant rootstock (e.g., trifoliate orange).</li>
             <li>Insert healthy bud shield or cleft scion firmly.</li>
@@ -902,7 +1002,6 @@
         content: `
           <p><strong>Recommended Method:</strong> Cleft Grafting or Whip & Tongue.</p>
           <p><strong>Best Time:</strong> Late winter to early spring before new shoot flushes.</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
           <ul>
             <li>Use 6–12 month old seed-grown seedling rootstocks.</li>
             <li>Cut rootstock trunk straight across; split down center vertically.</li>
@@ -917,7 +1016,6 @@
         content: `
           <p><strong>Recommended Method:</strong> Whip & Tongue Grafting.</p>
           <p><strong>Best Time:</strong> Late winter dormancy stage.</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
           <ul>
             <li>Match scion and rootstock stem thickness equally.</li>
             <li>Slice matching smooth diagonal cuts with interlocking tongues.</li>
@@ -931,7 +1029,6 @@
         content: `
           <p><strong>Recommended Method:</strong> Hypocotyl / Cleft Grafting.</p>
           <p><strong>Best Time:</strong> Early seedling stage (soldier phase).</p>
-          <p><strong>Step-by-Step Instructions:</strong></p>
           <ul>
             <li>Join disease-resistant Robusta rootstock with Arabica scion top.</li>
             <li>Make clean micro-cleft cuts using razor blades.</li>
@@ -1012,9 +1109,72 @@
       }
     }
 
-    // Initialize first question
-    loadQuestion();
-  </script>
+    /* QUIZ GAME ENGINE */
+    const quizData = [
+      {
+        question: "What layer of tissues must align for a graft to be successful?",
+        options: ["Pith", "Cambium layer", "Bark outer layer", "Epidermis"],
+        answer: 1
+      },
+      {
+        question: "Which technique is best when scion and rootstock are the same small diameter?",
+        options: ["Top-working", "Cleft grafting", "Whip & Tongue", "Bark grafting"],
+        answer: 2
+      },
+      {
+        question: "What is the primary function of Parafilm or grafting tape?",
+        options: ["To prevent moisture loss", "To add fertilizer", "To repel insects", "To block sunlight"],
+        answer: 0
+      }
+    ];
 
+    let currentQ = 0;
+
+    function loadQuiz() {
+      const q = quizData[currentQ];
+      document.getElementById("quiz-question").innerText = `Q${currentQ + 1}: ${q.question}`;
+      const optDiv = document.getElementById("quiz-options");
+      optDiv.innerHTML = "";
+      document.getElementById("quiz-feedback").innerText = "";
+      document.getElementById("next-btn").style.display = "none";
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(idx);
+        optDiv.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(idx) {
+      const q = quizData[currentQ];
+      const feedback = document.getElementById("quiz-feedback");
+      if (idx === q.answer) {
+        feedback.innerText = "Correct! Great job.";
+        feedback.style.color = "#8bc34a";
+      } else {
+        feedback.innerText = `Incorrect! The correct answer was: ${q.options[q.answer]}`;
+        feedback.style.color = "#ff5252";
+      }
+      document.getElementById("next-btn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      currentQ = (currentQ + 1) % quizData.length;
+      loadQuiz();
+    }
+
+    loadQuiz();
+
+    /* REGISTER PWA SERVICE WORKER */
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker Registered!', reg))
+          .catch(err => console.error('Service Worker Registration Failed!', err));
+      });
+    }
+  </script>
 </body>
 </html>
