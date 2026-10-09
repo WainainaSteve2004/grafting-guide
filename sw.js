@@ -1,4 +1,4 @@
-const CACHE_NAME = 'grafting-guide-v1';
+const CACHE_NAME = 'grafting-cache-v2';
 const urlsToCache = [
   './',
   './index.html',
