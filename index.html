@@ -130,29 +130,46 @@
       background: var(--accent-hover);
     }
 
-    /* HERO SECTION WITH CLEAR GRAFTING BACKGROUND IMAGE */
+    /* HERO SECTION - FULL UNCONTAINED VISIBILITY FOR HERO-BG */
     .hero {
       text-align: center;
-      padding: 90px 20px 70px 20px;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(11, 31, 18, 0.4) 100%), 
-                  url('images/hero-bg.jpg') center/cover no-repeat;
+      padding: 60px 20px;
+      background-color: #0d2214;
+      background-image: url('images/hero-bg.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
       border-bottom: 1px solid var(--border-color);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-content-box {
+      background: rgba(11, 31, 18, 0.75);
+      padding: 30px 40px;
+      border-radius: 16px;
+      max-width: 750px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(139, 195, 74, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .hero h1 {
       font-size: 2.8rem;
       margin-bottom: 15px;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
     }
 
     .hero p {
       font-size: 1.2rem;
-      color: #ffffff;
-      max-width: 650px;
-      margin: 0 auto 30px auto;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.9);
-      font-weight: 600;
+      color: #e8f5e9;
+      margin: 0 auto 25px auto;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      font-weight: 500;
     }
 
     .hero-buttons {
@@ -186,7 +203,7 @@
     }
 
     .btn-secondary {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       border: 2px solid var(--accent-color);
       color: #fff;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -510,14 +527,16 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION WITH CLEAR GRAFTING BACKGROUND IMAGE -->
+  <!-- HERO SECTION WITH FULL UNCLIPPED DIAGRAM BACKGROUND -->
   <section class="hero">
-    <h1>Master Fruit Tree Grafting</h1>
-    <p>Learn step-by-step grafting techniques for various fruit trees and test your knowledge!</p>
-    <div class="hero-buttons">
-      <a href="#fruit-trees" class="btn btn-primary">Explore Trees</a>
-      <a href="#methods" class="btn btn-secondary">Grafting Methods</a>
-      <a href="#quiz" class="btn btn-primary">Play Grafting Quiz</a>
+    <div class="hero-content-box">
+      <h1>Master Fruit Tree Grafting</h1>
+      <p>Learn step-by-step grafting techniques for various fruit trees and test your knowledge!</p>
+      <div class="hero-buttons">
+        <a href="#fruit-trees" class="btn btn-primary">Explore Trees</a>
+        <a href="#methods" class="btn btn-secondary">Grafting Methods</a>
+        <a href="#quiz" class="btn btn-primary">Play Grafting Quiz</a>
+      </div>
     </div>
   </section>
 
