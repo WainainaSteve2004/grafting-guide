@@ -53,6 +53,9 @@
       color: var(--text-main);
       line-height: 1.6;
       transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -72,6 +75,7 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .logo-img {
@@ -89,18 +93,22 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
     }
 
     nav a {
       color: var(--text-main);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
-    nav a:hover {
+    nav a:hover, nav a.active-tab {
       color: var(--accent-color);
+      background-color: rgba(139, 195, 74, 0.1);
     }
 
     .theme-toggle {
@@ -140,7 +148,7 @@
       transition: all 0.3s ease;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
       .hamburger-btn {
         display: flex;
       }
@@ -156,7 +164,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 30px 20px;
-        gap: 20px;
+        gap: 15px;
         transition: right 0.3s ease;
         box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5);
       }
@@ -176,6 +184,17 @@
       }
     }
 
+    /* PAGE SECTIONS MANAGEMENT */
+    .page-section {
+      display: none;
+      padding: 50px 7%;
+      flex-grow: 1;
+    }
+
+    .page-section.active-page {
+      display: block;
+    }
+
     /* HERO / HOME SECTION */
     .hero {
       text-align: center;
@@ -184,8 +203,8 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      border-bottom: 1px solid var(--border-color);
-      min-height: 500px;
+      border-radius: 16px;
+      min-height: 480px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -259,8 +278,7 @@
 
     .search-container {
       max-width: 600px;
-      margin: -25px auto 40px auto;
-      padding: 0 20px;
+      margin: 30px auto 0 auto;
     }
 
     .search-input {
@@ -279,10 +297,6 @@
     .search-input:focus {
       border-color: var(--accent-color);
       box-shadow: 0 0 10px var(--accent-color);
-    }
-
-    section {
-      padding: 50px 7%;
     }
 
     .section-title {
@@ -622,6 +636,7 @@
       padding: 25px;
       border-top: 1px solid var(--border-color);
       color: var(--text-muted);
+      margin-top: auto;
     }
   </style>
 </head>
@@ -629,7 +644,7 @@
 
   <!-- HEADER NAVIGATION -->
   <header>
-    <a href="#home" class="logo-container">
+    <a onclick="showPage('home')" class="logo-container">
       <img src="logo.png.png" alt="Grafting Solutions Logo" class="logo-img" onerror="this.style.display='none'">
       <span class="logo-text">Grafting Solutions</span>
     </a>
@@ -641,38 +656,40 @@
     </button>
 
     <nav id="navMenu">
-      <a href="#home" onclick="closeMobileMenu()">Home</a>
-      <a href="#about" onclick="closeMobileMenu()">About Us</a>
-      <a href="#fruit-trees" onclick="closeMobileMenu()">Fruit Guides</a>
-      <a href="#methods" onclick="closeMobileMenu()">Methods</a>
-      <a href="#checklist" onclick="closeMobileMenu()">Tools</a>
-      <a href="#interactive-tools" onclick="closeMobileMenu()">Compatibility & Calendar</a>
-      <a href="#quiz" onclick="closeMobileMenu()">Quiz</a>
-      <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
+      <a onclick="showPage('home')" class="nav-link active-tab" id="nav-home">Home</a>
+      <a onclick="showPage('about')" class="nav-link" id="nav-about">About Us</a>
+      <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruit Guides</a>
+      <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods</a>
+      <a onclick="showPage('checklist')" class="nav-link" id="nav-checklist">Tools</a>
+      <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
+      <a onclick="showPage('quiz')" class="nav-link" id="nav-quiz">Quiz</a>
+      <a onclick="showPage('contact')" class="nav-link" id="nav-contact">Contact Us</a>
       <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Light Mode</button>
     </nav>
   </header>
 
-  <!-- HOME / HERO SECTION -->
-  <section id="home" class="hero">
-    <div class="hero-content-box">
-      <h1>Master Fruit Tree Grafting</h1>
-      <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
-      <div class="hero-buttons">
-        <a href="#fruit-trees" class="btn btn-primary">Explore Fruit Guides</a>
-        <a href="#methods" class="btn btn-secondary">Learn Grafting Methods</a>
-        <a href="#about" class="btn btn-primary">About Our Mission</a>
+  <!-- 1. HOME / HERO PAGE SECTION -->
+  <section id="home" class="page-section active-page">
+    <div class="hero">
+      <div class="hero-content-box">
+        <h1>Master Fruit Tree Grafting</h1>
+        <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
+        <div class="hero-buttons">
+          <button onclick="showPage('fruit-trees')" class="btn btn-primary">Explore Fruit Guides</button>
+          <button onclick="showPage('methods')" class="btn btn-secondary">Learn Grafting Methods</button>
+          <button onclick="showPage('about')" class="btn btn-primary">About Our Mission</button>
+        </div>
       </div>
+    </div>
+
+    <!-- SEARCH FILTER BAR -->
+    <div class="search-container">
+      <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
     </div>
   </section>
 
-  <!-- SEARCH FILTER BAR -->
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
-  </div>
-
-  <!-- ABOUT US SECTION -->
-  <section id="about" style="background-color: var(--card-bg);">
+  <!-- 2. ABOUT US PAGE SECTION -->
+  <section id="about" class="page-section">
     <h2 class="section-title">About Grafting Solutions</h2>
     <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
     
@@ -698,8 +715,8 @@
     </div>
   </section>
 
-  <!-- SECTION 1: FEATURED FRUIT TREES -->
-  <section id="fruit-trees">
+  <!-- 3. FEATURED FRUIT TREES PAGE SECTION -->
+  <section id="fruit-trees" class="page-section">
     <h2 class="section-title">Featured Fruit Trees</h2>
     <p class="section-subtitle">Select a crop below for complete rootstock criteria, scion selection, timing, step-by-step instructions, and aftercare guidance.</p>
     
@@ -772,8 +789,8 @@
     </div>
   </section>
 
-  <!-- SECTION 2: GRAFTING METHODS -->
-  <section id="methods" style="background-color: var(--card-bg);">
+  <!-- 4. GRAFTING METHODS PAGE SECTION -->
+  <section id="methods" class="page-section">
     <h2 class="section-title">Grafting Methods</h2>
     <p class="section-subtitle">Choose the correct technical procedure based on branch thickness and season.</p>
 
@@ -824,8 +841,8 @@
     </div>
   </section>
 
-  <!-- SECTION 3: EQUIPMENT CHECKLIST -->
-  <section id="checklist">
+  <!-- 5. EQUIPMENT CHECKLIST PAGE SECTION -->
+  <section id="checklist" class="page-section">
     <h2 class="section-title">Essential Grafting Equipment Checklist</h2>
     <p class="section-subtitle">Ensure you have sterilized tools and supplies before starting your cut.</p>
     
@@ -864,8 +881,8 @@
     </div>
   </section>
 
-  <!-- SECTION 4: COMPATIBILITY & SEASONAL CALENDAR -->
-  <section id="interactive-tools" style="background-color: var(--card-bg);">
+  <!-- 6. COMPATIBILITY & SEASONAL CALENDAR PAGE SECTION -->
+  <section id="interactive-tools" class="page-section">
     <h2 class="section-title">Compatibility Checker & Seasonal Calendar</h2>
     <p class="section-subtitle">Check botanical compatibility and local timing before grafting.</p>
 
@@ -923,8 +940,8 @@
     </div>
   </section>
 
-  <!-- SECTION 5: QUIZ GAME -->
-  <section id="quiz">
+  <!-- 7. QUIZ GAME PAGE SECTION -->
+  <section id="quiz" class="page-section">
     <h2 class="section-title">Horticultural Knowledge Quiz</h2>
     <p class="section-subtitle">Select a difficulty category below to filter questions and test your grafting expertise.</p>
 
@@ -948,8 +965,8 @@
     </div>
   </section>
 
-  <!-- SECTION 6: CONTACT US & FEEDBACK FORM -->
-  <section id="contact" style="background-color: var(--card-bg);">
+  <!-- 8. CONTACT US & FEEDBACK PAGE SECTION -->
+  <section id="contact" class="page-section">
     <h2 class="section-title">Contact Us & Feedback</h2>
     <p class="section-subtitle">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
 
@@ -988,6 +1005,28 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
+    /* SPA PAGE VIEW ROUTER */
+    function showPage(pageId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(sec => sec.classList.remove('active-page'));
+
+      const targetSection = document.getElementById(pageId);
+      if (targetSection) {
+        targetSection.classList.add('active-page');
+      }
+
+      const navLinks = document.querySelectorAll('nav a.nav-link');
+      navLinks.forEach(link => link.classList.remove('active-tab'));
+
+      const activeLink = document.getElementById(`nav-${pageId}`);
+      if (activeLink) {
+        activeLink.classList.add('active-tab');
+      }
+
+      window.scrollTo(0, 0);
+      closeMobileMenu();
+    }
+
     function toggleMobileMenu() {
       const nav = document.getElementById("navMenu");
       const btn = document.getElementById("hamburgerBtn");
