@@ -73,28 +73,30 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       cursor: pointer;
     }
 
     .logo-img {
-      height: 52px;
-      width: 52px;
-      object-fit: cover;
+      height: 64px;
+      width: 64px;
+      object-fit: contain;
       border-radius: 50%;
+      background-color: #ffffff;
+      padding: 2px;
       border: 2px solid var(--accent-color);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+      display: block;
       transition: transform 0.2s ease;
-      background-color: var(--card-bg);
     }
 
     .logo-container:hover .logo-img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .logo-text {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--text-main);
       letter-spacing: 0.5px;
@@ -648,7 +650,7 @@
 </head>
 <body data-theme="dark">
 
-  <!-- HEADER NAVIGATION WITH CORRECTED LOGO PATH -->
+  <!-- HEADER NAVIGATION WITH HIGH-VISIBILITY LOGO -->
   <header>
     <a onclick="showPage('home')" class="logo-container">
       <img src="images/logo.png" alt="Grafting Solutions Logo" class="logo-img">
