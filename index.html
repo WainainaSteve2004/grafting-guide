@@ -195,10 +195,10 @@
       display: block;
     }
 
-    /* HERO / HOME SECTION */
+    /* HERO / HOME SECTION - TRANSPARENT OVERLAY, FULL IMAGE VISIBILITY */
     .hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 100px 20px;
       background-image: url('images/hero-bg.jpg');
       background-position: center center;
       background-repeat: no-repeat;
@@ -212,34 +212,24 @@
     }
 
     .hero-content-box {
-      background: rgba(11, 31, 18, 0.85);
-      padding: 35px 45px;
-      border-radius: 20px;
-      max-width: 750px;
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(139, 195, 74, 0.3);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      background: transparent;
+      padding: 20px;
+      max-width: 800px;
     }
 
     .hero h1 {
-      font-size: 2.6rem;
-      margin-bottom: 15px;
+      font-size: 3rem;
+      margin-bottom: 20px;
       color: #ffffff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.9);
     }
 
     .hero p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin: 0 auto 25px auto;
-      font-weight: 500;
-    }
-
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin: 0 auto;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 4px rgba(0, 0, 0, 0.9);
     }
 
     .btn {
@@ -674,11 +664,6 @@
       <div class="hero-content-box">
         <h1>Master Fruit Tree Grafting</h1>
         <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
-        <div class="hero-buttons">
-          <button onclick="showPage('fruit-trees')" class="btn btn-primary">Explore Fruit Guides</button>
-          <button onclick="showPage('methods')" class="btn btn-secondary">Learn Grafting Methods</button>
-          <button onclick="showPage('about')" class="btn btn-primary">About Our Mission</button>
-        </div>
       </div>
     </div>
 
