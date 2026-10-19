@@ -544,123 +544,91 @@
     <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Guava)...">
   </div>
 
-  <!-- SECTION 1: FEATURED FRUIT TREES -->
-  <section id="fruit-trees">
-    <h2 class="section-title">Featured Fruit Trees</h2>
-    <p class="section-subtitle">Explore key step-by-step guides for popular fruit varieties below. The techniques shared here also apply to dozens of other fruit trees worldwide!</p>
-    
-    <div class="card-grid" id="treesGrid">
-      <div class="card search-item" data-title="Mango Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/1-mango.jpg" alt="Mango Tree">
-        </div>
-        <div class="card-content">
-          <h3>Mango Grafting</h3>
-          <p>Learn veneer and cleft grafting techniques for high-yield mango propagation.</p>
-          <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
+<!-- SECTION 1: FEATURED FRUIT TREES -->
+<section id="fruit-trees">
+  <h2 class="section-title">Featured Fruit Trees</h2>
+  <p class="section-subtitle">
+    Explore practical, step-by-step grafting guides for six selected crops.
+    Learn about rootstocks, scions, grafting methods, and aftercare.
+  </p>
 
-      <div class="card search-item" data-title="Orange Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/2-orange.jpg" alt="Orange Tree">
-        </div>
-        <div class="card-content">
-          <h3>Sweet Orange Grafting</h3>
-          <p>Master T-budding and cleft grafting on hardy citrus rootstocks.</p>
-          <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
+  <div class="card-grid" id="treesGrid">
 
-      <div class="card search-item" data-title="Lemon Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/3-lemon.jpg" alt="Lemon Tree">
-        </div>
-        <div class="card-content">
-          <h3>Lemon & Lime Grafting</h3>
-          <p>Propagate pest-resistant lemons with top-working techniques.</p>
-          <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
-        </div>
+    <!-- 1. Mango -->
+    <div class="card search-item" data-title="Mango Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/1-mango.jpg" alt="Mango tree with mango fruits">
       </div>
-
-      <div class="card search-item" data-title="Avocado Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/4-avocado.jpg" alt="Avocado Tree">
-        </div>
-        <div class="card-content">
-          <h3>Avocado Grafting</h3>
-          <p>Step-by-step instructions on side-tongue and cleft grafting Hass avocados.</p>
-          <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Apple Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/5-apple.jpg" alt="Apple Tree">
-        </div>
-        <div class="card-content">
-          <h3>Apple Grafting</h3>
-          <p>Learn bench grafting and whip-and-tongue methods for dwarf apple varieties.</p>
-          <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Coffee Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/6-coffee.jpg" alt="Coffee Plants">
-        </div>
-        <div class="card-content">
-          <h3>Coffee Grafting</h3>
-          <p>Graft Robusta rootstocks with Arabica scions to withstand root-knot nematodes.</p>
-          <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Guava Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/guava-grafting.jpg" alt="Guava Tree">
-        </div>
-        <div class="card-content">
-          <h3>Guava Grafting</h3>
-          <p>Master approach grafting and bark budding for high-yielding guava orchards.</p>
-          <button onclick="openModal('guava')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Passion Fruit Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/passion-grafting.jpg" alt="Passion Fruit Vine">
-        </div>
-        <div class="card-content">
-          <h3>Passion Fruit Grafting</h3>
-          <p>Graft purple passion fruit scions onto yellow disease-resistant rootstocks.</p>
-          <button onclick="openModal('passion')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Papaya Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/papaya-grafting.jpg" alt="Papaya Tree">
-        </div>
-        <div class="card-content">
-          <h3>Papaya Grafting</h3>
-          <p>Propagate true-to-type hermaphrodite papaya plants using specialized cleft cuts.</p>
-          <button onclick="openModal('papaya')" class="btn btn-secondary">Learn More</button>
-        </div>
-      </div>
-
-      <div class="card search-item" data-title="Macadamia Grafting">
-        <div class="card-img-wrapper">
-          <img src="images/macadamia-grafting.jpg" alt="Macadamia Nut Tree">
-        </div>
-        <div class="card-content">
-          <h3>Macadamia Grafting</h3>
-          <p>Apply whip-and-tongue or cleft grafting to produce top-quality macadamia nuts.</p>
-          <button onclick="openModal('macadamia')" class="btn btn-secondary">Learn More</button>
-        </div>
+      <div class="card-content">
+        <h3>Mango Grafting</h3>
+        <p>Learn suitable mango grafting methods, scion selection, grafting steps, and aftercare.</p>
+        <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
       </div>
     </div>
-  </section>
+
+    <!-- 2. Orange -->
+    <div class="card search-item" data-title="Orange Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/2-orange.jpg" alt="Orange tree with ripe oranges">
+      </div>
+      <div class="card-content">
+        <h3>Orange Grafting</h3>
+        <p>Explore citrus budding and grafting methods, compatible rootstocks, and care after grafting.</p>
+        <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <!-- 3. Lemon -->
+    <div class="card search-item" data-title="Lemon Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/3-lemon.jpg" alt="Lemon tree with ripe lemons">
+      </div>
+      <div class="card-content">
+        <h3>Lemon Grafting</h3>
+        <p>Learn lemon grafting methods, rootstock selection, graft union care, and common mistakes.</p>
+        <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <!-- 4. Avocado -->
+    <div class="card search-item" data-title="Avocado Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/4-avocado.jpg" alt="Avocado tree with avocado fruits">
+      </div>
+      <div class="card-content">
+        <h3>Avocado Grafting</h3>
+        <p>Follow practical avocado grafting steps, from selecting healthy plant material to aftercare.</p>
+        <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <!-- 5. Apple -->
+    <div class="card search-item" data-title="Apple Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/5-apple.jpg" alt="Apple tree with ripe apples">
+      </div>
+      <div class="card-content">
+        <h3>Apple Grafting</h3>
+        <p>Discover suitable apple rootstocks, whip-and-tongue grafting, and graft care.</p>
+        <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <!-- 6. Coffee -->
+    <div class="card search-item" data-title="Coffee Grafting">
+      <div class="card-img-wrapper">
+        <img src="images/6-coffee.jpg" alt="Coffee plant with ripe coffee cherries">
+      </div>
+      <div class="card-content">
+        <h3>Coffee Grafting</h3>
+        <p>Explore coffee grafting, compatible plant material, grafting care, and crop-specific guidance.</p>
+        <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- SECTION 2: GRAFTING METHODS -->
   <section id="methods" style="background-color: var(--card-bg);">
