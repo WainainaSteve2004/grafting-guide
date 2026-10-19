@@ -1,7 +1,9 @@
-const CACHE_NAME = 'grafting-cache-v4';
+const CACHE_NAME = 'grafting-cache-v5';
 const ASSETS_TO_CACHE = [
   './',
+  './index.html',
   './manifest.json',
+  './logo.png.png',
   './images/hero-bg.jpg',
   './images/1-mango.jpg',
   './images/2-orange.jpg',
@@ -9,10 +11,12 @@ const ASSETS_TO_CACHE = [
   './images/4-avocado.jpg',
   './images/5-apple.jpg',
   './images/6-coffee.jpg',
-  './images/guava-grafting.jpg',
-  './images/passion-grafting.jpg',
-  './images/papaya-grafting.jpg',
-  './images/macadamia-grafting.jpg',
+  './images/mango-grafting.jpg',
+  './images/orange-grafting.jpg',
+  './images/lemon-grafting.jpg',
+  './images/avocado-grafting.jpg',
+  './images/apple-grafting.jpg',
+  './images/coffee-grafting.jpg',
   './images/method-cleft.jpg',
   './images/method-budding.jpg',
   './images/method-whip-tongue.jpg',
