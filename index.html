@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fruit Tree Grafting Guide & Interactive Tools</title>
+  <title>Grafting Solutions - Fruit Tree Grafting Guide & Interactive Tools</title>
 
-  <!-- Google Analytics (GA4) -->
+  <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your actual Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,22 +16,22 @@
   </script>
 
   <!-- Primary SEO Tags -->
-  <meta name="description" content="Master fruit tree grafting with step-by-step guides, techniques, compatibility matrices, and interactive quiz games.">
-  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, avocado grafting, citrus grafting, guava grafting, passion fruit grafting">
-  <meta name="author" content="Wainaina Steve">
+  <meta name="description" content="Master fruit tree grafting with step-by-step crop guides, techniques, compatibility matrices, and interactive quiz games.">
+  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, lemon grafting, avocado grafting, apple grafting, coffee grafting">
+  <meta name="author" content="Wainaina Steve - Grafting Solutions">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://wainainasteve2004.github.io/grafting-guide/">
-  <meta property="og:title" content="Fruit Tree Grafting Guide & Interactive Tools">
+  <meta property="og:title" content="Grafting Solutions - Educational Grafting Guide">
   <meta property="og:description" content="Learn step-by-step grafting methods, test tree compatibility, check seasonal timing, and play interactive horticulture quizzes.">
   <meta property="og:image" content="https://wainainasteve2004.github.io/grafting-guide/images/hero-bg.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://wainainasteve2004.github.io/grafting-guide/">
-  <meta name="twitter:title" content="Fruit Tree Grafting Guide & Interactive Tools">
-  <meta name="twitter:description" content="Master fruit tree grafting with step-by-step guides, compatibility matrices, and interactive quiz games.">
+  <meta name="twitter:title" content="Grafting Solutions - Educational Grafting Guide">
+  <meta name="twitter:description" content="Master fruit tree grafting with step-by-step crop guides, compatibility matrices, and interactive quiz games.">
   <meta name="twitter:image" content="https://wainainasteve2004.github.io/grafting-guide/images/hero-bg.jpg">
 
   <!-- PWA Theme Color & Manifest Link -->
@@ -81,7 +81,7 @@
 
     header {
       background-color: var(--card-bg);
-      padding: 20px 7%;
+      padding: 15px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -91,11 +91,23 @@
       z-index: 100;
     }
 
-    .logo {
-      font-size: 1.5rem;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
       font-weight: bold;
       color: var(--text-main);
-      text-decoration: none;
     }
 
     nav {
@@ -130,7 +142,7 @@
       background: var(--accent-hover);
     }
 
-    /* HERO SECTION WITH HIGH-VISIBILITY BACKGROUND IMAGE */
+    /* HERO SECTION */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -139,7 +151,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       border-bottom: 1px solid var(--border-color);
-      min-height: 520px;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -147,28 +159,27 @@
     }
 
     .hero-content-box {
-      background: rgba(11, 31, 18, 0.45);
+      background: rgba(11, 31, 18, 0.85);
       padding: 35px 45px;
       border-radius: 20px;
       max-width: 750px;
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(139, 195, 74, 0.3);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
     .hero h1 {
-      font-size: 2.8rem;
+      font-size: 2.6rem;
       margin-bottom: 15px;
       color: #ffffff;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
     }
 
     .hero p {
-      font-size: 1.25rem;
-      color: #ffffff;
+      font-size: 1.15rem;
+      color: var(--text-muted);
       margin: 0 auto 25px auto;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .hero-buttons {
@@ -198,14 +209,12 @@
     .btn-primary:hover {
       background-color: var(--accent-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
     }
 
     .btn-secondary {
       background-color: rgba(0, 0, 0, 0.75);
       border: 2px solid var(--accent-color);
       color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
     .btn-secondary:hover {
@@ -270,7 +279,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
     }
 
     .card:hover {
@@ -314,7 +322,7 @@
       margin-bottom: 15px;
     }
 
-    /* CHECKLIST GRID & STYLES */
+    /* CHECKLIST GRID */
     .checklist-grid {
       max-width: 800px;
       margin: 0 auto;
@@ -333,7 +341,7 @@
       align-items: center;
       gap: 12px;
       cursor: pointer;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease;
     }
 
     .checklist-item:hover {
@@ -352,7 +360,6 @@
       font-size: 1rem;
       color: var(--text-main);
       font-weight: 600;
-      transition: text-decoration 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     }
 
     .checklist-item input[type="checkbox"]:checked + label {
@@ -409,6 +416,7 @@
       border-radius: 12px;
       border: 1px solid var(--border-color);
       box-shadow: 0 5px 20px var(--card-shadow);
+      text-align: left;
     }
 
     .quiz-options {
@@ -430,8 +438,13 @@
       transition: background 0.2s;
     }
 
-    .quiz-opt:hover {
+    .quiz-opt:hover:not(:disabled) {
       background: var(--border-color);
+    }
+
+    .quiz-opt:disabled {
+      cursor: not-allowed;
+      opacity: 0.8;
     }
 
     /* MODAL STYLES */
@@ -442,7 +455,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.8);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -453,7 +466,7 @@
       background: var(--card-bg);
       padding: 30px;
       border-radius: 12px;
-      max-width: 650px;
+      max-width: 700px;
       width: 100%;
       max-height: 85vh;
       overflow-y: auto;
@@ -463,28 +476,41 @@
     }
 
     .modal-content h3 {
-      color: var(--text-main);
-      font-size: 1.6rem;
+      color: var(--accent-color);
+      font-size: 1.8rem;
       margin-bottom: 15px;
     }
 
     .modal-content img {
       width: 100%;
-      max-height: 250px;
+      max-height: 280px;
       object-fit: cover;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
+    .modal-section {
+      margin-bottom: 15px;
+    }
+
+    .modal-section h4 {
+      color: var(--text-main);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 3px;
+    }
+
     .modal-content p, .modal-content li {
       color: var(--text-muted);
       line-height: 1.6;
-      margin-bottom: 10px;
+      font-size: 0.95rem;
     }
 
-    .modal-content ul {
+    .modal-content ul, .modal-content ol {
       padding-left: 20px;
-      margin-bottom: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
     }
 
     .close-modal {
@@ -514,126 +540,125 @@
 
   <!-- HEADER NAVIGATION -->
   <header>
-    <a href="#" class="logo">Grafting Guide</a>
+    <a href="#" class="logo-container">
+      <img src="logo.png.png" alt="Grafting Solutions Logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">Grafting Solutions</span>
+    </a>
     <nav>
-      <a href="#fruit-trees">Fruit Trees</a>
+      <a href="#fruit-trees">Fruit Guides</a>
       <a href="#methods">Methods</a>
-      <a href="#checklist">Tools Checklist</a>
-      <a href="#interactive-tools">Tools & Calendar</a>
-      <a href="#quiz">Quiz Game</a>
+      <a href="#checklist">Tools</a>
+      <a href="#interactive-tools">Compatibility & Calendar</a>
+      <a href="#quiz">Quiz</a>
       <a href="#feedback">Feedback</a>
       <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Light Mode</button>
     </nav>
   </header>
 
-  <!-- HERO SECTION WITH HIGH-VISIBILITY BACKGROUND IMAGE -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content-box">
       <h1>Master Fruit Tree Grafting</h1>
-      <p>Learn step-by-step grafting techniques for various fruit trees and test your knowledge!</p>
+      <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
       <div class="hero-buttons">
-        <a href="#fruit-trees" class="btn btn-primary">Explore Trees</a>
-        <a href="#methods" class="btn btn-secondary">Grafting Methods</a>
-        <a href="#quiz" class="btn btn-primary">Play Grafting Quiz</a>
+        <a href="#fruit-trees" class="btn btn-primary">Explore Fruit Guides</a>
+        <a href="#methods" class="btn btn-secondary">Learn Grafting Methods</a>
+        <a href="#checklist" class="btn btn-primary">View Tools Checklist</a>
       </div>
     </div>
   </section>
 
   <!-- SEARCH FILTER BAR -->
   <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Guava)...">
+    <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
   </div>
 
-<!-- SECTION 1: FEATURED FRUIT TREES -->
-<section id="fruit-trees">
-  <h2 class="section-title">Featured Fruit Trees</h2>
-  <p class="section-subtitle">
-    Explore practical, step-by-step grafting guides for six selected crops.
-    Learn about rootstocks, scions, grafting methods, and aftercare.
-  </p>
-
-  <div class="card-grid" id="treesGrid">
-
-    <!-- 1. Mango -->
-    <div class="card search-item" data-title="Mango Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/1-mango.jpg" alt="Mango tree with mango fruits">
+  <!-- SECTION 1: FEATURED FRUIT TREES -->
+  <section id="fruit-trees">
+    <h2 class="section-title">Featured Fruit Trees</h2>
+    <p class="section-subtitle">Select a crop below for complete rootstock criteria, scion selection, timing, step-by-step instructions, and aftercare guidance.</p>
+    
+    <div class="card-grid" id="treesGrid">
+      
+      <!-- 1. Mango Card -->
+      <div class="card search-item" data-title="Mango Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/mango-grafting.jpg" alt="Mango Grafting" onerror="this.src='images/1-mango.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Mango Grafting</h3>
+          <p>Learn side-veneer and cleft grafting for uniform high-yielding mango propagation.</p>
+          <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
-      <div class="card-content">
-        <h3>Mango Grafting</h3>
-        <p>Learn suitable mango grafting methods, scion selection, grafting steps, and aftercare.</p>
-        <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
+
+      <!-- 2. Orange Card -->
+      <div class="card search-item" data-title="Orange Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/orange-grafting.jpg" alt="Sweet Orange Grafting" onerror="this.src='images/2-orange.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Sweet Orange Grafting</h3>
+          <p>Master T-budding and chip budding on hardy, disease-resistant citrus rootstocks.</p>
+          <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
+        </div>
       </div>
+
+      <!-- 3. Lemon Card -->
+      <div class="card search-item" data-title="Lemon Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/lemon-grafting.jpg" alt="Lemon Grafting" onerror="this.src='images/3-lemon.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Lemon & Lime Grafting</h3>
+          <p>Propagate pest-resistant citrus varieties using T-budding and cleft grafting techniques.</p>
+          <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <!-- 4. Avocado Card -->
+      <div class="card search-item" data-title="Avocado Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/avocado-grafting.jpg" alt="Avocado Grafting" onerror="this.src='images/4-avocado.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Avocado Grafting</h3>
+          <p>Detailed step-by-step guide for cleft and side-tongue grafting Hass avocado scions.</p>
+          <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <!-- 5. Apple Card -->
+      <div class="card search-item" data-title="Apple Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/apple-grafting.jpg" alt="Apple Grafting" onerror="this.src='images/5-apple.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Apple Grafting</h3>
+          <p>Master whip-and-tongue bench grafting on dwarfing rootstocks during winter dormancy.</p>
+          <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <!-- 6. Coffee Card -->
+      <div class="card search-item" data-title="Coffee Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/coffee-grafting.jpg" alt="Coffee Grafting" onerror="this.src='images/6-coffee.jpg'">
+        </div>
+        <div class="card-content">
+          <h3>Coffee Grafting</h3>
+          <p>Join disease-resistant Robusta rootstock bases with high-quality Arabica scion tops.</p>
+          <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
     </div>
-
-    <!-- 2. Orange -->
-    <div class="card search-item" data-title="Orange Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/2-orange.jpg" alt="Orange tree with ripe oranges">
-      </div>
-      <div class="card-content">
-        <h3>Orange Grafting</h3>
-        <p>Explore citrus budding and grafting methods, compatible rootstocks, and care after grafting.</p>
-        <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
-      </div>
-    </div>
-
-    <!-- 3. Lemon -->
-    <div class="card search-item" data-title="Lemon Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/3-lemon.jpg" alt="Lemon tree with ripe lemons">
-      </div>
-      <div class="card-content">
-        <h3>Lemon Grafting</h3>
-        <p>Learn lemon grafting methods, rootstock selection, graft union care, and common mistakes.</p>
-        <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
-      </div>
-    </div>
-
-    <!-- 4. Avocado -->
-    <div class="card search-item" data-title="Avocado Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/4-avocado.jpg" alt="Avocado tree with avocado fruits">
-      </div>
-      <div class="card-content">
-        <h3>Avocado Grafting</h3>
-        <p>Follow practical avocado grafting steps, from selecting healthy plant material to aftercare.</p>
-        <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
-      </div>
-    </div>
-
-    <!-- 5. Apple -->
-    <div class="card search-item" data-title="Apple Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/5-apple.jpg" alt="Apple tree with ripe apples">
-      </div>
-      <div class="card-content">
-        <h3>Apple Grafting</h3>
-        <p>Discover suitable apple rootstocks, whip-and-tongue grafting, and graft care.</p>
-        <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
-      </div>
-    </div>
-
-    <!-- 6. Coffee -->
-    <div class="card search-item" data-title="Coffee Grafting">
-      <div class="card-img-wrapper">
-        <img src="images/6-coffee.jpg" alt="Coffee plant with ripe coffee cherries">
-      </div>
-      <div class="card-content">
-        <h3>Coffee Grafting</h3>
-        <p>Explore coffee grafting, compatible plant material, grafting care, and crop-specific guidance.</p>
-        <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- SECTION 2: GRAFTING METHODS -->
   <section id="methods" style="background-color: var(--card-bg);">
     <h2 class="section-title">Grafting Methods</h2>
-    <p class="section-subtitle">Choose the right technical method for your stem diameter and season.</p>
+    <p class="section-subtitle">Choose the correct technical procedure based on branch thickness and season.</p>
 
     <div class="card-grid" id="methodsGrid">
       <div class="card search-item" data-title="Cleft Grafting Method">
@@ -664,7 +689,7 @@
         </div>
         <div class="card-content">
           <h3>Whip & Tongue</h3>
-          <p>Provides strong cambium contact for young branches of identical thickness.</p>
+          <p>Provides maximum cambium contact for young branches of identical thickness.</p>
           <button onclick="openModal('whip')" class="btn btn-primary">Learn Method</button>
         </div>
       </div>
@@ -675,19 +700,18 @@
         </div>
         <div class="card-content">
           <h3>Side Veneer</h3>
-          <p>Excellent for evergreen fruit trees like mangoes and avocados in warm weather.</p>
+          <p>Excellent for evergreen tropical trees like mangoes and avocados in warm weather.</p>
           <button onclick="openModal('side')" class="btn btn-primary">Learn Method</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 3: GRAFTING EQUIPMENT CHECKLIST -->
+  <!-- SECTION 3: EQUIPMENT CHECKLIST -->
   <section id="checklist">
     <h2 class="section-title">Essential Grafting Equipment Checklist</h2>
-    <p class="section-subtitle">Check off key tools and supplies before starting your grafting process to guarantee clean cuts and high success rates.</p>
+    <p class="section-subtitle">Ensure you have sterilized tools and supplies before starting your cut.</p>
     
-    <!-- Progress Bar Container -->
     <div style="max-width: 800px; margin: 0 auto 25px auto; text-align: center;">
       <p id="checklist-progress-text" style="font-weight: bold; margin-bottom: 8px; color: var(--text-muted);">0 of 6 tools ready (0%)</p>
       <div style="width: 100%; height: 10px; background: var(--border-color); border-radius: 5px; overflow: hidden;">
@@ -706,86 +730,97 @@
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="tool3" onchange="updateChecklistProgress()">
-        <label for="tool3">🧼 Rubbing Alcohol (Sanitizer)</label>
+        <label for="tool3">🧼 70% Isopropyl Alcohol (Sanitizer)</label>
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="tool4" onchange="updateChecklistProgress()">
-        <label for="tool4">✂️ Pruning Shears / Secateurs</label>
+        <label for="tool4">✂️ Bypass Pruning Shears</label>
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="tool5" onchange="updateChecklistProgress()">
-        <label for="tool5">🪵 Grafting Sealant / Wax</label>
+        <label for="tool5">🪵 Grafting Compound / Wax</label>
       </div>
       <div class="checklist-item">
         <input type="checkbox" id="tool6" onchange="updateChecklistProgress()">
-        <label for="tool6">🏷️ Plant Identification Tags</label>
+        <label for="tool6">🏷️ Weatherproof Plant Tags</label>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: INTERACTIVE TOOLS & SEASONAL CALENDAR -->
+  <!-- SECTION 4: COMPATIBILITY & SEASONAL CALENDAR -->
   <section id="interactive-tools" style="background-color: var(--card-bg);">
-    <h2 class="section-title">Grafting Tools & Seasonal Calendar</h2>
-    <p class="section-subtitle">Check stem compatibility and ideal timing before attempting your graft.</p>
+    <h2 class="section-title">Compatibility Checker & Seasonal Calendar</h2>
+    <p class="section-subtitle">Check botanical compatibility and local timing before grafting.</p>
 
     <div class="tools-container">
       
-      <!-- TOOL 1: COMPATIBILITY CHECKER -->
+      <!-- COMPATIBILITY CHECKER -->
       <div class="tool-box">
-        <h3>Compatibility Checker</h3>
+        <h3>Rootstock–Scion Compatibility</h3>
         
-        <label>Select Scion (Desired Fruit):</label>
+        <label>Select Scion (Desired Variety):</label>
         <select id="scion-select">
-          <option value="sweet-orange">Sweet Orange</option>
-          <option value="mango">Mango</option>
-          <option value="avocado">Avocado</option>
-          <option value="apple">Apple</option>
-          <option value="passion">Purple Passion Fruit</option>
+          <option value="sweet-orange">Sweet Orange (Citrus sinensis)</option>
+          <option value="lemon">Eureka Lemon (Citrus limon)</option>
+          <option value="mango">Tommy Atkins Mango (Mangifera indica)</option>
+          <option value="avocado">Hass Avocado (Persea americana)</option>
+          <option value="apple">Fuji Apple (Malus domestica)</option>
+          <option value="arabica-coffee">Arabica Coffee (Coffea arabica)</option>
         </select>
 
         <label>Select Rootstock Base:</label>
         <select id="rootstock-select">
-          <option value="lemon">Lemon / Trifoliate Orange</option>
-          <option value="wild-mango">Wild / Seedling Mango</option>
-          <option value="avocado-seedling">Avocado Seedling</option>
-          <option value="crabapple">Crabapple / M9 Rootstock</option>
-          <option value="yellow-passion">Yellow Passion Fruit Rootstock</option>
-          <option value="peach">Peach Rootstock</option>
+          <option value="trifoliate-orange">Trifoliate Orange (Citrus/Poncirus)</option>
+          <option value="wild-mango">Wild Seedling Mango (Mangifera indica)</option>
+          <option value="avocado-seedling">Avocado Seedling (Persea americana)</option>
+          <option value="m9-apple">M9 / M26 Apple Rootstock (Malus spp.)</option>
+          <option value="robusta-coffee">Robusta Coffee (Coffea canephora)</option>
+          <option value="peach-stock">Nemaguard Peach Rootstock (Prunus)</option>
         </select>
 
-        <button onclick="checkCompatibility()" class="btn btn-primary" style="width: 100%;">Check Match</button>
+        <button onclick="checkCompatibility()" class="btn btn-primary" style="width: 100%;">Check Compatibility</button>
 
         <div id="compatibility-result" style="margin-top: 15px; padding: 12px; border-radius: 6px; display: none; font-weight: bold; text-align: center;"></div>
       </div>
 
-      <!-- TOOL 2: SEASONAL CALENDAR -->
+      <!-- SEASONAL CALENDAR -->
       <div class="tool-box">
-        <h3>Seasonal Grafting Window</h3>
+        <h3>Regional Grafting Windows</h3>
         
-        <label>Select Season / Timing:</label>
+        <label>Select Season / Climate Timing:</label>
         <select id="season-select" onchange="filterSeason()">
           <option value="all">Show All Seasons</option>
-          <option value="spring">Early Spring (Dormant Break)</option>
-          <option value="summer">Active Summer Growth</option>
-          <option value="autumn">Late Summer / Early Autumn</option>
+          <option value="spring">Late Winter / Early Spring (Dormancy Break)</option>
+          <option value="summer">Active Growth / Rainy Season (Sap Flow)</option>
+          <option value="autumn">Late Summer / Autumn (Budding Phase)</option>
         </select>
 
         <ul id="season-list" style="list-style: none;">
-          <li data-season="spring" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Late Winter / Spring:</strong> Apples, Pears, Plums, Peaches, Macadamia (Cleft & Whip Grafting)</li>
-          <li data-season="summer" style="padding: 8px 0; border-bottom: 1px solid var(--border-color);"><strong>Mid/Late Summer:</strong> Citrus, Mangoes, Avocados, Guava, Passion Fruit (T-Budding & Side-Veneer)</li>
-          <li data-season="autumn" style="padding: 8px 0;"><strong>Early Autumn:</strong> Tropical & Subtropical active sap flow budding (Papaya & Young Saplings)</li>
+          <li data-season="spring" style="padding: 10px 0; border-bottom: 1px solid var(--border-color);">
+            <strong>Late Winter / Early Spring:</strong> Deciduous trees (Apples, Pears, Peaches). Best for Whip & Tongue and Cleft grafting while dormant.
+          </li>
+          <li data-season="summer" style="padding: 10px 0; border-bottom: 1px solid var(--border-color);">
+            <strong>Active Growth / Rainy Season:</strong> Tropical/Evergreen trees (Citrus, Mangoes, Avocados, Coffee). High humidity and active bark slipping favor T-budding and Side-Veneer grafts.
+          </li>
+          <li data-season="autumn" style="padding: 10px 0;">
+            <strong>Late Summer / Autumn:</strong> Chip budding and late T-budding before growth halts for temperate species.
+          </li>
         </ul>
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION 5: INTERACTIVE QUIZ GAME -->
+  <!-- SECTION 5: QUIZ GAME -->
   <section id="quiz">
-    <h2 class="section-title">Grafting Knowledge Quiz</h2>
-    <p class="section-subtitle">Test your skills before taking a knife to your trees!</p>
+    <h2 class="section-title">Horticultural Knowledge Quiz</h2>
+    <p class="section-subtitle">Test your practical grafting knowledge and track your score.</p>
 
     <div class="quiz-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h4 id="quiz-progress" style="color: var(--accent-color);">Question 1 of 5</h4>
+        <span id="quiz-score" style="font-weight: bold; color: var(--text-main);">Score: 0</span>
+      </div>
       <h3 id="quiz-question">Loading Question...</h3>
       <div class="quiz-options" id="quiz-options"></div>
       <p id="quiz-feedback" style="margin-top: 15px; font-weight: bold; min-height: 24px;"></p>
@@ -793,12 +828,12 @@
     </div>
   </section>
 
-  <!-- SECTION 6: USER FEEDBACK & SUGGESTIONS -->
+  <!-- SECTION 6: FEEDBACK FORM -->
   <section id="feedback" style="background-color: var(--card-bg);">
     <h2 class="section-title">Feedback & Suggestions</h2>
-    <p class="section-subtitle">Have suggestions for new fruit trees or feature updates? Let us know!</p>
+    <p class="section-subtitle">Have suggestions or question updates? Contact Grafting Solutions directly.</p>
 
-    <form action="https://formspree.io/f/meaegbwj" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
       <div>
         <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name:</label>
         <input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
@@ -828,12 +863,12 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Grafting Guide by Wainaina Steve. Built with HTML, CSS, and JS.</p>
+    <p>&copy; 2026 Grafting Solutions by Wainaina Steve. Built with HTML, CSS, and JS.</p>
   </footer>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    /* THEME SWITCHER LOGIC WITH LOCALSTORAGE PERSISTENCE */
+    /* THEME SWITCHER */
     function initTheme() {
       const savedTheme = localStorage.getItem('theme') || 'dark';
       document.body.setAttribute('data-theme', savedTheme);
@@ -853,7 +888,7 @@
 
     initTheme();
 
-    /* CHECKLIST PROGRESS & PERSISTENCE */
+    /* CHECKLIST PROGRESS & LOCALSTORAGE PERSISTENCE */
     function updateChecklistProgress() {
       const checkboxes = document.querySelectorAll('.checklist-grid input[type="checkbox"]');
       let checkedCount = 0;
@@ -886,7 +921,7 @@
 
     document.addEventListener('DOMContentLoaded', loadChecklistState);
 
-    /* SEARCH FILTER LOGIC WITH EMPTY STATE MESSAGE */
+    /* SEARCH FILTER LOGIC */
     function filterContent() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const items = document.querySelectorAll(".search-item");
@@ -914,7 +949,7 @@
         document.getElementById("treesGrid").appendChild(noResultMsg);
       }
 
-      noResultMsg.innerText = matches === 0 ? "No fruit trees or grafting methods matched your search." : "";
+      noResultMsg.innerText = matches === 0 ? "No matching fruit guides or methods found." : "";
     }
 
     /* COMPATIBILITY CHECKER LOGIC */
@@ -924,20 +959,33 @@
       const resultDiv = document.getElementById("compatibility-result");
       resultDiv.style.display = "block";
 
-      if (
-        (scion === "sweet-orange" && rootstock === "lemon") ||
-        (scion === "mango" && rootstock === "wild-mango") ||
-        (scion === "avocado" && rootstock === "avocado-seedling") ||
-        (scion === "apple" && rootstock === "crabapple") ||
-        (scion === "passion" && rootstock === "yellow-passion")
-      ) {
+      const citrusScions = ['sweet-orange', 'lemon'];
+      const isCitrusRootstock = rootstock === 'trifoliate-orange';
+
+      if (citrusScions.includes(scion) && isCitrusRootstock) {
         resultDiv.style.background = "#d4edda";
         resultDiv.style.color = "#155724";
-        resultDiv.innerHTML = "High Compatibility! Excellent match for robust growth.";
+        resultDiv.innerHTML = "High Botanical Compatibility! Excellent match within the Rutaceae (Citrus) family.";
+      } else if (scion === "mango" && rootstock === "wild-mango") {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Anacardiaceae (Mango) scion and seedling rootstock match well.";
+      } else if (scion === "avocado" && rootstock === "avocado-seedling") {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Lauraceae (Avocado) inter-varietal graft union.";
+      } else if (scion === "apple" && rootstock === "m9-apple") {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Rosaceae (Apple) scion on dwarfing M9 rootstock.";
+      } else if (scion === "arabica-coffee" && rootstock === "robusta-coffee") {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Coffea arabica on nematode-resistant Coffea canephora base.";
       } else {
         resultDiv.style.background = "#f8d7da";
         resultDiv.style.color = "#721c24";
-        resultDiv.innerHTML = "Incompatible or Low Success! Interspecies graft union may fail.";
+        resultDiv.innerHTML = "Incompatible Combination! Interspecies/Cross-Family grafts fail due to vascular rejection.";
       }
     }
 
@@ -955,250 +1003,187 @@
       });
     }
 
-    /* MODAL GUIDES DATA */
+    /* EXPANDED MODAL GUIDES DATA */
     const guides = {
-     
-mango: {
-  title: "Mango Grafting Guide",
-  image: "images/1-mango.jpg",
-  content: `
-    <p><strong>Overview:</strong> Grafting allows you to propagate a selected mango variety while retaining its desirable fruit characteristics.</p>
-
-    <p><strong>Recommended Methods:</strong> Side veneer grafting or cleft grafting, depending on the rootstock size and local nursery practice.</p>
-
-    <p><strong>Rootstock Selection:</strong> Choose a healthy, actively growing mango seedling with a strong stem and no visible signs of pests or disease.</p>
-
-    <p><strong>Scion Selection:</strong> Select healthy, mature, disease-free shoot material from a known, productive mango tree. Use scions of a suitable size for the rootstock.</p>
-
-    <p><strong>Suitable Conditions:</strong> Graft during warm conditions when the rootstock is actively growing but not stressed by drought or excessive heat. Protect the graft from drying out.</p>
-
-    <p><strong>Step-by-Step Procedure:</strong></p>
-    <ol>
-      <li>Clean and disinfect your grafting knife and other tools.</li>
-      <li>Choose a healthy rootstock and a compatible scion of the desired mango variety.</li>
-      <li>Make the appropriate smooth cut in the rootstock for your chosen grafting method.</li>
-      <li>Prepare the scion with a matching cut, keeping the cut surfaces clean.</li>
-      <li>Join the scion and rootstock so their cambium layers align along at least one side.</li>
-      <li>Secure the union firmly with suitable grafting tape to prevent movement and moisture loss.</li>
-      <li>Label the graft with the variety and grafting date.</li>
-    </ol>
-
-    <p><strong>Aftercare:</strong></p>
-    <ul>
-      <li>Keep the rootstock adequately watered without waterlogging the soil.</li>
-      <li>Protect the graft from strong sun, wind, and drying conditions while it heals.</li>
-      <li>Remove competing shoots below the graft union as they appear.</li>
-      <li>Check the union regularly and loosen or remove binding material before it constricts the stem, following the tape manufacturer's guidance.</li>
-      <li>Support new growth if it is vulnerable to wind or accidental damage.</li>
-    </ul>
-
-    <p><strong>Signs of Success:</strong> The scion remains green and firm, buds begin to grow, and new growth develops while the union gradually heals.</p>
-
-    <p><strong>Signs of Failure:</strong> The scion becomes dry, shrivelled, or blackened, or the union rots. Remove failed material and investigate the cause before trying again.</p>
-
-    <p><strong>Common Mistakes:</strong> Using diseased plant material, allowing cut surfaces to dry out, poor cambium alignment, loose binding, waterlogging, or leaving vigorous rootstock shoots to compete with the scion.</p>
-
-    <p><strong>Important:</strong> Grafting success depends on compatibility, plant condition, technique, and environmental conditions. Use locally recommended mango rootstocks and follow appropriate nursery guidance.</p>
-  `
-},
-
-     
-orange: {
-  title: "Orange Grafting Guide",
-  image: "images/2-orange.jpg",
-  content: `
-    <p><strong>Overview:</strong> Grafting propagates a selected orange variety by joining a scion or bud from that variety to a compatible rootstock.</p>
-
-    <p><strong>Recommended Methods:</strong> T-budding or chip budding are commonly used for citrus. Cleft grafting may be suitable for some larger rootstocks.</p>
-
-    <p><strong>Rootstock Selection:</strong> Choose a healthy, vigorous citrus rootstock suited to your local soil, climate, and disease conditions. Examples used in citrus production include trifoliate orange and selected sour orange or other locally recommended rootstocks. Compatibility and disease risks vary by rootstock and variety.</p>
-
-    <p><strong>Scion Selection:</strong> Obtain a healthy bud or scion from a correctly identified, productive orange tree. Use disease-free propagation material from a reputable nursery.</p>
-
-    <p><strong>Best Time:</strong> For T-budding, choose a period when the rootstock is actively growing and its bark separates readily. Chip budding can be used when bark slipping is less reliable, provided conditions are suitable.</p>
-
-    <p><strong>Step-by-Step Procedure — T-Budding:</strong></p>
-    <ol>
-      <li>Clean and disinfect your budding knife.</li>
-      <li>Choose a healthy section of the rootstock stem, away from damaged or diseased tissue.</li>
-      <li>Make a T-shaped cut through the bark without unnecessarily damaging the wood.</li>
-      <li>Cut a healthy bud shield from the selected orange budwood.</li>
-      <li>Carefully lift the bark flaps and slide the bud shield beneath them.</li>
-      <li>Wrap the union with suitable budding tape, following the tape instructions and leaving the bud eye exposed where appropriate.</li>
-      <li>Label the variety and date, then monitor the bud for signs of establishment.</li>
-    </ol>
-
-    <p><strong>Aftercare:</strong></p>
-    <ul>
-      <li>Water as needed to maintain suitable soil moisture, but avoid waterlogging.</li>
-      <li>Protect the plant from severe heat, strong wind, and unnecessary disturbance.</li>
-      <li>Check the budding union regularly and remove or loosen binding material at the appropriate time to prevent constriction.</li>
-      <li>Once the bud has successfully joined, follow local nursery guidance on cutting back the rootstock above the bud to encourage scion growth.</li>
-      <li>Remove unwanted shoots growing below the graft or bud union.</li>
-    </ul>
-
-    <p><strong>Signs of Success:</strong> The bud remains healthy and green, the union begins to heal, and new growth develops after the rootstock is managed appropriately.</p>
-
-    <p><strong>Signs of Failure:</strong> The bud dries out, turns dark, or rots, or the union fails to heal. Review plant health, compatibility, cut quality, moisture, and wrapping before trying again.</p>
-
-    <p><strong>Common Mistakes:</strong> Using diseased budwood, choosing an incompatible rootstock, allowing cut surfaces to dry, damaging the bud, wrapping too tightly, or leaving competing shoots on the rootstock.</p>
-
-    <p><strong>Important:</strong> Use citrus propagation material and rootstocks recommended for your area. Citrus diseases can spread through infected budwood, so use certified or otherwise reliably disease-free material where available.</p>
-  `
-},
-
-      lemon: {
-        title: "Lemon Grafting Guide",
-        image: "images/3-lemon.jpg",
+      mango: {
+        title: "Mango Grafting Guide (Mangifera indica)",
+        image: "images/mango-grafting.jpg",
+        fallbackImage: "images/1-mango.jpg",
         content: `
-          <p><strong>Recommended Method:</strong> T-Budding or Cleft Grafting.</p>
-          <p><strong>Best Time:</strong> Spring or Autumn when rootstock bark is active.</p>
-          <ul>
-            <li>Select hardy disease-resistant rootstock (e.g., trifoliate orange).</li>
-            <li>Insert healthy bud shield or cleft scion firmly.</li>
-            <li>Keep in high-humidity shaded shelter for 3–4 weeks until union seals.</li>
-          </ul>
+          <div class="modal-section">
+            <h4>Overview</h4>
+            <p>Grafting propagates selected superior mango varieties by joining scion wood to vigorous seedling rootstocks.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Recommended Methods</h4>
+            <p>Side-Veneer Grafting or Cleft Grafting on young 6-12 month rootstocks.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Rootstock & Scion Selection</h4>
+            <p><strong>Rootstock:</strong> Vigorous, disease-free polyembryonic seedling base.<br>
+               <strong>Scion:</strong> Terminal wood with plump, unopened terminal vegetative buds.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Best Timing</h4>
+            <p>Warm active growth period (Late Spring / Early Summer) with warm temperatures (>25°C).</p>
+          </div>
+          <div class="modal-section">
+            <h4>Step-by-Step Instructions</h4>
+            <ol>
+              <li>Make a downward cut 3-4 cm long on the side of the rootstock stem.</li>
+              <li>Shape the scion base into a matching thin wedge cut.</li>
+              <li>Insert scion into rootstock slot, ensuring cambium green rings align.</li>
+              <li>Wrap tightly with grafting tape to seal out water and air.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>Aftercare & Success Signs</h4>
+            <p>New green shoot flushes indicate a successful union (usually 3-4 weeks). Remove rootstock suckers below the graft union.</p>
+          </div>
+        `
+      },
+      orange: {
+        title: "Sweet Orange Grafting Guide (Citrus sinensis)",
+        image: "images/orange-grafting.jpg",
+        fallbackImage: "images/2-orange.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>Overview</h4>
+            <p>Propagates sweet orange cultivars onto hardy citrus rootstocks resistant to soil pathogens.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Recommended Methods</h4>
+            <p>T-Budding or Chip Budding during active sap flow when bark slips easily[cite: 7].</p>
+          </div>
+          <div class="modal-section">
+            <h4>Rootstock & Scion Selection</h4>
+            <p><strong>Rootstock:</strong> Trifoliate Orange or Sour Orange rootstocks suited to local soil conditions[cite: 7].<br>
+               <strong>Scion:</strong> Healthy budwood shield cut from productive, disease-free mother trees[cite: 7].</p>
+          </div>
+          <div class="modal-section">
+            <h4>Best Timing</h4>
+            <p>Warm rainy season / active flush period when bark slips readily from wood[cite: 7].</p>
+          </div>
+          <div class="modal-section">
+            <h4>Step-by-Step Instructions</h4>
+            <ol>
+              <li>Slice a vertical T-incision into rootstock bark layer.</li>
+              <li>Cut a single bud shield cleanly from scion stick.</li>
+              <li>Gently open rootstock bark flaps and slide bud shield into slot.</li>
+              <li>Wrap with budding tape, keeping the vegetative bud eye exposed.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>Aftercare & Success Signs</h4>
+            <p>Bud remains green and plump after 21 days. Cut rootstock top 5 cm above graft to force bud growth.</p>
+          </div>
+        `
+      },
+      lemon: {
+        title: "Lemon & Lime Grafting Guide (Citrus limon)",
+        image: "images/lemon-grafting.jpg",
+        fallbackImage: "images/3-lemon.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>Overview</h4>
+            <p>Combines heavy-fruiting lemon varieties with disease-resistant rootstock bases.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Recommended Methods</h4>
+            <p>T-Budding or Cleft Grafting.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Rootstock & Scion Selection</h4>
+            <p><strong>Rootstock:</strong> Rough Lemon or Trifoliate rootstocks.<br>
+               <strong>Scion:</strong> Plump bud shields from mature Eureka or Lisbon lemon stems.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Step-by-Step Instructions</h4>
+            <ol>
+              <li>Execute T-cut or cleft incision on pencil-thick rootstock base.</li>
+              <li>Insert scion/bud ensuring cambium contact.</li>
+              <li>Wrap securely with grafting tape.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>Aftercare</h4>
+            <p>Keep in partial shade for 3 weeks; rub off all wild rootstock sprouts below the graft.</p>
+          </div>
         `
       },
       avocado: {
-        title: "Avocado Grafting Guide",
-        image: "images/4-avocado.jpg",
+        title: "Avocado Grafting Guide (Persea americana)",
+        image: "images/avocado-grafting.jpg",
+        fallbackImage: "images/4-avocado.jpg",
         content: `
-          <p><strong>Recommended Method:</strong> Cleft Grafting or Whip & Tongue.</p>
-          <p><strong>Best Time:</strong> Late winter to early spring before new shoot flushes.</p>
-          <ul>
-            <li>Use 6–12 month old seed-grown seedling rootstocks.</li>
-            <li>Cut rootstock trunk straight across; split down center vertically.</li>
-            <li>Wedge scion wood base into cleft, matching cambium sides.</li>
-            <li>Wrap tightly with grafting tape and seal cut surfaces.</li>
-          </ul>
+          <div class="modal-section">
+            <h4>Overview</h4>
+            <p>Joins commercial cultivars (e.g., Hass, Fuerte) onto seedling rootstocks.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Recommended Methods</h4>
+            <p>Cleft Grafting or Side-Tongue Grafting on 6-9 month seedlings.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Rootstock & Scion Selection</h4>
+            <p><strong>Rootstock:</strong> Healthy seedling stem (pencil to finger thickness).<br>
+               <strong>Scion:</strong> Mature terminal bud sticks with plump, unbroken buds.</p>
+          </div>
+          <div class="modal-section">
+            <h4>Step-by-Step Instructions</h4>
+            <ol>
+              <li>Behead rootstock straight across; split center down 3 cm.</li>
+              <li>Cut scion stem base into a flat, smooth 3 cm wedge.</li>
+              <li>Insert scion wedge into split; align cambium layers tightly.</li>
+              <li>Bind tightly with grafting tape and apply sealant to top cut face.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>Aftercare</h4>
+            <p>Protect from direct hot sun with shade cloth until new leaves mature.</p>
+          </div>
         `
       },
       apple: {
-        title: "Apple Grafting Guide",
-        image: "images/5-apple.jpg",
+        title: "Apple Grafting Guide (Malus domestica)",
+        image: "images/apple-grafting.jpg",
+        fallbackImage: "images/5-apple.jpg",
         content: `
-          <p><strong>Recommended Method:</strong> Whip & Tongue Grafting.</p>
-          <p><strong>Best Time:</strong> Late winter dormancy stage.</p>
-          <ul>
-            <li>Match scion and rootstock stem thickness equally.</li>
-            <li>Slice matching smooth diagonal cuts with interlocking tongues.</li>
-            <li>Fit tongues together tight, seal with tape and grafting wax.</li>
-          </ul>
+          <p><strong>Recommended Method:</strong> Whip & Tongue Grafting during winter dormancy.</p>
+          <p><strong>Rootstock:</strong> Dwarfing clonal roots (M9, M26, MM106).</p>
+          <p><strong>Steps:</strong> Slice matching interlocking tongues on equal-diameter scion and stock. Press together, wrap with tape, and dip in wax.</p>
         `
       },
       coffee: {
-        title: "Coffee Grafting Guide",
-        image: "images/6-coffee.jpg",
+        title: "Coffee Grafting Guide (Coffea spp.)",
+        image: "images/coffee-grafting.jpg",
+        fallbackImage: "images/6-coffee.jpg",
         content: `
-          <p><strong>Recommended Method:</strong> Hypocotyl / Cleft Grafting.</p>
-          <p><strong>Best Time:</strong> Early seedling stage (soldier phase).</p>
-          <ul>
-            <li>Join disease-resistant Robusta rootstock with Arabica scion top.</li>
-            <li>Make clean micro-cleft cuts using razor blades.</li>
-            <li>Secure joint with grafting clip and keep in humid chamber.</li>
-          </ul>
-        `
-      },
-      guava: {
-        title: "Guava Grafting Guide",
-        image: "images/guava-grafting.jpg",
-        content: `
-          <p><strong>Recommended Method:</strong> Approach Grafting / Bark Budding.</p>
-          <p><strong>Best Time:</strong> Warm active growing season.</p>
-          <ul>
-            <li>Select vigorous, disease-free seedling rootstocks.</li>
-            <li>Perform precise bark budding cuts to join cambium layers cleanly.</li>
-            <li>Wrap firmly with grafting tape and shelter from harsh direct sunlight.</li>
-          </ul>
-        `
-      },
-      passion: {
-        title: "Passion Fruit Grafting Guide",
-        image: "images/passion-grafting.jpg",
-        content: `
-          <p><strong>Recommended Method:</strong> Splice or Cleft Grafting.</p>
-          <p><strong>Best Time:</strong> Spring or early summer.</p>
-          <ul>
-            <li>Graft sweet purple passion fruit scions onto yellow passion fruit rootstocks.</li>
-            <li>Yellow rootstocks provide natural resistance to soil-borne Fusarium wilt.</li>
-            <li>Secure graft union with small clips and keep under humid shade.</li>
-          </ul>
-        `
-      },
-      papaya: {
-        title: "Papaya Grafting Guide",
-        image: "images/papaya-grafting.jpg",
-        content: `
-          <p><strong>Recommended Method:</strong> Cleft Grafting on Young Shoots.</p>
-          <p><strong>Best Time:</strong> Warm, humid growing periods.</p>
-          <ul>
-            <li>Graft high-yielding hermaphrodite side shoots onto young rootstocks.</li>
-            <li>Eliminates unwanted male trees before field planting.</li>
-            <li>Maintain high humidity with plastic covers until union takes.</li>
-          </ul>
-        `
-      },
-      macadamia: {
-        title: "Macadamia Grafting Guide",
-        image: "images/macadamia-grafting.jpg",
-        content: `
-          <p><strong>Recommended Method:</strong> Whip & Tongue or Cleft Grafting.</p>
-          <p><strong>Best Time:</strong> Early spring before bud break.</p>
-          <ul>
-            <li>Select mature scion wood with well-developed buds.</li>
-            <li>Ensure sharp cuts to cut through tough macadamia stem tissues.</li>
-            <li>Seal all exposed cuts with grafting wax to prevent desiccation.</li>
-          </ul>
+          <p><strong>Recommended Method:</strong> Hypocotyl Cleft Grafting at seedling soldier stage.</p>
+          <p><strong>Rootstock:</strong> Nematode-resistant Coffea canephora (Robusta).</p>
+          <p><strong>Scion:</strong> High-quality Coffea arabica seedling top.</p>
+          <p><strong>Steps:</strong> Split rootstock hypocotyl stem, insert wedge-shaped Arabica scion, secure with micro grafting clip, and hold in a high-humidity chamber.</p>
         `
       },
       cleft: {
         title: "Cleft Grafting Technique",
         image: "images/method-cleft.jpg",
-        content: `
-          <p><strong>Overview:</strong> Classic method to graft onto thick trunks or established branches.</p>
-          <ul>
-            <li>Split severed rootstock stem vertically down middle.</li>
-            <li>Taper scion end into thin wedge shape.</li>
-            <li>Insert scion into split, aligning outer cambium green rings.</li>
-          </ul>
-        `
+        content: "<p>Classic top-working method where the rootstock is split down the middle and a wedge-shaped scion is inserted into the split.</p>"
       },
       whip: {
         title: "Whip & Tongue Technique",
         image: "images/method-whip-tongue.jpg",
-        content: `
-          <p><strong>Overview:</strong> Creates maximum surface area contact between equal diameter stems.</p>
-          <ul>
-            <li>Make long 1-inch slanting cuts on both rootstock and scion.</li>
-            <li>Cut small interlocking tongue slots in both cut faces.</li>
-            <li>Interlock tongues together, press tight, and wrap securely.</li>
-          </ul>
-        `
+        content: "<p>Provides maximum structural stability by interlocking diagonal cuts and tongue slots on equal-diameter stems.</p>"
       },
       budding: {
         title: "T-Budding Technique",
         image: "images/method-budding.jpg",
-        content: `
-          <p><strong>Overview:</strong> Highly efficient propagation method using single vegetative buds.</p>
-          <ul>
-            <li>Cut T-incision into rootstock bark layer.</li>
-            <li>Slice bud shield cleanly off scion twig.</li>
-            <li>Slide bud down into T-cut; wrap above and below bud.</li>
-          </ul>
-        `
+        content: "<p>Efficient propagation technique using a single bud shield slid under a T-cut flap in active rootstock bark.</p>"
       },
       side: {
         title: "Side Veneer Grafting Technique",
         image: "images/method-side-veneer.jpg",
-        content: `
-          <p><strong>Overview:</strong> Leaves top of rootstock intact until graft takes successfully.</p>
-          <ul>
-            <li>Cut shallow notch side slice into rootstock.</li>
-            <li>Prepare matching bevel on scion base.</li>
-            <li>Bind scion flat against side notch using grafting tape.</li>
-          </ul>
-        `
+        content: "<p>Leaves the top of the rootstock intact while a side notch accepts a matching scion wedge, minimizing graft stress.</p>"
       }
     };
 
@@ -1206,10 +1191,13 @@ orange: {
       const modal = document.getElementById("guide-modal");
       const body = document.getElementById("modal-body");
       if (guides[key]) {
+        const item = guides[key];
+        const imgSrc = item.image;
+        const fallback = item.fallbackImage ? `onerror="this.src='${item.fallbackImage}'"` : '';
         body.innerHTML = `
-          <h3>${guides[key].title}</h3>
-          <img src="${guides[key].image}" alt="${guides[key].title}">
-          ${guides[key].content}
+          <h3>${item.title}</h3>
+          <img src="${imgSrc}" alt="${item.title}" ${fallback}>
+          ${item.content}
         `;
         modal.style.display = "flex";
       }
@@ -1225,50 +1213,51 @@ orange: {
       }
     }
 
-    /* EXPANDED QUIZ GAME ENGINE */
+    /* ENHANCED QUIZ ENGINE WITH SCORING & EXPLANATIONS */
     const quizData = [
       {
-        question: "What layer of tissues must align for a graft to be successful?",
-        options: ["Pith", "Cambium layer", "Bark outer layer", "Epidermis"],
-        answer: 1
+        question: "Which layer of stem tissues must align for a successful graft union?",
+        options: ["Pith", "Cambium layer", "Outer bark", "Epidermis"],
+        answer: 1,
+        explanation: "The cambium layer contains actively dividing meristematic cells responsible for fusing vascular tissues."
       },
       {
-        question: "Which technique is best when scion and rootstock are the same small diameter?",
+        question: "Which method is best suited when scion and rootstock are equal small diameters?",
         options: ["Top-working", "Cleft grafting", "Whip & Tongue", "Bark grafting"],
-        answer: 2
+        answer: 2,
+        explanation: "Whip & Tongue creates interlocking cuts that hold stems of identical thickness securely together."
       },
       {
-        question: "What is the primary function of Parafilm or grafting tape?",
-        options: ["To prevent moisture loss", "To add fertilizer", "To repel insects", "To block sunlight"],
-        answer: 0
+        question: "What is the primary function of Parafilm grafting tape?",
+        options: ["Prevents moisture loss and seals out pathogens", "Adds nutrients to the stem", "Repels insects", "Blocks direct sunlight"],
+        answer: 0,
+        explanation: "Grafting tape locks in moisture to keep cut stem tissues from drying out before the union heals."
       },
       {
-        question: "Why are purple passion fruit varieties frequently grafted onto yellow passion fruit rootstocks?",
-        options: ["To increase fruit sweetness", "To provide resistance against Fusarium wilt", "To make vines grow shorter", "To eliminate leaves"],
-        answer: 1
+        question: "Why is Arabica coffee commonly grafted onto Robusta rootstock?",
+        options: ["To increase caffeine", "To resist root-knot nematodes and soil pathogens", "To shorten harvest time", "To change fruit color"],
+        answer: 1,
+        explanation: "Robusta roots offer strong natural resistance against destructive soil nematodes."
       },
       {
-        question: "What is 'top-working' in fruit tree grafting?",
-        options: ["Grafting roots underground", "Replacing an established tree's canopy with new scion varieties", "Pruning top leaves only", "Applying fertilizer to upper branches"],
-        answer: 1
-      },
-      {
-        question: "What condition is essential for scion wood collection during dormancy?",
-        options: ["Healthy, disease-free terminal wood with dormant buds", "Flowering stems with active fruits", "Dead dried branches", "Roots from seedling bases"],
-        answer: 0
-      },
-      {
-        question: "How long should grafting tape usually remain before checking for union success?",
-        options: ["1 to 2 days", "3 to 6 weeks", "1 to 2 years", "10 minutes"],
-        answer: 1
+        question: "What condition indicates that citrus bark is suitable for T-Budding?",
+        options: ["Bark is dry and cracked", "Bark slips easily from wood during active sap flow", "Leaves have fallen off", "Branches are fully dormant"],
+        answer: 1,
+        explanation: "'Slipping' bark separates cleanly without tearing, allowing easy insertion of the bud shield."
       }
     ];
 
     let currentQ = 0;
+    let score = 0;
+    let answered = false;
 
     function loadQuiz() {
+      answered = false;
       const q = quizData[currentQ];
-      document.getElementById("quiz-question").innerText = `Q${currentQ + 1}: ${q.question}`;
+      document.getElementById("quiz-progress").innerText = `Question ${currentQ + 1} of ${quizData.length}`;
+      document.getElementById("quiz-score").innerText = `Score: ${score}`;
+      document.getElementById("quiz-question").innerText = q.question;
+      
       const optDiv = document.getElementById("quiz-options");
       optDiv.innerHTML = "";
       document.getElementById("quiz-feedback").innerText = "";
@@ -1284,26 +1273,48 @@ orange: {
     }
 
     function selectAnswer(idx) {
+      if (answered) return;
+      answered = true;
+
       const q = quizData[currentQ];
       const feedback = document.getElementById("quiz-feedback");
+      const buttons = document.querySelectorAll(".quiz-opt");
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.answer) {
+          btn.style.background = "#2e7d32";
+          btn.style.color = "#ffffff";
+        } else if (i === idx) {
+          btn.style.background = "#c62828";
+          btn.style.color = "#ffffff";
+        }
+      });
+
       if (idx === q.answer) {
-        feedback.innerText = "Correct! Great job.";
+        score++;
+        document.getElementById("quiz-score").innerText = `Score: ${score}`;
+        feedback.innerText = `Correct! ${q.explanation}`;
         feedback.style.color = "#8bc34a";
       } else {
-        feedback.innerText = `Incorrect! The correct answer was: ${q.options[q.answer]}`;
+        feedback.innerText = `Incorrect. ${q.explanation}`;
         feedback.style.color = "#ff5252";
       }
+
       document.getElementById("next-btn").style.display = "inline-block";
     }
 
     function nextQuestion() {
       currentQ = (currentQ + 1) % quizData.length;
+      if (currentQ === 0) {
+        score = 0;
+      }
       loadQuiz();
     }
 
     loadQuiz();
 
-    /* REGISTER PWA SERVICE WORKER WITH AUTO-UPDATE */
+    /* PWA SERVICE WORKER REGISTRATION WITH AUTO-UPDATE */
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js').then(reg => {
