@@ -176,7 +176,7 @@
       }
     }
 
-    /* HERO SECTION */
+    /* HERO / HOME SECTION */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -354,6 +354,36 @@
       color: var(--text-muted);
       font-size: 0.95rem;
       margin-bottom: 15px;
+    }
+
+    /* ABOUT US SECTION STYLES */
+    .about-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 5px 20px var(--card-shadow);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .about-feature {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .about-feature h4 {
+      color: var(--accent-color);
+      margin-bottom: 8px;
     }
 
     /* CHECKLIST GRID */
@@ -599,7 +629,7 @@
 
   <!-- HEADER NAVIGATION -->
   <header>
-    <a href="#" class="logo-container">
+    <a href="#home" class="logo-container">
       <img src="logo.png.png" alt="Grafting Solutions Logo" class="logo-img" onerror="this.style.display='none'">
       <span class="logo-text">Grafting Solutions</span>
     </a>
@@ -611,25 +641,27 @@
     </button>
 
     <nav id="navMenu">
+      <a href="#home" onclick="closeMobileMenu()">Home</a>
+      <a href="#about" onclick="closeMobileMenu()">About Us</a>
       <a href="#fruit-trees" onclick="closeMobileMenu()">Fruit Guides</a>
       <a href="#methods" onclick="closeMobileMenu()">Methods</a>
       <a href="#checklist" onclick="closeMobileMenu()">Tools</a>
       <a href="#interactive-tools" onclick="closeMobileMenu()">Compatibility & Calendar</a>
       <a href="#quiz" onclick="closeMobileMenu()">Quiz</a>
-      <a href="#feedback" onclick="closeMobileMenu()">Feedback</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact Us</a>
       <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Light Mode</button>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- HOME / HERO SECTION -->
+  <section id="home" class="hero">
     <div class="hero-content-box">
       <h1>Master Fruit Tree Grafting</h1>
       <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
       <div class="hero-buttons">
         <a href="#fruit-trees" class="btn btn-primary">Explore Fruit Guides</a>
         <a href="#methods" class="btn btn-secondary">Learn Grafting Methods</a>
-        <a href="#checklist" class="btn btn-primary">View Tools Checklist</a>
+        <a href="#about" class="btn btn-primary">About Our Mission</a>
       </div>
     </div>
   </section>
@@ -638,6 +670,33 @@
   <div class="search-container">
     <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
   </div>
+
+  <!-- ABOUT US SECTION -->
+  <section id="about" style="background-color: var(--card-bg);">
+    <h2 class="section-title">About Grafting Solutions</h2>
+    <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
+    
+    <div class="about-box">
+      <p style="margin-bottom: 20px; font-size: 1.05rem; text-align: center;">
+        Grafting Solutions is a modern educational Progressive Web App (PWA) designed to simplify plant propagation for commercial growers and home gardeners alike. Our goal is to promote high-yielding, disease-resistant fruit production through step-by-step guides, interactive tools, and offline accessibility.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-feature">
+          <h4>🌱 Expert Step-by-Step Guides</h4>
+          <p>Detailed rootstock selection, scion harvesting, and cutting instructions tailored to each individual fruit species.</p>
+        </div>
+        <div class="about-feature">
+          <h4>🧪 Botanical Compatibility</h4>
+          <p>Instant rootstock–scion compatibility checks to avoid interspecies graft failures before taking a knife to your trees.</p>
+        </div>
+        <div class="about-feature">
+          <h4>📱 100% Offline PWA</h4>
+          <p>Install directly to your smartphone home screen and access full nursery guides even in remote farming fields without internet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- SECTION 1: FEATURED FRUIT TREES -->
   <section id="fruit-trees">
@@ -889,10 +948,10 @@
     </div>
   </section>
 
-  <!-- SECTION 6: FEEDBACK FORM -->
-  <section id="feedback" style="background-color: var(--card-bg);">
-    <h2 class="section-title">Feedback & Suggestions</h2>
-    <p class="section-subtitle">Have suggestions or question updates? Contact Grafting Solutions directly.</p>
+  <!-- SECTION 6: CONTACT US & FEEDBACK FORM -->
+  <section id="contact" style="background-color: var(--card-bg);">
+    <h2 class="section-title">Contact Us & Feedback</h2>
+    <p class="section-subtitle">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
 
     <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
       <div>
@@ -910,7 +969,7 @@
         <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary" style="cursor: pointer; width: 100%;">Send Feedback</button>
+      <button type="submit" class="btn btn-primary" style="cursor: pointer; width: 100%;">Send Message</button>
     </form>
   </section>
 
@@ -1140,7 +1199,6 @@
       }
     }
 
-    /* EXPANDED QUIZ LOGIC WITH CATEGORY FILTERS */
     const fullQuizData = [
       { category: "fundamentals", question: "Which specific tissue layer must align precisely between rootstock and scion for graft vascular healing?", options: ["Pith", "Cambium layer", "Outer bark", "Epidermis"], answer: 1, explanation: "The cambium layer contains actively dividing meristematic cells responsible for fusing new vascular connections." },
       { category: "fundamentals", question: "In botanical terms, what does the 'Scion' represent in a grafted tree?", options: ["The lower root system base", "The upper shoot/bud portion that determines fruit variety", "The plastic tape binding the stem", "A wild seedling root"], answer: 1, explanation: "The scion is the selected upper vegetative shoot that grows into the fruit-bearing canopy." },
