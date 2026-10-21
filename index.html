@@ -384,6 +384,7 @@
     .table-container {
       width: 100%;
       overflow-x: auto;
+      margin-top: 40px;
       margin-bottom: 40px;
       background: var(--card-bg);
       border-radius: 12px;
@@ -419,6 +420,7 @@
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 25px;
+      margin-top: 40px;
       margin-bottom: 35px;
       box-shadow: 0 4px 15px var(--card-shadow);
       text-align: center;
@@ -836,9 +838,74 @@
 
   <section id="methods" class="page-section">
     <h2 class="section-title">Grafting Methods Masterclass</h2>
-    <p class="section-subtitle">Filter techniques by difficulty or season, compare methods, or use our interactive Method Finder.</p>
+    <p class="section-subtitle">Explore the six primary propagation techniques, run the Method Finder, or review technical specifications.</p>
 
-    <!-- METHOD FINDER WIZARD -->
+    <!-- 1. SIX GRAFTING METHOD CARDS DISPLAYED DIRECTLY AT TOP -->
+    <div class="card-grid" id="methodsGrid">
+      <div class="card search-item method-card" data-title="Cleft Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-cleft.jpg" alt="Cleft Grafting Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Cleft+Grafting'">
+        </div>
+        <div class="card-content">
+          <h3>Cleft Grafting</h3>
+          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Medium to Large (2.5–8cm)<br>Ideal for top-working older rootstocks or branches with larger stem diameters.</p>
+          <button onclick="openModal('cleft')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+
+      <div class="card search-item method-card" data-title="T-Budding Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-budding.jpg" alt="T-Budding Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=T-Budding'">
+        </div>
+        <div class="card-content">
+          <h3>T-Budding</h3>
+          <p><strong>Difficulty:</strong> Beginner<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Popular for citrus and stone fruits during active spring/summer sap flow.</p>
+          <button onclick="openModal('budding')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+
+      <div class="card search-item method-card" data-title="Whip & Tongue Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-whip-tongue.jpg" alt="Whip & Tongue Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Whip+%26+Tongue'">
+        </div>
+        <div class="card-content">
+          <h3>Whip & Tongue</h3>
+          <p><strong>Difficulty:</strong> Advanced<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Provides maximum cambium contact for young branches of identical thickness.</p>
+          <button onclick="openModal('whip')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+
+      <div class="card search-item method-card" data-title="Side Veneer Grafting Method">
+        <div class="card-img-wrapper">
+          <img src="images/method-side-veneer.jpg" alt="Side Veneer Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Side+Veneer'">
+        </div>
+        <div class="card-content">
+          <h3>Side Veneer</h3>
+          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Pencil to Medium (8–15mm)<br>Excellent for evergreen tropical trees like mangoes and avocados in warm weather.</p>
+          <button onclick="openModal('side')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+
+      <!-- BARK GRAFTING CARD (Image Removed) -->
+      <div class="card search-item method-card" data-title="Bark Grafting Method">
+        <div class="card-content" style="padding-top: 25px;">
+          <h3>Bark Grafting</h3>
+          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Thick Trunk (5–15cm+)<br>Top-working method for top canopy renewal on mature stumps when bark is slipping.</p>
+          <button onclick="openModal('bark')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+
+      <!-- CHIP BUDDING CARD (Image Removed) -->
+      <div class="card search-item method-card" data-title="Chip Budding Method">
+        <div class="card-content" style="padding-top: 25px;">
+          <h3>Chip Budding</h3>
+          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Versatile budding method used anytime during active or dormant seasons when bark won't slip.</p>
+          <button onclick="openModal('chip')" class="btn btn-primary">Learn Method</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. INTERACTIVE METHOD FINDER WIZARD (MOVED UNDER METHODS) -->
     <div class="finder-box">
       <h3 style="color: var(--accent-color);">🔎 Interactive Method Finder Wizard</h3>
       <p style="color: var(--text-muted); font-size: 0.95rem;">Select your stem diameter and season to discover the optimal technique instantly:</p>
@@ -858,17 +925,7 @@
       <p id="finder-result" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem; color: var(--accent-color); min-height: 28px;"></p>
     </div>
 
-    <!-- METHOD FILTER BADGES -->
-    <div class="quiz-filter-container" style="margin-bottom: 30px;">
-      <button class="quiz-filter-btn active" onclick="filterMethodCards('all', this)">All Methods</button>
-      <button class="quiz-filter-btn" onclick="filterMethodCards('beginner', this)">Beginner</button>
-      <button class="quiz-filter-btn" onclick="filterMethodCards('intermediate', this)">Intermediate</button>
-      <button class="quiz-filter-btn" onclick="filterMethodCards('advanced', this)">Advanced</button>
-      <button class="quiz-filter-btn" onclick="filterMethodCards('active', this)">Active Growth Season</button>
-      <button class="quiz-filter-btn" onclick="filterMethodCards('dormant', this)">Dormant Season</button>
-    </div>
-
-    <!-- QUICK METHOD COMPARISON TABLE -->
+    <!-- 3. QUICK TECHNICAL COMPARISON TABLE (MOVED UNDER METHODS) -->
     <div class="table-container">
       <h3 style="color: var(--accent-color); margin-bottom: 12px; text-align: center;">Quick Technical Comparison Table</h3>
       <table class="method-table">
@@ -926,70 +983,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div class="card-grid" id="methodsGrid">
-      <div class="card search-item method-card" data-tags="intermediate dormant" data-title="Cleft Grafting Method">
-        <div class="card-img-wrapper">
-          <img src="images/method-cleft.jpg" alt="Cleft Grafting Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Cleft+Grafting'">
-        </div>
-        <div class="card-content">
-          <h3>Cleft Grafting</h3>
-          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Medium to Large (2.5–8cm)<br>Ideal for top-working older rootstocks or branches with larger stem diameters.</p>
-          <button onclick="openModal('cleft')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
-
-      <div class="card search-item method-card" data-tags="beginner active" data-title="T-Budding Grafting Method">
-        <div class="card-img-wrapper">
-          <img src="images/method-budding.jpg" alt="T-Budding Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=T-Budding'">
-        </div>
-        <div class="card-content">
-          <h3>T-Budding</h3>
-          <p><strong>Difficulty:</strong> Beginner<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Popular for citrus and stone fruits during active spring/summer sap flow.</p>
-          <button onclick="openModal('budding')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
-
-      <div class="card search-item method-card" data-tags="advanced dormant" data-title="Whip & Tongue Grafting Method">
-        <div class="card-img-wrapper">
-          <img src="images/method-whip-tongue.jpg" alt="Whip & Tongue Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Whip+%26+Tongue'">
-        </div>
-        <div class="card-content">
-          <h3>Whip & Tongue</h3>
-          <p><strong>Difficulty:</strong> Advanced<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Provides maximum cambium contact for young branches of identical thickness.</p>
-          <button onclick="openModal('whip')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
-
-      <div class="card search-item method-card" data-tags="intermediate active" data-title="Side Veneer Grafting Method">
-        <div class="card-img-wrapper">
-          <img src="images/method-side-veneer.jpg" alt="Side Veneer Technique" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Side+Veneer'">
-        </div>
-        <div class="card-content">
-          <h3>Side Veneer</h3>
-          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Pencil to Medium (8–15mm)<br>Excellent for evergreen tropical trees like mangoes and avocados in warm weather.</p>
-          <button onclick="openModal('side')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
-
-      <!-- BARK GRAFTING CARD (Image Container Removed) -->
-      <div class="card search-item method-card" data-tags="intermediate active" data-title="Bark Grafting Method">
-        <div class="card-content" style="padding-top: 25px;">
-          <h3>Bark Grafting</h3>
-          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Thick Trunk (5–15cm+)<br>Top-working method for top canopy renewal on mature stumps when bark is slipping.</p>
-          <button onclick="openModal('bark')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
-
-      <!-- CHIP BUDDING CARD (Image Container Removed) -->
-      <div class="card search-item method-card" data-tags="intermediate active dormant" data-title="Chip Budding Method">
-        <div class="card-content" style="padding-top: 25px;">
-          <h3>Chip Budding</h3>
-          <p><strong>Difficulty:</strong> Intermediate<br><strong>Stem Size:</strong> Pencil Thin (6–12mm)<br>Versatile budding method used anytime during active or dormant seasons when bark won't slip.</p>
-          <button onclick="openModal('chip')" class="btn btn-primary">Learn Method</button>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1284,25 +1277,6 @@
           item.style.display = "block";
         } else {
           item.style.display = "none";
-        }
-      });
-    }
-
-    /* FIXED METHOD FILTER LOGIC */
-    function filterMethodCards(category, btn) {
-      document.querySelectorAll('#methods .quiz-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cards = document.querySelectorAll('.method-card');
-      const searchInput = document.getElementById("searchInput");
-      if (searchInput) searchInput.value = ""; // reset search box if typing
-
-      cards.forEach(card => {
-        const tags = (card.getAttribute('data-tags') || '').toLowerCase();
-        if (category === 'all' || tags.includes(category.toLowerCase())) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
         }
       });
     }
