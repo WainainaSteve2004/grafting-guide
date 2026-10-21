@@ -698,7 +698,7 @@
 </head>
 <body data-theme="dark">
 
-  <!-- HEADER NAVIGATION WITH "FRUITS & TREE GUIDE" -->
+  <!-- HEADER NAVIGATION -->
   <header>
     <a onclick="showPage('home')" class="logo-container">
       <img src="images/logo.png" alt="Grafting Solutions Logo" class="logo-img">
@@ -738,7 +738,7 @@
     </div>
   </section>
 
-  <!-- 2. ABOUT PAGE SECTION (INCLUDES CONTACT FORM) -->
+  <!-- 2. ABOUT PAGE SECTION -->
   <section id="about" class="page-section">
     <h2 class="section-title">About Grafting Solutions</h2>
     <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
@@ -820,7 +820,7 @@
       </div>
     </div>
 
-    <!-- CROP CARDS GRID (10 CROPS) -->
+    <!-- CROP CARDS GRID -->
     <div class="card-grid" id="treesGrid">
       <div class="card search-item" data-title="Mango Grafting">
         <div class="card-img-wrapper">
@@ -934,10 +934,10 @@
     </div>
   </section>
 
-  <!-- 4. GRAFTING METHODS PAGE SECTION -->
+  <!-- 4. GRAFTING METHODS PAGE SECTION WITH DETAILED MODALS -->
   <section id="methods" class="page-section">
     <h2 class="section-title">Grafting Methods</h2>
-    <p class="section-subtitle">Choose the correct technical procedure based on branch thickness and season.</p>
+    <p class="section-subtitle">Select any method below to view comprehensive, step-by-step technical guides.</p>
 
     <div class="card-grid" id="methodsGrid">
       <div class="card search-item" data-title="Cleft Grafting Method">
@@ -1293,8 +1293,9 @@
       });
     }
 
-    /* COMPREHENSIVE DETAILED GUIDES FOR ALL CROPS & METHODS */
+    /* COMPREHENSIVE GUIDES FOR ALL CROPS & METHODS */
     const guides = {
+      // CROPS
       mango: {
         title: "Comprehensive Mango Grafting Guide (Mangifera indica)",
         image: "images/mango-grafting.jpg",
@@ -1594,10 +1595,133 @@
           </div>
         `
       },
-      cleft: { title: "Cleft Grafting Technique", image: "images/method-cleft.jpg", content: "<p>Classic top-working method where rootstock is split down the middle.</p>" },
-      whip: { title: "Whip & Tongue Technique", image: "images/method-whip-tongue.jpg", content: "<p>Provides maximum structural contact on equal-diameter stems.</p>" },
-      budding: { title: "T-Budding Technique", image: "images/method-budding.jpg", content: "<p>Single bud shield slid under T-cut flap in active bark.</p>" },
-      side: { title: "Side Veneer Grafting Technique", image: "images/method-side-veneer.jpg", content: "<p>Leaves rootstock top intact while side notch accepts scion wedge.</p>" }
+
+      // GRAFTING METHODS
+      cleft: {
+        title: "Technical Masterclass: Cleft Grafting",
+        image: "images/method-cleft.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Best Applications</h4>
+            <p>Cleft grafting is one of the oldest, most reliable top-working techniques in horticulture. It is ideal when grafting a smaller scion stick onto a thicker rootstock stem or branch (up to 5–8cm diameter). It is widely used for renewing mature trees, top-working orchard cultivars, and propagating avocados, mangoes, and apples.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Required Tools</h4>
+            <ul>
+              <li>Sharp grafting knife & heavy cleaver / cleft tool</li>
+              <li>Small wooden mallet</li>
+              <li>Parafilm / heavy PVC tape</li>
+              <li>Grafting wax or seal compound</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution Protocol</h4>
+            <ol>
+              <li><strong>Decapitation:</strong> Cut the rootstock trunk or branch straight across horizontally using a fine-toothed saw or heavy shears. Smooth the surface cut with a razor knife.</li>
+              <li><strong>Splitting the Stock:</strong> Drive a cleft knife 3–5cm deep straight down into the center of the rootstock cut using a light mallet. Insert a wedge tool to hold the split open.</li>
+              <li><strong>Shaping Scion Wedges:</strong> Take a 10–15cm dormant scion stick with 3–4 buds. Cut two long, smooth 3–4cm sloping cuts at the base to form a sharp, narrow wedge (slightly thicker on the outer edge).</li>
+              <li><strong>Insertion & Cambium Matching:</strong> Slide the scion wedge down into the split rootstock. Ensure the cambium layer (the green tissue line beneath the bark) of the scion meets the cambium layer of the rootstock precisely.</li>
+              <li><strong>Binding & Sealing:</strong> Remove the wedge tool so the rootstock clamps down tightly on the scion. Wrap the entire joint securely with Parafilm and apply wax over all exposed open cuts to seal against water and air exposure.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Critical Success Factors</h4>
+            <p>Avoid rocking the knife back and forth while carving scion wedges; cuts must be 100% flat. Moisture loss is the leading cause of cleft failure—ensure every open crack is fully sealed with wax or tape.</p>
+          </div>
+        `
+      },
+      budding: {
+        title: "Technical Masterclass: T-Budding (Shield Budding)",
+        image: "images/method-budding.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Best Applications</h4>
+            <p>T-budding (or Shield Budding) uses a single vegetative bud rather than an entire scion branch stick. It is highly efficient for nursery mass propagation of citrus, stone fruits (peaches, plums), and roses. It requires active plant sap flow when rootstock bark "slips" easily away from the wood.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Required Tools</h4>
+            <ul>
+              <li>Razor-sharp T-budding knife with a bark-lifter spatula end</li>
+              <li>Clear stretchable PVC budding tape</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution Protocol</h4>
+            <ol>
+              <li><strong>Making the T-Cut:</strong> Select a smooth area on the rootstock stem 15–20cm above soil. Make a vertical cut 2.5cm long through the bark. Make a horizontal cut across the top forming a "T". Gently peel open the bark flaps using the knife bone-spatula.</li>
+              <li><strong>Removing the Bud Shield:</strong> Select a healthy budwood stick. Insert your knife 1.5cm below a plump bud, slicing upward under the bark and through a thin sliver of wood, ending 1cm above the bud. Cut across the bark to release the shield.</li>
+              <li><strong>Inserting the Shield:</strong> Hold the bud shield by its leaf petiole stub and slide it downward into the open T-flap on the rootstock until the bud rests securely flat against the wood.</li>
+              <li><strong>Trimming & Wrapping:</strong> Slice off any excess bark shield extending above the horizontal T-cut line. Wrap the union firmly from bottom to top with budding tape, keeping the bud tip exposed or lightly covered.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Critical Success Factors</h4>
+            <p>Do not touch the exposed, moist cambium back of the bud shield with your fingers, as skin oils degrade graft healing. Inspect after 3 weeks; a successful bud remains plump and green.</p>
+          </div>
+        `
+      },
+      whip: {
+        title: "Technical Masterclass: Whip & Tongue Grafting",
+        image: "images/method-whip-tongue.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Best Applications</h4>
+            <p>Whip & Tongue grafting is the premier method for dormant bench grafting of apples, pears, and grapes. It is used when both the rootstock stem and scion twig are young and have identical thickness (6–12mm diameter). The interlocking "tongues" provide extraordinary mechanical strength and maximum cambium contact area.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Required Tools</h4>
+            <ul>
+              <li>High-carbon steel grafting knife (single-bevel preferred)</li>
+              <li>Parafilm stretch tape</li>
+              <li>Grafting wax</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution Protocol</h4>
+            <ol>
+              <li><strong>The Primary Slanting Cut:</strong> Make a clean, single-pass sloping cut 2.5–3.5cm long across the top of the rootstock. Make an identical diagonal cut across the base of the scion twig.</li>
+              <li><strong>Creating the Tongues:</strong> On the flat face of both sloped cuts, place your knife blade one-third of the way down from the pointed tip. Cut downward parallel to the stem length about 1.5cm deep to create interlocking thin wooden "tongues".</li>
+              <li><strong>Interlocking the Joint:</strong> Push the two stems together so the tongues interlock smoothly. The cambium inner bark rings must align perfectly on both sides (or at least one side if diameters differ slightly).</li>
+              <li><strong>Securing & Sealing:</strong> Wrap tightly with Parafilm tape. Because the tongues lock together, the joint holds its shape easily while being wrapped. Seal the top tip of the scion stick with wax.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Critical Success Factors</h4>
+            <p>Cuts must be made in a single swift motion without whittling or creating wavy cuts. Wavy cuts create air gaps that prevent vascular healing.</p>
+          </div>
+        `
+      },
+      side: {
+        title: "Technical Masterclass: Side Veneer Grafting",
+        image: "images/method-side-veneer.jpg",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Best Applications</h4>
+            <p>Side Veneer grafting is widely favored for tropical evergreens such as mangoes, avocados, conifers, and camellias. Its major advantage is that the top of the rootstock seedling is kept intact until after the graft union has successfully healed, ensuring continuous photosynthesis during the callusing process.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Required Tools</h4>
+            <ul>
+              <li>Flexible thin-blade grafting knife</li>
+              <li>Clear grafting tape / Parafilm</li>
+              <li>Clear poly humidity bags</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution Protocol</h4>
+            <ol>
+              <li><strong>Rootstock Preparation:</strong> Make a smooth, shallow downward cut 3–4cm long through the bark into the outer wood on the side of the rootstock trunk. At the bottom of this cut, make a short downward notch to remove the bark strip, leaving a small lip.</li>
+              <li><strong>Scion Wedge Carving:</strong> Prepare a 10–12cm scion stick. Cut a long, smooth 3–4cm flat slice on one side, and a short 0.5cm bevel on the opposite side at the base.</li>
+              <li><strong>Fitting into the Notch:</strong> Fit the scion wedge into the rootstock side notch so the short bevel rests inside the bottom lip and the long cut faces the rootstock wood face. Align cambium layers precisely.</li>
+              <li><strong>Wrapping & Top Removal:</strong> Bind the scion firmly against the rootstock with grafting tape. Once the scion produces fresh new leaves (after 4–6 weeks), cut off the rootstock head 5cm above the graft union.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Critical Success Factors</h4>
+            <p>Do not cut off the rootstock top prematurely! The intact rootstock leaves keep sap moving upward to nourish the healing joint.</p>
+          </div>
+        `
+      }
     };
 
     function openModal(key) {
@@ -1626,108 +1750,4 @@
       { category: "fundamentals", question: "Which specific tissue layer must align precisely between rootstock and scion for graft vascular healing?", options: ["Pith", "Cambium layer", "Outer bark", "Epidermis"], answer: 1, explanation: "The cambium layer contains actively dividing meristematic cells responsible for fusing new vascular connections." },
       { category: "fundamentals", question: "In botanical terms, what does the 'Scion' represent in a grafted tree?", options: ["The lower root system base", "The upper shoot/bud portion that determines fruit variety", "The plastic tape binding the stem", "A wild seedling root"], answer: 1, explanation: "The scion is the selected upper vegetative shoot that grows into the fruit-bearing canopy." },
       { category: "fundamentals", question: "What is the primary cause of graft union failure between unrelated plant families?", options: ["Lack of direct sunlight", "Vascular tissue incompatibility and cellular rejection", "Excessive soil water", "Pruning shears being too sharp"], answer: 1, explanation: "Incompatible cellular biochemistries block vascular connections from fusing." },
-      { category: "fundamentals", question: "What does the term 'Top-Working' refer to in orchard management?", options: ["Grafting roots underground", "Replacing an established mature tree's canopy with new scion cultivars", "Pruning upper leaves only", "Applying high-nitrogen fertilizer"], answer: 1, explanation: "Top-working allows orchardists to convert mature trees to modern fruit varieties without replanting." },
-      { category: "techniques", question: "Which method is best suited when scion and rootstock are equal small diameters?", options: ["Top-working cleft", "Whip & Tongue grafting", "Bark grafting", "Approach grafting"], answer: 1, explanation: "Whip & Tongue creates interlocking tongue slots on stems of identical thickness." },
-      { category: "techniques", question: "What condition indicates that citrus bark is ready for T-Budding?", options: ["Bark is dry and cracked", "Bark 'slips' easily from wood during active sap flow", "Leaves have fallen off", "Branches are fully dormant"], answer: 1, explanation: "'Slipping' bark separates cleanly from the wood layer without tearing." },
-      { category: "techniques", question: "What is the main function of Parafilm or breathable grafting tape?", options: ["Seals in moisture to prevent tissue desiccation", "Adds artificial growth hormones", "Repels wild birds", "Blocks all light from reaching the graft"], answer: 0, explanation: "Parafilm holds cut tissues together while locking in essential moisture." },
-      { category: "techniques", question: "Why must grafting tools be disinfected with 70% isopropyl alcohol between trees?", options: ["To keep blades sharp", "To prevent transmission of viral, bacterial, and fungal pathogens", "To make cuts smooth", "To cool down steel blades"], answer: 1, explanation: "Sanitizing blades prevents systemic diseases from spreading between mother trees." },
-      { category: "crop-specific", question: "Why is Arabica coffee commonly grafted onto Robusta rootstock bases?", options: ["To increase caffeine levels", "To provide resistance against soil-borne root-knot nematodes", "To make coffee beans turn red faster", "To shorten pruning time"], answer: 1, explanation: "Robusta roots offer strong natural resistance against destructive root-knot nematodes." },
-      { category: "crop-specific", question: "When is the optimal season for bench-grafting apple scions onto M9 dwarfing rootstocks?", options: ["Mid-summer during fruiting", "Late winter or early spring while scion wood is dormant", "Late autumn during leaf fall", "Any warm rainy afternoon"], answer: 1, explanation: "Deciduous trees like apples are grafted during winter dormancy just before spring bud-break." },
-      { category: "crop-specific", question: "Which grafting technique is most widely recommended for evergreen tropical Mango propagation?", options: ["Side-Veneer or Cleft Grafting", "Hardwood bench grafting", "Bridge grafting", "Simple air-layering"], answer: 0, explanation: "Side-veneer and cleft grafting on seedling rootstocks yield the highest success rates for mangoes." },
-      { category: "crop-specific", question: "What must be done to rootstock suckers that sprout below an avocado graft union?", options: ["Leave them to support growth", "Prune them off immediately so nutrients flow into the scion", "Graft them together", "Cover them in fertilizer"], answer: 1, explanation: "Rootstock suckers divert water and nutrients away from the grafted scion if not removed promptly." }
-    ];
-
-    let activeCategory = 'all';
-    let filteredQuestions = [...fullQuizData];
-    let currentQ = 0;
-    let score = 0;
-    let answered = false;
-
-    function setQuizCategory(category, buttonEl) {
-      activeCategory = category;
-      document.querySelectorAll('.quiz-filter-btn').forEach(btn => btn.classList.remove('active'));
-      buttonEl.classList.add('active');
-
-      if (category === 'all') {
-        filteredQuestions = [...fullQuizData];
-      } else {
-        filteredQuestions = fullQuizData.filter(q => q.category === category);
-      }
-
-      currentQ = 0;
-      score = 0;
-      loadQuiz();
-    }
-
-    function loadQuiz() {
-      answered = false;
-      const q = filteredQuestions[currentQ];
-      
-      document.getElementById("quiz-progress").innerText = `Question ${currentQ + 1} of ${filteredQuestions.length}`;
-      document.getElementById("quiz-score").innerText = `Score: ${score}`;
-      document.getElementById("quiz-question").innerText = q.question;
-      
-      const optDiv = document.getElementById("quiz-options");
-      optDiv.innerHTML = "";
-      document.getElementById("quiz-feedback").innerText = "";
-      document.getElementById("next-btn").style.display = "none";
-
-      q.options.forEach((opt, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "quiz-opt";
-        btn.innerText = opt;
-        btn.onclick = () => selectAnswer(idx);
-        optDiv.appendChild(btn);
-      });
-    }
-
-    function selectAnswer(idx) {
-      if (answered) return;
-      answered = true;
-
-      const q = filteredQuestions[currentQ];
-      const feedback = document.getElementById("quiz-feedback");
-      const buttons = document.querySelectorAll(".quiz-opt");
-
-      buttons.forEach((btn, i) => {
-        btn.disabled = true;
-        if (i === q.answer) {
-          btn.style.background = "#2e7d32";
-          btn.style.color = "#ffffff";
-        } else if (i === idx) {
-          btn.style.background = "#c62828";
-          btn.style.color = "#ffffff";
-        }
-      });
-
-      if (idx === q.answer) {
-        score++;
-        document.getElementById("quiz-score").innerText = `Score: ${score}`;
-        feedback.innerText = `Correct! ${q.explanation}`;
-        feedback.style.color = "#8bc34a";
-      } else {
-        feedback.innerText = `Incorrect. ${q.explanation}`;
-        feedback.style.color = "#ff5252";
-      }
-
-      document.getElementById("next-btn").style.display = "inline-block";
-    }
-
-    function nextQuestion() {
-      currentQ = (currentQ + 1) % filteredQuestions.length;
-      if (currentQ === 0) {
-        score = 0;
-      }
-      loadQuiz();
-    }
-
-    loadQuiz();
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').then(reg => reg.update()).catch(err => console.error(err));
-      });
-    }
-  </script>
-</body>
-</html>
+      { category
