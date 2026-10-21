@@ -6,8 +6,8 @@
   <title>Grafting Solutions - Fruits & Tree Guide & Interactive Tools</title>
 
   <!-- Primary SEO Tags -->
-  <meta name="description" content="Master fruit tree grafting with step-by-step crop guides, techniques, compatibility matrices, and interactive quiz games.">
-  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, lemon grafting, avocado grafting, apple grafting, coffee grafting">
+  <meta name="description" content="Master fruit tree grafting with step-by-step crop guides, techniques, compatibility matrices, and interactive quiz games for all fruit families.">
+  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, citrus, avocado grafting, apple grafting, peach, plum, pear, coffee grafting">
   <meta name="author" content="Wainaina Steve - Grafting Solutions">
 
   <!-- PWA Theme Color -->
@@ -317,6 +317,32 @@
       text-align: center;
       color: var(--text-muted);
       margin-bottom: 35px;
+    }
+
+    .category-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .cat-pill {
+      padding: 8px 18px;
+      border-radius: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .cat-pill:hover, .cat-pill.active {
+      background: var(--accent-color);
+      color: #fff;
+      border-color: var(--accent-color);
     }
 
     .card-grid {
@@ -697,6 +723,15 @@
       color: var(--text-main);
     }
 
+    .universal-rules-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px var(--card-shadow);
+    }
+
     footer {
       background-color: var(--card-bg);
       text-align: center;
@@ -737,12 +772,12 @@
     <div class="hero">
       <div class="hero-content-box">
         <h1>Master Fruit Tree Grafting</h1>
-        <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques, check stock compatibility, and test your practical horticultural skills.</p>
+        <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques across all fruit tree families, check botanical compatibility, and master practical horticultural skills.</p>
       </div>
     </div>
 
     <div class="search-container">
-      <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
+      <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search any fruit, tree or method (e.g. Mango, Peach, Pear, Citrus, Cleft)...">
     </div>
   </section>
 
@@ -757,8 +792,8 @@
 
       <div class="about-grid">
         <div class="about-feature">
-          <h4>🌱 Expert Step-by-Step Guides</h4>
-          <p>Detailed rootstock selection, scion harvesting, and cutting instructions tailored to each individual fruit species.</p>
+          <h4>🌱 Universal Botanical Principles</h4>
+          <p>Learn how cambium matching, rootstock vigor, and scion dormancy apply to thousands of woody fruit trees worldwide.</p>
         </div>
         <div class="about-feature">
           <h4>🧪 Botanical Compatibility</h4>
@@ -773,75 +808,212 @@
   </section>
 
   <section id="fruit-trees" class="page-section">
-    <h2 class="section-title">Fruits & Tree Guide</h2>
-    <p class="section-subtitle">Detailed guides on all grafted fruit plants: Why we graft them and general step-by-step how-to procedures.</p>
+    <h2 class="section-title">Fruits & Tree Propagation Guide</h2>
+    <p class="section-subtitle">Explore crop-specific grafting guides grouped by plant family, or learn universal grafting rules for any tree.</p>
 
+    <!-- Universal Grafting Rules Educational Banner -->
+    <div class="universal-rules-box">
+      <h3 style="color: var(--accent-color); font-size: 1.4rem; margin-bottom: 12px; text-align: center;">💡 How Grafting Works Across ALL Tree Species</h3>
+      <p style="margin-bottom: 15px; color: var(--text-muted);">
+        While hundreds of distinct fruit varieties exist, <strong>every woody tree follows the exact same biological rules of vascular union</strong>. If you want to graft a species not featured below (like Persimmons, Cherries, Guavas, or Passion Fruit), apply these 4 universal principles:
+      </p>
+      <div class="about-grid" style="margin-top: 15px;">
+        <div class="about-feature" style="padding: 15px;">
+          <strong style="color: var(--accent-color);">1. Family Compatibility:</strong>
+          <p style="font-size: 0.9rem;">Grafts succeed almost exclusively within the same genus or botanical family (e.g., Citrus to Citrus, Rosaceae to Rosaceae). You cannot graft an Apple onto an Orange tree.</p>
+        </div>
+        <div class="about-feature" style="padding: 15px;">
+          <strong style="color: var(--accent-color);">2. Cambium Contact:</strong>
+          <p style="font-size: 0.9rem;">The thin green vascular cambium layer just beneath the outer bark of scion and rootstock MUST overlap on at least one side to allow callus tissue bridging.</p>
+        </div>
+        <div class="about-feature" style="padding: 15px;">
+          <strong style="color: var(--accent-color);">3. Seasonal Timing:</strong>
+          <p style="font-size: 0.9rem;">Deciduous trees graft best during winter dormancy (Whip/Cleft). Evergreens/Tropicals graft best in warm humid rainy seasons (T-bud/Side veneer).</p>
+        </div>
+        <div class="about-feature" style="padding: 15px;">
+          <strong style="color: var(--accent-color);">4. Moisture Seal:</strong>
+          <p style="font-size: 0.9rem;">Exposed cuts lose moisture rapidly. Wrapping completely with Parafilm or grafting wax prevents desiccating air from killing the union before healing.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filter Pills -->
+    <div class="category-pills">
+      <button class="cat-pill active" onclick="filterTreeCategory('all', this)">All Species</button>
+      <button class="cat-pill" onclick="filterTreeCategory('citrus', this)">🍊 Citrus Family</button>
+      <button class="cat-pill" onclick="filterTreeCategory('tropical', this)">🥭 Tropical & Subtropical</button>
+      <button class="cat-pill" onclick="filterTreeCategory('deciduous', this)">🍎 Deciduous & Stone Fruit</button>
+      <button class="cat-pill" onclick="filterTreeCategory('plantation', this)">☕ Plantation & Commercial</button>
+    </div>
+
+    <!-- Dynamic Cards Grid -->
     <div class="card-grid" id="treesGrid">
-      <div class="card search-item" data-title="Mango Grafting">
+      
+      <!-- MANGO -->
+      <div class="card search-item tree-card" data-category="tropical" data-title="Mango Grafting (Mangifera indica)">
         <div class="card-img-wrapper">
           <img src="images/1-mango.jpg" alt="Mango Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Mango+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Mango Grafting</h3>
-          <p><strong>Primary Method:</strong> Side-Veneer / Cleft<br><strong>Why Graft:</strong> Accelerates bearing (2–3 yrs vs 8+ yrs seed), guarantees true-to-type fruit sweetness, and manages canopy size.</p>
-          <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Anacardiaceae Family</span>
+            <h3>Mango Grafting</h3>
+            <p><strong>Primary Method:</strong> Side-Veneer / Cleft<br><strong>Why Graft:</strong> Speeds fruiting from 8+ years to 2–3 years, guarantees fruit sweetness, and manages orchard canopy size.</p>
+          </div>
+          <button onclick="openModal('mango')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <div class="card search-item" data-title="Orange Grafting">
+      <!-- SWEET ORANGE -->
+      <div class="card search-item tree-card" data-category="citrus" data-title="Sweet Orange Grafting (Citrus sinensis)">
         <div class="card-img-wrapper">
           <img src="images/2-orange.jpg" alt="Orange Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Orange+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Sweet Orange Grafting</h3>
-          <p><strong>Primary Method:</strong> T-Budding / Chip Budding<br><strong>Why Graft:</strong> Imparts soil fungus resistance (Phytophthora) using Trifoliate rootstocks and prevents seed polyembryony variations.</p>
-          <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
+            <h3>Sweet Orange Grafting</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Chip Budding<br><strong>Why Graft:</strong> Imparts root rot (Phytophthora) immunity via Trifoliate stock and prevents seedling genetic variations.</p>
+          </div>
+          <button onclick="openModal('orange')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <div class="card search-item" data-title="Lemon Grafting">
+      <!-- LEMON & LIME -->
+      <div class="card search-item tree-card" data-category="citrus" data-title="Lemon & Lime Grafting (Citrus limon)">
         <div class="card-img-wrapper">
           <img src="images/3-lemon.jpg" alt="Lemon Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Lemon+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Lemon & Lime Grafting</h3>
-          <p><strong>Primary Method:</strong> T-Budding / Cleft<br><strong>Why Graft:</strong> Prevents root rot in wet soils, ensures uniform citrus acidity, and doubles early fruit production density.</p>
-          <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
+            <h3>Lemon & Lime Grafting</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Cleft<br><strong>Why Graft:</strong> Prevents root rot in wet soils, stabilizes juice acidity, and doubles early fruit density.</p>
+          </div>
+          <button onclick="openModal('lemon')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <div class="card search-item" data-title="Avocado Grafting">
+      <!-- GRAPEFRUIT & MANDARIN -->
+      <div class="card search-item tree-card" data-category="citrus" data-title="Grapefruit & Mandarin Grafting (Citrus paradisi)">
+        <div class="card-img-wrapper">
+          <img src="images/citrus-grapefruit.jpg" alt="Grapefruit Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Grapefruit+%26+Mandarin'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
+            <h3>Grapefruit & Mandarin</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Micro-Budding<br><strong>Why Graft:</strong> Boosts cold hardiness, eliminates seediness, and allows multi-grafted citrus trees bearing 3+ fruit varieties.</p>
+          </div>
+          <button onclick="openModal('grapefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- AVOCADO -->
+      <div class="card search-item tree-card" data-category="tropical" data-title="Avocado Grafting (Persea americana)">
         <div class="card-img-wrapper">
           <img src="images/4-avocado.jpg" alt="Avocado Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Avocado+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Avocado Grafting</h3>
-          <p><strong>Primary Method:</strong> Cleft / Side-Tongue<br><strong>Why Graft:</strong> Clones commercial Hass/Fuerte varieties onto root-rot tolerant bases, skipping decade-long juvenile delays.</p>
-          <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Lauraceae Family</span>
+            <h3>Avocado Grafting</h3>
+            <p><strong>Primary Method:</strong> Cleft / Side-Tongue<br><strong>Why Graft:</strong> Clones Hass/Fuerte scions onto root-rot resistant bases, skipping 10-year seed delays.</p>
+          </div>
+          <button onclick="openModal('avocado')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <div class="card search-item" data-title="Apple Grafting">
+      <!-- APPLE -->
+      <div class="card search-item tree-card" data-category="deciduous" data-title="Apple Grafting (Malus domestica)">
         <div class="card-img-wrapper">
           <img src="images/5-apple.jpg" alt="Apple Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Apple+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Apple Grafting</h3>
-          <p><strong>Primary Method:</strong> Whip & Tongue / Cleft<br><strong>Why Graft:</strong> Controls tree vigor with dwarfing rootstocks (M9/M26), yields uniform orchard spacing, and improves cold hardiness.</p>
-          <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae Family</span>
+            <h3>Apple Grafting</h3>
+            <p><strong>Primary Method:</strong> Whip & Tongue / Cleft<br><strong>Why Graft:</strong> Controls tree height with dwarfing M9/M26 rootstocks and yields uniform fruit true-to-type.</p>
+          </div>
+          <button onclick="openModal('apple')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <div class="card search-item" data-title="Coffee Grafting">
+      <!-- PEACH, PLUM & APRICOT -->
+      <div class="card search-item tree-card" data-category="deciduous" data-title="Peach, Plum & Apricot Grafting (Prunus spp.)">
+        <div class="card-img-wrapper">
+          <img src="images/stone-fruits.jpg" alt="Peach and Plum Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Peach,+Plum+%26+Stone+Fruits'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae (Prunus) Family</span>
+            <h3>Peach, Plum & Apricot</h3>
+            <p><strong>Primary Method:</strong> Chip Budding / Whip & Tongue<br><strong>Why Graft:</strong> Combines root knot nematode immunity with early summer ripening scions across compatible stone fruits.</p>
+          </div>
+          <button onclick="openModal('stonefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- PEAR & QUINCE -->
+      <div class="card search-item tree-card" data-category="deciduous" data-title="Pear & Quince Grafting (Pyrus communis)">
+        <div class="card-img-wrapper">
+          <img src="images/pear.jpg" alt="Pear Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Pear+%26+Quince+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae Family</span>
+            <h3>Pear & Quince Grafting</h3>
+            <p><strong>Primary Method:</strong> Cleft / Whip & Tongue<br><strong>Why Graft:</strong> Dwarfs vigorous pear canopies using Quince rootstocks and provides Fire Blight bacterial tolerance.</p>
+          </div>
+          <button onclick="openModal('pear')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- COFFEE -->
+      <div class="card search-item tree-card" data-category="plantation" data-title="Coffee Grafting (Coffea arabica / canephora)">
         <div class="card-img-wrapper">
           <img src="images/6-coffee.jpg" alt="Coffee Plant" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Coffee+Grafting'">
         </div>
         <div class="card-content">
-          <h3>Coffee Grafting</h3>
-          <p><strong>Primary Method:</strong> Hypocotyl Cleft Grafting<br><strong>Why Graft:</strong> Fuses high-flavor Arabica scions with nematode-resistant Robusta roots to protect plantations from root pests.</p>
-          <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rubiaceae Family</span>
+            <h3>Coffee Grafting</h3>
+            <p><strong>Primary Method:</strong> Hypocotyl Cleft Grafting<br><strong>Why Graft:</strong> Fuses premium Arabica tops onto nematode-resistant Robusta roots to protect commercial plantations.</p>
+          </div>
+          <button onclick="openModal('coffee')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
+
+      <!-- GUAVA & PAPAYA -->
+      <div class="card search-item tree-card" data-category="tropical" data-title="Guava & Tropical Fruits Grafting (Psidium guajava)">
+        <div class="card-img-wrapper">
+          <img src="images/guava.jpg" alt="Guava Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Guava+%26+Tropicals'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Myrtaceae / Caricaceae</span>
+            <h3>Guava & Tropical Fruits</h3>
+            <p><strong>Primary Method:</strong> Side Veneer / Patch Budding<br><strong>Why Graft:</strong> Standardizes flesh color (pink/white), eliminates wilt susceptibility, and triggers dwarfing.</p>
+          </div>
+          <button onclick="openModal('guava')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- MACADAMIA & NUTS -->
+      <div class="card search-item tree-card" data-category="plantation" data-title="Macadamia & Nut Tree Grafting (Macadamia integrifolia)">
+        <div class="card-img-wrapper">
+          <img src="images/macadamia.jpg" alt="Macadamia Nut Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Macadamia+%26+Nut+Trees'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Proteaceae Family</span>
+            <h3>Macadamia Nut Grafting</h3>
+            <p><strong>Primary Method:</strong> Whip & Tongue / Splice<br><strong>Why Graft:</strong> Clones thick shell commercial cultivars, drastically reducing juvenile nut drop and speeding maturity.</p>
+          </div>
+          <button onclick="openModal('macadamia')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -895,7 +1067,6 @@
         </div>
       </div>
 
-      <!-- BARK GRAFTING CARD (Image Removed) -->
       <div class="card search-item method-card" data-title="Bark Grafting Method">
         <div class="card-content" style="padding-top: 25px;">
           <h3>Bark Grafting</h3>
@@ -904,7 +1075,6 @@
         </div>
       </div>
 
-      <!-- CHIP BUDDING CARD (Image Removed) -->
       <div class="card search-item method-card" data-title="Chip Budding Method">
         <div class="card-content" style="padding-top: 25px;">
           <h3>Chip Budding</h3>
@@ -914,7 +1084,7 @@
       </div>
     </div>
 
-    <!-- 2. INTERACTIVE METHOD FINDER WIZARD (BELOW CARDS) -->
+    <!-- 2. INTERACTIVE METHOD FINDER WIZARD -->
     <div class="finder-box">
       <h3 style="color: var(--accent-color);">🔎 Interactive Method Finder Wizard</h3>
       <p style="color: var(--text-muted); font-size: 0.95rem;">Select your stem diameter and season to discover the optimal technique instantly:</p>
@@ -934,7 +1104,7 @@
       <p id="finder-result" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem; color: var(--accent-color); min-height: 28px;"></p>
     </div>
 
-    <!-- 3. QUICK TECHNICAL COMPARISON TABLE (BELOW CARDS) -->
+    <!-- 3. QUICK TECHNICAL COMPARISON TABLE -->
     <div class="table-container">
       <h3 style="color: var(--accent-color); margin-bottom: 12px; text-align: center;">Quick Technical Comparison Table</h3>
       <table class="method-table">
@@ -953,42 +1123,42 @@
             <td>2.5cm – 8cm</td>
             <td>Intermediate</td>
             <td>Late Winter / Spring</td>
-            <td>Avocado, Mango, Apple</td>
+            <td>Avocado, Mango, Apple, Pear</td>
           </tr>
           <tr>
             <td><strong>T-Budding</strong></td>
             <td>6mm – 12mm</td>
             <td>Beginner</td>
             <td>Spring / Summer (Sap flowing)</td>
-            <td>Citrus (Orange, Lemon, Lime)</td>
+            <td>Citrus (Orange, Lemon, Lime, Grapefruit)</td>
           </tr>
           <tr>
             <td><strong>Whip & Tongue</strong></td>
             <td>6mm – 12mm</td>
             <td>Advanced</td>
             <td>Winter Dormancy</td>
-            <td>Apple, Pear, Macadamia</td>
+            <td>Apple, Pear, Stone Fruits, Macadamia</td>
           </tr>
           <tr>
             <td><strong>Side Veneer</strong></td>
             <td>8mm – 15mm</td>
             <td>Intermediate</td>
             <td>Warm Rainy Season</td>
-            <td>Mango, Papaya, Avocado</td>
+            <td>Mango, Papaya, Guava, Avocado</td>
           </tr>
           <tr>
             <td><strong>Bark Grafting</strong></td>
             <td>5cm – 15cm+</td>
             <td>Intermediate</td>
             <td>Early Spring (Bark slipping)</td>
-            <td>Top-Working Old Trees</td>
+            <td>Top-Working Old Fruit Trees</td>
           </tr>
           <tr>
             <td><strong>Chip Budding</strong></td>
             <td>6mm – 12mm</td>
             <td>Intermediate</td>
             <td>Autumn / Dry Season</td>
-            <td>Grapes, Citrus, Deciduous</td>
+            <td>Grapes, Citrus, Peach, Plum, Apricot</td>
           </tr>
         </tbody>
       </table>
@@ -1044,22 +1214,22 @@
         
         <label>Select Scion (Desired Variety):</label>
         <select id="scion-select">
-          <option value="sweet-orange">Sweet Orange (Citrus sinensis)</option>
-          <option value="lemon">Eureka Lemon (Citrus limon)</option>
-          <option value="mango">Tommy Atkins Mango (Mangifera indica)</option>
-          <option value="avocado">Hass Avocado (Persea americana)</option>
-          <option value="apple">Fuji Apple (Malus domestica)</option>
-          <option value="arabica-coffee">Arabica Coffee (Coffea arabica)</option>
+          <option value="sweet-orange">Sweet Orange / Lemon (Rutaceae Family)</option>
+          <option value="mango">Tommy Atkins Mango (Anacardiaceae)</option>
+          <option value="avocado">Hass Avocado (Lauraceae)</option>
+          <option value="apple">Fuji Apple / Pear (Rosaceae)</option>
+          <option value="peach">Peach / Plum (Rosaceae - Prunus)</option>
+          <option value="arabica-coffee">Arabica Coffee (Rubiaceae)</option>
         </select>
 
         <label>Select Rootstock Base:</label>
         <select id="rootstock-select">
-          <option value="trifoliate-orange">Trifoliate Orange (Citrus/Poncirus)</option>
-          <option value="wild-mango">Wild Seedling Mango (Mangifera indica)</option>
-          <option value="avocado-seedling">Avocado Seedling (Persea americana)</option>
-          <option value="m9-apple">M9 / M26 Apple Rootstock (Malus spp.)</option>
-          <option value="robusta-coffee">Robusta Coffee (Coffea canephora)</option>
-          <option value="peach-stock">Nemaguard Peach Rootstock (Prunus)</option>
+          <option value="trifoliate-orange">Trifoliate Orange (Rutaceae)</option>
+          <option value="wild-mango">Wild Seedling Mango (Anacardiaceae)</option>
+          <option value="avocado-seedling">Avocado Seedling (Lauraceae)</option>
+          <option value="m9-apple">M9 / M26 Apple Rootstock (Rosaceae)</option>
+          <option value="peach-stock">Nemaguard Peach Rootstock (Rosaceae - Prunus)</option>
+          <option value="robusta-coffee">Robusta Coffee (Rubiaceae)</option>
         </select>
 
         <button onclick="checkCompatibility()" class="btn btn-primary" style="width: 100%;">Check Compatibility</button>
@@ -1079,10 +1249,10 @@
 
         <ul id="season-list" style="list-style: none;">
           <li data-season="spring" style="padding: 10px 0; border-bottom: 1px solid var(--border-color);">
-            <strong>Late Winter / Early Spring:</strong> Deciduous trees (Apples, Pears, Peaches). Best for Whip & Tongue and Cleft grafting while dormant.
+            <strong>Late Winter / Early Spring:</strong> Deciduous trees (Apples, Pears, Peaches, Plums). Best for Whip & Tongue and Cleft grafting while dormant.
           </li>
           <li data-season="summer" style="padding: 10px 0; border-bottom: 1px solid var(--border-color);">
-            <strong>Active Growth / Rainy Season:</strong> Tropical/Evergreen trees (Citrus, Mangoes, Avocados, Coffee). High humidity and active bark slipping favor T-budding and Side-Veneer grafts.
+            <strong>Active Growth / Rainy Season:</strong> Tropical/Evergreen trees (Citrus, Mangoes, Avocados, Coffee, Guava). High humidity and active bark slipping favor T-budding and Side-Veneer grafts.
           </li>
           <li data-season="autumn" style="padding: 10px 0;">
             <strong>Late Summer / Autumn:</strong> Chip budding and late T-budding before growth halts for temperate species.
@@ -1116,6 +1286,7 @@
     </div>
   </section>
 
+  <!-- Modal Pop-up Container -->
   <div id="guide-modal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
     <div class="modal-content">
       <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -1190,6 +1361,22 @@
 
     initTheme();
 
+    /* Category Filter for Fruit Trees */
+    function filterTreeCategory(category, buttonEl) {
+      document.querySelectorAll('.cat-pill').forEach(btn => btn.classList.remove('active'));
+      buttonEl.classList.add('active');
+
+      const cards = document.querySelectorAll('.tree-card');
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
     /* Equipment Checklist Progress */
     function updateChecklistProgress() {
       const checkboxes = document.querySelectorAll('.checklist-grid input[type="checkbox"]');
@@ -1246,10 +1433,7 @@
       const resultDiv = document.getElementById("compatibility-result");
       resultDiv.style.display = "block";
 
-      const citrusScions = ['sweet-orange', 'lemon'];
-      const isCitrusRootstock = rootstock === 'trifoliate-orange';
-
-      if (citrusScions.includes(scion) && isCitrusRootstock) {
+      if (scion === "sweet-orange" && rootstock === "trifoliate-orange") {
         resultDiv.style.background = "#d4edda";
         resultDiv.style.color = "#155724";
         resultDiv.innerHTML = "High Botanical Compatibility! Excellent match within the Rutaceae (Citrus) family.";
@@ -1265,6 +1449,10 @@
         resultDiv.style.background = "#d4edda";
         resultDiv.style.color = "#155724";
         resultDiv.innerHTML = "High Compatibility! Rosaceae (Apple) scion on dwarfing M9 rootstock.";
+      } else if (scion === "peach" && rootstock === "peach-stock") {
+        resultDiv.style.background = "#d4edda";
+        resultDiv.style.color = "#155724";
+        resultDiv.innerHTML = "High Compatibility! Prunus species match (Peach/Plum onto Nemaguard stock).";
       } else if (scion === "arabica-coffee" && rootstock === "robusta-coffee") {
         resultDiv.style.background = "#d4edda";
         resultDiv.style.color = "#155724";
@@ -1272,7 +1460,7 @@
       } else {
         resultDiv.style.background = "#f8d7da";
         resultDiv.style.color = "#721c24";
-        resultDiv.innerHTML = "Incompatible Combination! Interspecies/Cross-Family grafts fail due to vascular rejection.";
+        resultDiv.innerHTML = "Incompatible Combination! Cross-family grafts fail due to vascular tissue rejection.";
       }
     }
 
@@ -1314,167 +1502,179 @@
       }
     }
 
+    /* Comprehensive Modal Content Database */
     const guides = {
       mango: {
-        title: "Comprehensive Mango Grafting Guide",
+        title: "Comprehensive Mango Grafting Guide (Mangifera indica)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>Mangoes (<em>Mangifera indica</em>) grown from seed exhibit wide genetic segregation, take 8 to 10 years to produce fruit, and grow into uncontrollable trees. Grafting clones superior commercial varieties (such as Tommy Atkins, Kent, or Apple Mango) onto hardy wild seedling stocks. Grafted trees bear high-quality fruit in 2 to 3 years and remain compact for easy harvesting.</p>
+            <p>Mangoes grown from seed exhibit wide genetic segregation, take 8 to 10 years to produce fruit, and grow into uncontrollable giant trees. Grafting clones superior commercial varieties (Tommy Atkins, Kent, Apple Mango) onto hardy wild seedling stocks. Grafted trees bear high-quality fruit in 2 to 3 years and remain compact for easy harvesting.</p>
           </div>
           <div class="modal-section">
-            <h4>2. Rootstock Selection & Scion Preparation</h4>
+            <h4>2. Rootstock Selection & Scion Harvesting</h4>
             <ul>
-              <li><strong>Rootstock:</strong> Use 6 to 12-month-old wild mango seedling rootstocks with stem thickness of 8–15mm (pencil thick).</li>
+              <li><strong>Rootstock:</strong> 6 to 12-month-old wild seedling rootstocks with stem thickness of 8–15mm.</li>
               <li><strong>Scion Selection:</strong> Cut 10–15cm terminal shoots from healthy mother trees where terminal buds are swollen but not blooming.</li>
-              <li><strong>Defoliation:</strong> Strip off leaf blades 7–10 days before collecting scion wood, leaving short petioles to stimulate terminal bud swelling.</li>
+              <li><strong>Defoliation:</strong> Strip leaf blades 7–10 days before collecting scion wood, leaving short petioles to stimulate bud swelling.</li>
             </ul>
           </div>
           <div class="modal-section">
             <h4>3. General How-To Execution (Side-Veneer / Cleft)</h4>
             <ul>
-              <li><strong>Step 1:</strong> Make a downward cut 3–5cm long on the side of the rootstock, penetrating slightly into the wood with a short notch lip cut at the base.</li>
+              <li><strong>Step 1:</strong> Make a downward cut 3–5cm long on the rootstock stem with a short notch lip cut at the base.</li>
               <li><strong>Step 2:</strong> Cut a matching long flat bevel on one side of the scion base and a short wedge cut on the back.</li>
-              <li><strong>Step 3:</strong> Slide the scion into the rootstock notch, ensuring exact alignment of green inner cambium layers on at least one edge.</li>
-              <li><strong>Step 4:</strong> Wrap tightly with Parafilm starting from below the cut upward to seal moisture. Enclose the scion head in a clear humidity bag.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>4. Post-Graft Care & Aftercare</h4>
-            <ul>
-              <li>Keep grafted seedlings under 50–70% shade for 3 to 4 weeks until new shoot flushes appear.</li>
-              <li>Rub off rootstock suckers immediately as they emerge below the graft union.</li>
-              <li>Once the new scion flush hardens, prune back the rootstock top to direct full growth into the scion.</li>
+              <li><strong>Step 3:</strong> Slide scion into rootstock notch, aligning green inner cambium layers on at least one edge.</li>
+              <li><strong>Step 4:</strong> Wrap tightly with Parafilm tape starting from below the cut upward to seal moisture.</li>
             </ul>
           </div>
         `
       },
       orange: {
-        title: "Sweet Orange Grafting Guide",
+        title: "Sweet Orange Propagation Guide (Citrus sinensis)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>Sweet orange varieties (<em>Citrus sinensis</em>) like Washington Navel or Valencia suffer from root rot (<em>Phytophthora</em>) and polyembryony issues when grown from seeds or cuttings. Grafting onto resistant rootstocks like <em>Poncirus trifoliata</em> or Carrizo Citrange provides soil pathogen immunity, cold tolerance, and consistent sugar-acid fruit balance.</p>
+            <p>Sweet orange varieties suffer from root rot (<em>Phytophthora</em>) and polyembryony issues when grown from seeds. Grafting onto resistant rootstocks like <em>Poncirus trifoliata</em> or Carrizo Citrange provides soil pathogen immunity, cold tolerance, and consistent sugar-acid balance.</p>
           </div>
           <div class="modal-section">
-            <h4>2. Rootstock & Bud Preparation</h4>
+            <h4>2. General How-To Execution (T-Budding)</h4>
             <ul>
-              <li><strong>Rootstock:</strong> Vigorous 9-12 month citrus seedlings with pencil-thin stem diameters (6–12mm).</li>
-              <li><strong>Scion Buds:</strong> Collect firm, round bud sticks with plump vegetative buds from healthy certified parent trees during active growth flushes.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>3. General How-To Execution (T-Budding)</h4>
-            <ul>
-              <li><strong>Step 1:</strong> Slice a vertical cut 2.5cm long through the rootstock bark 10–15cm above soil level, topped with a horizontal cut to make a "T".</li>
-              <li><strong>Step 2:</strong> Peel back the green bark flaps using the bone lifter edge of your budding knife.</li>
-              <li><strong>Step 3:</strong> Cut a single vegetative bud shield (1.5–2cm) from the bud stick with a thin sliver of wood behind it.</li>
-              <li><strong>Step 4:</strong> Slide the bud shield downward under the rootstock flaps and bind firmly with budding tape, leaving the eye exposed.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>4. Post-Graft Care & Growth Forcing</h4>
-            <ul>
-              <li>Inspect after 14–21 days; a plump green bud indicates successful vascular connection.</li>
-              <li>Bend or notch the rootstock stem 5cm above the graft to break apical dominance and force the scion bud to break out.</li>
+              <li><strong>Step 1:</strong> Slice a vertical cut 2.5cm long through rootstock bark 10–15cm above soil, topped with a horizontal cut ("T").</li>
+              <li><strong>Step 2:</strong> Peel back green bark flaps using the knife lifter edge.</li>
+              <li><strong>Step 3:</strong> Cut a single vegetative bud shield (1.5–2cm) from scion stick and slide downward under bark flaps.</li>
+              <li><strong>Step 4:</strong> Bind tightly with budding tape, leaving the eye exposed.</li>
             </ul>
           </div>
         `
       },
       lemon: {
-        title: "Lemon & Lime Grafting Guide",
+        title: "Lemon & Lime Propagation Guide (Citrus limon)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>Lemons (<em>Citrus limon</em>) and limes (<em>Citrus aurantifolia</em>) grafted onto disease-hardy rootstocks avoid waterlogging rot, yield up to 100% more fruit per tree, and begin cropping within 18 to 24 months after field planting.</p>
+            <p>Lemons and limes grafted onto disease-hardy rootstocks avoid waterlogging root rot, yield up to 100% more fruit per tree, and begin cropping within 18 to 24 months after field planting.</p>
           </div>
           <div class="modal-section">
-            <h4>2. Rootstock & Scion Selection</h4>
-            <ul>
-              <li>Use Phytophthora-resistant rootstock bases like Rough Lemon or Trifoliate orange.</li>
-              <li>Select mature 1-year-old green wood with prominent lateral vegetative buds.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>3. General How-To Execution</h4>
+            <h4>2. How-To Execution</h4>
             <ul>
               <li>Execute T-Budding or Cleft grafting during warm rainy months when sap flow is high.</li>
-              <li>Align cambium lines on at least one vertical margin perfectly.</li>
-              <li>Wrap tightly with waterproof Parafilm to prevent rainwater infiltration into open wounds.</li>
+              <li>Align cambium lines perfectly on at least one vertical margin.</li>
+              <li>Wrap tightly with waterproof Parafilm to prevent rainwater infiltration.</li>
             </ul>
           </div>
+        `
+      },
+      grapefruit: {
+        title: "Grapefruit & Mandarin Guide (Citrus paradisi / reticulata)",
+        content: `
           <div class="modal-section">
-            <h4>4. Post-Graft Care</h4>
+            <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
+            <p>Grafting mandarins (Tangerines) and grapefruits allows nurserymen to produce thornless trees that produce seedless fruit. Multi-grafting enables growing grapefruits, lemons, and mandarins all on a single root trunk.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. How-To Execution (Micro-Budding)</h4>
             <ul>
-              <li>Remove all rootstock shoots below the tape continuously.</li>
-              <li>Unwrap tape after 4 weeks once full callus formation is visible.</li>
+              <li>Use pencil-thin citrus seedling rootstocks (Swingle Citrumelo or Rough Lemon).</li>
+              <li>Insert small vegetative chip or T-buds into active rootstock stems during early spring.</li>
             </ul>
           </div>
         `
       },
       avocado: {
-        title: "Avocado Grafting Guide",
+        title: "Avocado Propagation Guide (Persea americana)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>Avocado trees (<em>Persea americana</em>) grown from seed take 10 to 15 years to fruit and rarely produce palatable fruits. Grafting clones desirable Hass, Fuerte, or Pinkerton scions onto disease-tolerant rootstocks, guaranteeing early heavy yields in 2 to 3 years with uniform fruit size.</p>
+            <p>Avocado trees grown from seed take 10 to 15 years to fruit and rarely produce palatable fruits. Grafting clones desirable Hass or Fuerte scions onto root-rot tolerant stocks, guaranteeing early yields in 2 to 3 years.</p>
           </div>
           <div class="modal-section">
-            <h4>2. Rootstock & Scion Selection</h4>
+            <h4>2. General How-To Execution (Cleft Grafting)</h4>
             <ul>
-              <li>Select healthy 6 to 9-month-old seedling rootstocks with 8–15mm thick stems.</li>
-              <li>Harvest 10–12cm scion sticks with 3 to 4 plump plump terminal buds from productive mother trees.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>3. General How-To Execution (Cleft / Side Tongue)</h4>
-            <ul>
-              <li><strong>Step 1:</strong> Behead the rootstock stem horizontally 15cm above soil level and split the center downward by 3–4cm.</li>
-              <li><strong>Step 2:</strong> Shape the scion base into a smooth 3cm double-bevel wedge.</li>
-              <li><strong>Step 3:</strong> Insert the scion wedge into the rootstock split, aligning cambium layers on at least one side.</li>
-              <li><strong>Step 4:</strong> Bind tightly with grafting tape and cover the scion with a clear plastic bag for 21 days to maintain humidity.</li>
+              <li><strong>Step 1:</strong> Behead rootstock stem 15cm above soil level and split the center downward by 3–4cm.</li>
+              <li><strong>Step 2:</strong> Shape scion base into a smooth 3cm double-bevel wedge.</li>
+              <li><strong>Step 3:</strong> Insert scion wedge into rootstock split, aligning cambium layers. Wrap tightly and cover with a clear plastic bag for 21 days.</li>
             </ul>
           </div>
         `
       },
       apple: {
-        title: "Apple Grafting Guide",
+        title: "Apple Propagation Guide (Malus domestica)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>Apple cultivars (<em>Malus domestica</em>) do not grow true from seed and suffer from extreme canopy vigor. Grafting onto dwarfing or semi-dwarfing clonal rootstocks (e.g., M9, M26, MM106) controls tree height, increases planting density per acre, and speeds fruiting to 2 years.</p>
+            <p>Apples do not grow true from seed and suffer from extreme canopy vigor. Grafting onto dwarfing rootstocks (M9, M26, MM106) controls tree height and speeds fruiting to 2 years.</p>
           </div>
           <div class="modal-section">
-            <h4>2. Rootstock & Scion Preparation</h4>
+            <h4>2. General How-To Execution (Whip & Tongue)</h4>
             <ul>
-              <li>Collect dormant scion wood in late winter and store wrapped in damp paper towels in refrigeration.</li>
-              <li>Use certified virus-free rootstock liners of matching stem diameter.</li>
-            </ul>
-          </div>
-          <div class="modal-section">
-            <h4>3. General How-To Execution (Whip & Tongue)</h4>
-            <ul>
-              <li>Make matching 2.5–3.5cm slanting cuts on rootstock top and scion base.</li>
+              <li>Make matching 3cm slanting cuts on rootstock top and scion base.</li>
               <li>Slice interlocking vertical tongues into both slants and slide them tightly together.</li>
               <li>Wrap tightly with Parafilm and seal exposed top cuts with grafting wax.</li>
             </ul>
           </div>
         `
       },
-      coffee: {
-        title: "Coffee Grafting Guide",
+      stonefruit: {
+        title: "Peach, Plum & Stone Fruit Guide (Prunus spp.)",
         content: `
           <div class="modal-section">
             <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
-            <p>High-quality Arabica coffee (<em>Coffea arabica</em>) produces superior specialty coffee but has fragile roots susceptible to destructive root-knot nematodes. Grafting Arabica tops onto Robusta (<em>Coffea canephora</em>) root bases provides root pest immunity while retaining premium cup quality.</p>
+            <p>Stone fruits (Peaches, Plums, Nectarines, Apricots) are highly closely related in the <em>Prunus</em> genus. Grafting allows inter-species combinations—such as growing plums and peaches on the same rootstock!</p>
           </div>
           <div class="modal-section">
-            <h4>2. General How-To Execution (Hypocotyl Cleft)</h4>
+            <h4>2. How-To Execution (Chip Budding)</h4>
             <ul>
-              <li>Perform when both seedlings are at the "soldier" or "butterfly" cotyledon stage (2 to 4 weeks old).</li>
-              <li>Cut the Robusta rootstock stem horizontally below cotyledons and make a 5mm split.</li>
-              <li>Shape the Arabica scion into a tiny wedge, slip into the split, and clamp with micro-grafting clips in a high-humidity propagation tent.</li>
+              <li>Perform in late summer/autumn using dormant chip buds, or early spring using whip-and-tongue cuts on dormant wood.</li>
             </ul>
+          </div>
+        `
+      },
+      pear: {
+        title: "Pear & Quince Guide (Pyrus communis)",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
+            <p>Pears grafted onto Quince rootstocks remain dwarf in height and resist Fire Blight bacteria while bearing heavy yields of juicy fruit.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. How-To Execution</h4>
+            <ul>
+              <li>Perform Cleft or Whip & Tongue grafting in late winter before bud break.</li>
+            </ul>
+          </div>
+        `
+      },
+      coffee: {
+        title: "Coffee Grafting Guide (Coffea spp.)",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives (WHY WE GRAFT)</h4>
+            <p>High-quality Arabica coffee produces superior cup flavor but has fragile roots susceptible to destructive root-knot nematodes. Grafting Arabica tops onto Robusta root bases provides root pest immunity.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. How-To Execution (Hypocotyl Cleft)</h4>
+            <ul>
+              <li>Perform when seedlings are at the cotyledon stage (2 to 4 weeks old). Cut rootstock stem below cotyledons, make a 5mm split, insert tiny scion wedge, and clamp with micro-clips.</li>
+            </ul>
+          </div>
+        `
+      },
+      guava: {
+        title: "Guava & Tropical Fruits Guide (Psidium guajava)",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Guavas and tropical fruits grafted onto resistant rootstocks eliminate guava wilt disease and guarantee high-pectin, sweet pink flesh harvest.</p>
+          </div>
+        `
+      },
+      macadamia: {
+        title: "Macadamia & Nut Tree Guide (Macadamia integrifolia)",
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Macadamia seedlings take 12+ years to bear nuts. Grafting commercial cultivars (such as 660 or 741) reduces juvenile period to 4 years with high oil content kernels.</p>
           </div>
         `
       },
@@ -1482,16 +1682,11 @@
         title: "Cleft Grafting Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>Cleft grafting is a reliable technique for top-working thick tree stumps (2.5cm–8cm diameter) or rootstocks. Widely used for Avocados, Mangoes, Apples, and Pears.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
-              <li><strong>Step 1:</strong> Cut rootstock stump squarely across. Split center downward by 5cm using a heavy knife or grafting chisel.</li>
-              <li><strong>Step 2:</strong> Shape scion base into a 3–4cm long double-bevel wedge with one edge slightly thicker.</li>
-              <li><strong>Step 3:</strong> Insert scion into outer edge of split so thick side faces outward and cambium layers align.</li>
-              <li><strong>Step 4:</strong> Seal entire union and cut surfaces thoroughly with Parafilm and grafting wax.</li>
+              <li><strong>Step 1:</strong> Cut rootstock stump squarely across. Split center downward by 5cm.</li>
+              <li><strong>Step 2:</strong> Shape scion base into a 3–4cm long double-bevel wedge.</li>
+              <li><strong>Step 3:</strong> Insert scion into split edge so cambium layers align on at least one side. Seal completely.</li>
             </ul>
           </div>
         `
@@ -1500,16 +1695,10 @@
         title: "T-Budding Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>T-Budding uses a single vegetative bud shield inserted into active rootstock bark. Standard method for Citrus species (Orange, Lemon, Lime) and Stone Fruits.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
               <li><strong>Step 1:</strong> Make a vertical cut 2.5cm long on rootstock topped with a horizontal cut forming a "T".</li>
-              <li><strong>Step 2:</strong> Open bark flaps gently using knife bark lifter.</li>
-              <li><strong>Step 3:</strong> Slice a 2cm bud shield from scion stick and slide down beneath bark flaps.</li>
-              <li><strong>Step 4:</strong> Wrap firmly with budding tape starting from bottom upward, leaving bud eye exposed.</li>
+              <li><strong>Step 2:</strong> Open bark flaps and slide a 2cm bud shield down beneath flaps. Wrap with budding tape.</li>
             </ul>
           </div>
         `
@@ -1518,16 +1707,10 @@
         title: "Whip & Tongue Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>Advanced bench grafting for stems of identical pencil-thin diameter (6–12mm). Provides high mechanical strength for Apples, Pears, and Walnuts.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
-              <li><strong>Step 1:</strong> Make matching 3cm diagonal slanting cuts on rootstock and scion.</li>
-              <li><strong>Step 2:</strong> Cut interlocking tongues into both slants 1/3 down from tips.</li>
-              <li><strong>Step 3:</strong> Push tongues together tightly to interlock cambium layers on both sides.</li>
-              <li><strong>Step 4:</strong> Bind tightly with Parafilm tape and seal cuts.</li>
+              <li><strong>Step 1:</strong> Make matching 3cm slanting cuts on rootstock and scion.</li>
+              <li><strong>Step 2:</strong> Cut interlocking tongues into both slants, slide together tightly, and bind with Parafilm.</li>
             </ul>
           </div>
         `
@@ -1536,15 +1719,9 @@
         title: "Side Veneer Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>Attaches scion to side of intact rootstock stem. Ideal for tropical evergreen trees like Mangoes, Avocados, and Papayas.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
-              <li><strong>Step 1:</strong> Cut shallow downward notch (3–4cm) on rootstock stem with small lip at base.</li>
-              <li><strong>Step 2:</strong> Cut matching flat bevel on scion base and short wedge on back.</li>
-              <li><strong>Step 3:</strong> Fit scion base into notch lip, align cambium, and wrap with Parafilm.</li>
+              <li><strong>Step 1:</strong> Cut downward notch on rootstock stem with small lip at base. Fit scion bevel cut into notch lip and wrap tightly.</li>
             </ul>
           </div>
         `
@@ -1553,15 +1730,9 @@
         title: "Bark Grafting Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>Top-working method for renewing mature tree stumps (5–15cm+ diameter) when bark slips easily in spring.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
-              <li><strong>Step 1:</strong> Saw trunk horizontally. Cut 4cm vertical slits down rootstock bark.</li>
-              <li><strong>Step 2:</strong> Prepare scion with long 3–4cm flat bevel. Slip scion between bark flap and wood.</li>
-              <li><strong>Step 3:</strong> Wrap trunk circumference tightly and seal cut top completely with tree wax.</li>
+              <li><strong>Step 1:</strong> Saw trunk horizontally. Cut 4cm vertical slits down rootstock bark, slip scion between bark flap and wood, and seal top.</li>
             </ul>
           </div>
         `
@@ -1570,15 +1741,9 @@
         title: "Chip Budding Technique Guide",
         content: `
           <div class="modal-section">
-            <h4>1. Method Overview & Suitable Crops</h4>
-            <p>Versatile budding method used anytime during dormant or active growth when bark won't slip.</p>
-          </div>
-          <div class="modal-section">
-            <h4>2. Step-by-Step Procedure</h4>
+            <h4>1. Step-by-Step Procedure</h4>
             <ul>
-              <li><strong>Step 1:</strong> Cut 45° notch into rootstock stem wood. Cut downward 2cm above notch to remove chip.</li>
-              <li><strong>Step 2:</strong> Cut matching chip containing a bud from scion stick.</li>
-              <li><strong>Step 3:</strong> Fit scion chip into notch, align cambium, and wrap tightly with Parafilm.</li>
+              <li><strong>Step 1:</strong> Cut 45° notch into rootstock wood. Fit matching chip containing scion bud and wrap tightly.</li>
             </ul>
           </div>
         `
