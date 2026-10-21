@@ -759,7 +759,8 @@
     <nav id="navMenu">
       <a onclick="showPage('home')" class="nav-link active-tab" id="nav-home">Home</a>
       <a onclick="showPage('about')" class="nav-link" id="nav-about">About</a>
-      <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruits & Tree Guide</a>
+      <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Main Crop Guide</a>
+      <a onclick="showPage('other-crops')" class="nav-link" id="nav-other-crops">Exotics, Nuts & Stone Fruits</a>
       <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods</a>
       <a onclick="showPage('checklist')" class="nav-link" id="nav-checklist">Tools</a>
       <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
@@ -768,85 +769,46 @@
     </nav>
   </header>
 
-  <section id="home" class="page-section active-page">
-    <div class="hero">
-      <div class="hero-content-box">
-        <h1>Master Fruit Tree Grafting</h1>
-        <p>Welcome to Grafting Solutions! Explore comprehensive crop-specific techniques across all fruit tree families, check botanical compatibility, and master practical horticultural skills.</p>
-      </div>
-    </div>
-
-    <div class="search-container">
-      <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search any fruit, tree or method (e.g. Mango, Peach, Pear, Citrus, Cleft)...">
-    </div>
-  </section>
-
-  <section id="about" class="page-section">
-    <h2 class="section-title">About Grafting Solutions</h2>
-    <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
-    
-    <div class="about-box">
-      <p style="margin-bottom: 20px; font-size: 1.05rem; text-align: center;">
-        Grafting Solutions is a modern educational platform designed to simplify plant propagation for commercial growers and home gardeners alike. Our goal is to promote high-yielding, disease-resistant fruit production through step-by-step guides and interactive tools.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-feature">
-          <h4>🌱 Universal Botanical Principles</h4>
-          <p>Learn how cambium matching, rootstock vigor, and scion dormancy apply to thousands of woody fruit trees worldwide.</p>
-        </div>
-        <div class="about-feature">
-          <h4>🧪 Botanical Compatibility</h4>
-          <p>Instant rootstock–scion compatibility checks to avoid interspecies graft failures before taking a knife to your trees.</p>
-        </div>
-        <div class="about-feature">
-          <h4>📱 Interactive & Responsive</h4>
-          <p>Access full nursery guides, tools, and quizzes seamlessly across all mobile devices and desktop screens.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="fruit-trees" class="page-section">
-    <h2 class="section-title">Fruits & Tree Propagation Guide</h2>
-    <p class="section-subtitle">Explore crop-specific grafting guides grouped by plant family, or learn universal grafting rules for any tree.</p>
+    <h2 class="section-title">Primary Fruit Crops Guide</h2>
+    <p class="section-subtitle">Explore core commercial fruit tree guides, or learn universal grafting rules for any tree.</p>
 
     <!-- Universal Grafting Rules Educational Banner -->
     <div class="universal-rules-box">
       <h3 style="color: var(--accent-color); font-size: 1.4rem; margin-bottom: 12px; text-align: center;">💡 How Grafting Works Across ALL Tree Species</h3>
       <p style="margin-bottom: 15px; color: var(--text-muted);">
-        While hundreds of distinct fruit varieties exist, <strong>every woody tree follows the exact same biological rules of vascular union</strong>. If you want to graft a species not featured below (like Persimmons, Cherries, Guavas, or Passion Fruit), apply these 4 universal principles:
+        While hundreds of distinct fruit varieties exist, <strong>every woody tree follows the exact same biological rules of vascular union</strong>. Apply these 4 universal principles to any species:
       </p>
       <div class="about-grid" style="margin-top: 15px;">
         <div class="about-feature" style="padding: 15px;">
           <strong style="color: var(--accent-color);">1. Family Compatibility:</strong>
-          <p style="font-size: 0.9rem;">Grafts succeed almost exclusively within the same genus or botanical family (e.g., Citrus to Citrus, Rosaceae to Rosaceae). You cannot graft an Apple onto an Orange tree.</p>
+          <p style="font-size: 0.9rem;">Grafts succeed almost exclusively within the same genus or botanical family (e.g., Citrus to Citrus, Rosaceae to Rosaceae).</p>
         </div>
         <div class="about-feature" style="padding: 15px;">
           <strong style="color: var(--accent-color);">2. Cambium Contact:</strong>
-          <p style="font-size: 0.9rem;">The thin green vascular cambium layer just beneath the outer bark of scion and rootstock MUST overlap on at least one side to allow callus tissue bridging.</p>
+          <p style="font-size: 0.9rem;">The thin green vascular cambium layer just beneath the outer bark of scion and rootstock MUST overlap on at least one side.</p>
         </div>
         <div class="about-feature" style="padding: 15px;">
           <strong style="color: var(--accent-color);">3. Seasonal Timing:</strong>
-          <p style="font-size: 0.9rem;">Deciduous trees graft best during winter dormancy (Whip/Cleft). Evergreens/Tropicals graft best in warm humid rainy seasons (T-bud/Side veneer).</p>
+          <p style="font-size: 0.9rem;">Deciduous trees graft best during winter dormancy; Evergreens/Tropicals graft best in warm humid rainy seasons.</p>
         </div>
         <div class="about-feature" style="padding: 15px;">
           <strong style="color: var(--accent-color);">4. Moisture Seal:</strong>
-          <p style="font-size: 0.9rem;">Exposed cuts lose moisture rapidly. Wrapping completely with Parafilm or grafting wax prevents desiccating air from killing the union before healing.</p>
+          <p style="font-size: 0.9rem;">Exposed cuts lose moisture rapidly. Wrapping completely with Parafilm or grafting wax prevents desiccation.</p>
         </div>
       </div>
     </div>
 
     <!-- Category Filter Pills -->
     <div class="category-pills">
-      <button class="cat-pill active" onclick="filterTreeCategory('all', this)">All Species</button>
-      <button class="cat-pill" onclick="filterTreeCategory('citrus', this)">🍊 Citrus Family</button>
-      <button class="cat-pill" onclick="filterTreeCategory('tropical', this)">🥭 Tropical & Subtropical</button>
-      <button class="cat-pill" onclick="filterTreeCategory('deciduous', this)">🍎 Deciduous & Stone Fruit</button>
-      <button class="cat-pill" onclick="filterTreeCategory('plantation', this)">☕ Plantation & Commercial</button>
+      <button class="cat-pill active" onclick="filterTreeCategory('all', this)">All Primary Species</button>
+      <button class="cat-pill" onclick="filterTreeCategory('citrus', this)">🍊 Citrus</button>
+      <button class="cat-pill" onclick="filterTreeCategory('tropical', this)">🥭 Tropical</button>
+      <button class="cat-pill" onclick="filterTreeCategory('deciduous', this)">🍎 Deciduous</button>
+      <button class="cat-pill" onclick="filterTreeCategory('plantation', this)">☕ Plantation</button>
     </div>
 
-    <!-- Dynamic Cards Grid -->
+    <!-- Main Dynamic Cards Grid -->
     <div class="card-grid" id="treesGrid">
       
       <!-- MANGO -->
@@ -858,7 +820,7 @@
           <div>
             <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Anacardiaceae Family</span>
             <h3>Mango Grafting</h3>
-            <p><strong>Primary Method:</strong> Side-Veneer / Cleft<br><strong>Why Graft:</strong> Speeds fruiting from 8+ years to 2–3 years, guarantees fruit sweetness, and manages orchard canopy size.</p>
+            <p><strong>Primary Method:</strong> Side-Veneer / Cleft<br><strong>Why Graft:</strong> Speeds fruiting from 8+ years to 2–3 years, guarantees fruit sweetness, and manages canopy size.</p>
           </div>
           <button onclick="openModal('mango')" class="btn btn-secondary">Learn Guide</button>
         </div>
@@ -873,7 +835,7 @@
           <div>
             <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
             <h3>Sweet Orange Grafting</h3>
-            <p><strong>Primary Method:</strong> T-Budding / Chip Budding<br><strong>Why Graft:</strong> Imparts root rot (Phytophthora) immunity via Trifoliate stock and prevents seedling genetic variations.</p>
+            <p><strong>Primary Method:</strong> T-Budding / Chip Budding<br><strong>Why Graft:</strong> Imparts root rot immunity via Trifoliate stock and prevents seedling genetic variations.</p>
           </div>
           <button onclick="openModal('orange')" class="btn btn-secondary">Learn Guide</button>
         </div>
@@ -891,21 +853,6 @@
             <p><strong>Primary Method:</strong> T-Budding / Cleft<br><strong>Why Graft:</strong> Prevents root rot in wet soils, stabilizes juice acidity, and doubles early fruit density.</p>
           </div>
           <button onclick="openModal('lemon')" class="btn btn-secondary">Learn Guide</button>
-        </div>
-      </div>
-
-      <!-- GRAPEFRUIT & MANDARIN -->
-      <div class="card search-item tree-card" data-category="citrus" data-title="Grapefruit & Mandarin Grafting (Citrus paradisi)">
-        <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?auto=format&fit=crop&w=800&q=80" alt="Grapefruit Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Grapefruit+%26+Mandarin'">
-        </div>
-        <div class="card-content">
-          <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
-            <h3>Grapefruit & Mandarin</h3>
-            <p><strong>Primary Method:</strong> T-Budding / Micro-Budding<br><strong>Why Graft:</strong> Boosts cold hardiness, eliminates seediness, and allows multi-grafted citrus trees bearing 3+ fruit varieties.</p>
-          </div>
-          <button onclick="openModal('grapefruit')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
@@ -939,36 +886,6 @@
         </div>
       </div>
 
-      <!-- PEACH, PLUM & APRICOT -->
-      <div class="card search-item tree-card" data-category="deciduous" data-title="Peach, Plum & Apricot Grafting (Prunus spp.)">
-        <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1629828874514-c1e5103f2150?auto=format&fit=crop&w=800&q=80" alt="Peach and Plum Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Peach,+Plum+%26+Stone+Fruits'">
-        </div>
-        <div class="card-content">
-          <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae (Prunus) Family</span>
-            <h3>Peach, Plum & Apricot</h3>
-            <p><strong>Primary Method:</strong> Chip Budding / Whip & Tongue<br><strong>Why Graft:</strong> Combines root knot nematode immunity with early summer ripening scions across compatible stone fruits.</p>
-          </div>
-          <button onclick="openModal('stonefruit')" class="btn btn-secondary">Learn Guide</button>
-        </div>
-      </div>
-
-      <!-- PEAR & QUINCE -->
-      <div class="card search-item tree-card" data-category="deciduous" data-title="Pear & Quince Grafting (Pyrus communis)">
-        <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80" alt="Pear Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Pear+%26+Quince+Grafting'">
-        </div>
-        <div class="card-content">
-          <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae Family</span>
-            <h3>Pear & Quince Grafting</h3>
-            <p><strong>Primary Method:</strong> Cleft / Whip & Tongue<br><strong>Why Graft:</strong> Dwarfs vigorous pear canopies using Quince rootstocks and provides Fire Blight bacterial tolerance.</p>
-          </div>
-          <button onclick="openModal('pear')" class="btn btn-secondary">Learn Guide</button>
-        </div>
-      </div>
-
       <!-- COFFEE -->
       <div class="card search-item tree-card" data-category="plantation" data-title="Coffee Grafting (Coffea arabica / canephora)">
         <div class="card-img-wrapper">
@@ -984,31 +901,157 @@
         </div>
       </div>
 
-      <!-- GUAVA & PAPAYA -->
-      <div class="card search-item tree-card" data-category="tropical" data-title="Guava & Tropical Fruits Grafting (Psidium guajava)">
+    </div>
+  </section>
+
+  <section id="other-crops" class="page-section">
+    <h2 class="section-title">Specialty, Stone Fruits, Exotics & Nut Trees</h2>
+    <p class="section-subtitle">Discover individual grafting guides for specialty stone fruits, pome fruits, exotics, and nut crops.</p>
+
+    <!-- Sub-heading 1: Stone Fruits & Pome Fruits -->
+    <h3 style="color: var(--accent-color); font-size: 1.5rem; margin: 25px 0 15px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+      🍑 Stone Fruits & Pome Fruits (Prunus & Pyrus)
+    </h3>
+    <div class="card-grid">
+      
+      <!-- PEACH -->
+      <div class="card search-item" data-title="Peach Grafting (Prunus persica)">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1536592239637-2eb13f8981f9?auto=format&fit=crop&w=800&q=80" alt="Guava Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Guava+%26+Tropicals'">
+          <img src="https://images.unsplash.com/photo-1629828874514-c1e5103f2150?auto=format&fit=crop&w=800&q=80" alt="Peach Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Peach+Grafting'">
         </div>
         <div class="card-content">
           <div>
-            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Myrtaceae / Caricaceae</span>
-            <h3>Guava & Tropical Fruits</h3>
-            <p><strong>Primary Method:</strong> Side Veneer / Patch Budding<br><strong>Why Graft:</strong> Standardizes flesh color (pink/white), eliminates wilt susceptibility, and triggers dwarfing.</p>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Prunus (Rosaceae)</span>
+            <h3>Peach Grafting</h3>
+            <p><strong>Primary Method:</strong> Chip Budding / T-Budding<br><strong>Why Graft:</strong> Imparts root-knot nematode immunity on Nemaguard stocks and ensures sweet, heavy crops.</p>
+          </div>
+          <button onclick="openModal('stonefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- PLUM -->
+      <div class="card search-item" data-title="Plum Grafting (Prunus domestica)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1522184216316-3c25379f963c?auto=format&fit=crop&w=800&q=80" alt="Plum Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Plum+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Prunus (Rosaceae)</span>
+            <h3>Plum Grafting</h3>
+            <p><strong>Primary Method:</strong> Whip & Tongue / Chip Budding<br><strong>Why Graft:</strong> Controls tree height, matches clay-soil tolerant bases, and creates multi-plum trees.</p>
+          </div>
+          <button onclick="openModal('stonefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- APRICOT -->
+      <div class="card search-item" data-title="Apricot Grafting (Prunus armeniaca)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1595231776515-ddffb1f4eb73?auto=format&fit=crop&w=800&q=80" alt="Apricot Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Apricot+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Prunus (Rosaceae)</span>
+            <h3>Apricot Grafting</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Cleft<br><strong>Why Graft:</strong> Accelerates fruiting and allows grafting onto plum or peach rootstocks for poor soils.</p>
+          </div>
+          <button onclick="openModal('stonefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- PEAR -->
+      <div class="card search-item" data-title="Pear Grafting (Pyrus communis)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80" alt="Pear Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Pear+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Pyrus (Rosaceae)</span>
+            <h3>Pear Grafting</h3>
+            <p><strong>Primary Method:</strong> Whip & Tongue / Cleft<br><strong>Why Graft:</strong> Provides resistance to Fire Blight bacterial damage and stabilizes uniform fruit yields.</p>
+          </div>
+          <button onclick="openModal('pear')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- QUINCE -->
+      <div class="card search-item" data-title="Quince Grafting (Cydonia oblonga)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1582979512210-99b6a53385f9?auto=format&fit=crop&w=800&q=80" alt="Quince Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Quince+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rosaceae Family</span>
+            <h3>Quince Grafting</h3>
+            <p><strong>Primary Method:</strong> Cleft / Shield Budding<br><strong>Why Graft:</strong> Acts as a prime dwarfing rootstock for pears and promotes early heavy flower sets.</p>
+          </div>
+          <button onclick="openModal('pear')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sub-heading 2: Citrus Varieties, Tropicals & Nuts -->
+    <h3 style="color: var(--accent-color); font-size: 1.5rem; margin: 35px 0 15px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+      🍊 Citrus Varieties, Exotics & Nut Trees
+    </h3>
+    <div class="card-grid">
+
+      <!-- GRAPEFRUIT -->
+      <div class="card search-item" data-title="Grapefruit Grafting (Citrus paradisi)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1577234286642-fc512a5f8f11?auto=format&fit=crop&w=800&q=80" alt="Grapefruit Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Grapefruit+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
+            <h3>Grapefruit Grafting</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Micro-Budding<br><strong>Why Graft:</strong> Boosts cold hardiness, eliminates seediness, and increases drought tolerance.</p>
+          </div>
+          <button onclick="openModal('grapefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- MANDARIN & TANGERINE -->
+      <div class="card search-item" data-title="Mandarin & Tangerine Grafting (Citrus reticulata)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1557800636-894a6b716c21?auto=format&fit=crop&w=800&q=80" alt="Mandarin Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Mandarin+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Rutaceae Family</span>
+            <h3>Mandarin & Tangerine</h3>
+            <p><strong>Primary Method:</strong> T-Budding / Chip Budding<br><strong>Why Graft:</strong> Ensures thin easy-peel rinds and protects root systems against soil Phytophthora.</p>
+          </div>
+          <button onclick="openModal('grapefruit')" class="btn btn-secondary">Learn Guide</button>
+        </div>
+      </div>
+
+      <!-- GUAVA -->
+      <div class="card search-item" data-title="Guava Grafting (Psidium guajava)">
+        <div class="card-img-wrapper">
+          <img src="https://images.unsplash.com/photo-1536592239637-2eb13f8981f9?auto=format&fit=crop&w=800&q=80" alt="Guava Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Guava+Grafting'">
+        </div>
+        <div class="card-content">
+          <div>
+            <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Myrtaceae Family</span>
+            <h3>Guava Grafting</h3>
+            <p><strong>Primary Method:</strong> Side Veneer / Patch Budding<br><strong>Why Graft:</strong> Prevents devastating guava wilt disease and standardizes high-pectin pink/white fruit.</p>
           </div>
           <button onclick="openModal('guava')" class="btn btn-secondary">Learn Guide</button>
         </div>
       </div>
 
-      <!-- MACADAMIA & NUTS -->
-      <div class="card search-item tree-card" data-category="plantation" data-title="Macadamia & Nut Tree Grafting (Macadamia integrifolia)">
+      <!-- MACADAMIA NUT -->
+      <div class="card search-item" data-title="Macadamia Nut Grafting (Macadamia integrifolia)">
         <div class="card-img-wrapper">
-          <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=800&q=80" alt="Macadamia Nut Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Macadamia+%26+Nut+Trees'">
+          <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=800&q=80" alt="Macadamia Nut Tree" onerror="this.src='https://placehold.co/600x400/132e1c/8bc34a?text=Macadamia+Nut+Grafting'">
         </div>
         <div class="card-content">
           <div>
             <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); font-weight: bold;">Proteaceae Family</span>
-            <h3>Macadamia Nut Grafting</h3>
-            <p><strong>Primary Method:</strong> Whip & Tongue / Splice<br><strong>Why Graft:</strong> Clones thick shell commercial cultivars, drastically reducing juvenile nut drop and speeding maturity.</p>
+            <h3>Macadamia Nut</h3>
+            <p><strong>Primary Method:</strong> Whip & Tongue / Splice<br><strong>Why Graft:</strong> Cuts seedling harvest wait from 12+ years down to 4 years with high-oil commercial nuts.</p>
           </div>
           <button onclick="openModal('macadamia')" class="btn btn-secondary">Learn Guide</button>
         </div>
