@@ -138,7 +138,6 @@
       background: var(--accent-hover);
     }
 
-    /* HAMBURGER BUTTON STYLES */
     .hamburger-btn {
       display: none;
       flex-direction: column;
@@ -196,7 +195,6 @@
       }
     }
 
-    /* PAGE SECTIONS MANAGEMENT */
     .page-section {
       display: none;
       padding: 50px 7%;
@@ -204,10 +202,9 @@
     }
 
     .page-section.active-page {
-      display: block;
+      display: block !important;
     }
 
-    /* HERO / HOME SECTION */
     .hero {
       text-align: center;
       padding: 120px 20px;
@@ -408,7 +405,6 @@
       margin-bottom: 15px;
     }
 
-    /* ABOUT SECTION STYLES */
     .about-box {
       max-width: 900px;
       margin: 0 auto;
@@ -444,7 +440,6 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* CHECKLIST GRID */
     .checklist-grid {
       max-width: 800px;
       margin: 0 auto;
@@ -530,7 +525,6 @@
       color: var(--text-main);
     }
 
-    /* QUIZ STYLES */
     .quiz-card {
       max-width: 750px;
       margin: 0 auto;
@@ -600,7 +594,6 @@
       opacity: 0.85;
     }
 
-    /* MODAL STYLES */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -698,7 +691,7 @@
 </head>
 <body data-theme="dark">
 
-  <!-- HEADER NAVIGATION -->
+  <!-- HEADER NAVIGATION WITH EXACT MATCHING ID's -->
   <header>
     <a onclick="showPage('home')" class="logo-container">
       <img src="images/logo.png" alt="Grafting Solutions Logo" class="logo-img">
@@ -723,7 +716,7 @@
     </nav>
   </header>
 
-  <!-- 1. HOME / HERO PAGE SECTION -->
+  <!-- 1. HOME SECTION -->
   <section id="home" class="page-section active-page">
     <div class="hero">
       <div class="hero-content-box">
@@ -732,13 +725,12 @@
       </div>
     </div>
 
-    <!-- SEARCH FILTER BAR -->
     <div class="search-container">
       <input type="text" id="searchInput" class="search-input" onkeyup="filterContent()" placeholder="Search trees or methods (e.g., Mango, Cleft, Orange, Avocado)...">
     </div>
   </section>
 
-  <!-- 2. ABOUT PAGE SECTION -->
+  <!-- 2. ABOUT SECTION -->
   <section id="about" class="page-section">
     <h2 class="section-title">About Grafting Solutions</h2>
     <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
@@ -763,7 +755,6 @@
         </div>
       </div>
 
-      <!-- MERGED CONTACT FORM -->
       <div class="contact-wrapper">
         <h3 style="text-align: center; color: var(--accent-color); margin-bottom: 8px;">Get in Touch</h3>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
@@ -790,12 +781,11 @@
     </div>
   </section>
 
-  <!-- 3. FRUITS & TREE GUIDE PAGE SECTION -->
+  <!-- 3. FRUITS & TREE GUIDE SECTION (id="fruit-trees") -->
   <section id="fruit-trees" class="page-section">
     <h2 class="section-title">Fruits & Tree Guide</h2>
     <p class="section-subtitle">Learn why we graft, the essential step-by-step principles, and explore detailed crop propagation guides for 10 fruit varieties.</p>
     
-    <!-- OVERVIEW: WHY WE GRAFT & GENERAL HOW-TO -->
     <div class="overview-box">
       <h3 style="color: var(--accent-color); text-align: center; margin-bottom: 10px;">Grafting Overview: Why & How</h3>
       <div class="overview-grid">
@@ -820,7 +810,6 @@
       </div>
     </div>
 
-    <!-- CROP CARDS GRID -->
     <div class="card-grid" id="treesGrid">
       <div class="card search-item" data-title="Mango Grafting">
         <div class="card-img-wrapper">
@@ -934,7 +923,7 @@
     </div>
   </section>
 
-  <!-- 4. GRAFTING METHODS PAGE SECTION WITH DETAILED MODALS -->
+  <!-- 4. GRAFTING METHODS SECTION (id="methods") -->
   <section id="methods" class="page-section">
     <h2 class="section-title">Grafting Methods</h2>
     <p class="section-subtitle">Select any method below to view comprehensive, step-by-step technical guides.</p>
@@ -986,7 +975,7 @@
     </div>
   </section>
 
-  <!-- 5. EQUIPMENT CHECKLIST PAGE SECTION -->
+  <!-- 5. TOOLS / CHECKLIST SECTION (id="checklist") -->
   <section id="checklist" class="page-section">
     <h2 class="section-title">Essential Grafting Equipment Checklist</h2>
     <p class="section-subtitle">Ensure you have sterilized tools and supplies before starting your cut.</p>
@@ -1026,7 +1015,7 @@
     </div>
   </section>
 
-  <!-- 6. COMPATIBILITY & SEASONAL CALENDAR PAGE SECTION -->
+  <!-- 6. INTERACTIVE TOOLS SECTION (id="interactive-tools") -->
   <section id="interactive-tools" class="page-section">
     <h2 class="section-title">Compatibility Checker & Seasonal Calendar</h2>
     <p class="section-subtitle">Check botanical compatibility and local timing before grafting.</p>
@@ -1085,7 +1074,7 @@
     </div>
   </section>
 
-  <!-- 7. QUIZ GAME PAGE SECTION -->
+  <!-- 7. QUIZ SECTION (id="quiz") -->
   <section id="quiz" class="page-section">
     <h2 class="section-title">Horticultural Knowledge Quiz</h2>
     <p class="section-subtitle">Select a difficulty category below to filter questions and test your grafting expertise.</p>
@@ -1110,7 +1099,7 @@
     </div>
   </section>
 
-  <!-- MODAL POPUP FOR DETAILED GUIDES -->
+  <!-- MODAL POPUP -->
   <div id="guide-modal" class="modal-overlay" onclick="closeModalOnOuterClick(event)">
     <div class="modal-content">
       <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -1123,18 +1112,24 @@
     <p>&copy; 2026 Grafting Solutions by Wainaina Steve. Built with HTML, CSS, and JS.</p>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT SPA ROUTER FIX -->
   <script>
-    /* SPA PAGE VIEW ROUTER */
     function showPage(pageId) {
+      // Hide all page sections
       const sections = document.querySelectorAll('.page-section');
-      sections.forEach(sec => sec.classList.remove('active-page'));
+      sections.forEach(sec => {
+        sec.classList.remove('active-page');
+        sec.style.display = 'none';
+      });
 
+      // Show targeted page section
       const targetSection = document.getElementById(pageId);
       if (targetSection) {
         targetSection.classList.add('active-page');
+        targetSection.style.display = 'block';
       }
 
+      // Update Active Navigation Tab state
       const navLinks = document.querySelectorAll('nav a.nav-link');
       navLinks.forEach(link => link.classList.remove('active-tab'));
 
@@ -1293,9 +1288,7 @@
       });
     }
 
-    /* COMPREHENSIVE GUIDES FOR ALL CROPS & METHODS */
     const guides = {
-      // CROPS
       mango: {
         title: "Comprehensive Mango Grafting Guide (Mangifera indica)",
         image: "images/mango-grafting.jpg",
@@ -1595,8 +1588,6 @@
           </div>
         `
       },
-
-      // GRAFTING METHODS
       cleft: {
         title: "Technical Masterclass: Cleft Grafting",
         image: "images/method-cleft.jpg",
@@ -1750,4 +1741,108 @@
       { category: "fundamentals", question: "Which specific tissue layer must align precisely between rootstock and scion for graft vascular healing?", options: ["Pith", "Cambium layer", "Outer bark", "Epidermis"], answer: 1, explanation: "The cambium layer contains actively dividing meristematic cells responsible for fusing new vascular connections." },
       { category: "fundamentals", question: "In botanical terms, what does the 'Scion' represent in a grafted tree?", options: ["The lower root system base", "The upper shoot/bud portion that determines fruit variety", "The plastic tape binding the stem", "A wild seedling root"], answer: 1, explanation: "The scion is the selected upper vegetative shoot that grows into the fruit-bearing canopy." },
       { category: "fundamentals", question: "What is the primary cause of graft union failure between unrelated plant families?", options: ["Lack of direct sunlight", "Vascular tissue incompatibility and cellular rejection", "Excessive soil water", "Pruning shears being too sharp"], answer: 1, explanation: "Incompatible cellular biochemistries block vascular connections from fusing." },
-      { category
+      { category: "fundamentals", question: "What does the term 'Top-Working' refer to in orchard management?", options: ["Grafting roots underground", "Replacing an established mature tree's canopy with new scion cultivars", "Pruning upper leaves only", "Applying high-nitrogen fertilizer"], answer: 1, explanation: "Top-working allows orchardists to convert mature trees to modern fruit varieties without replanting." },
+      { category: "techniques", question: "Which method is best suited when scion and rootstock are equal small diameters?", options: ["Top-working cleft", "Whip & Tongue grafting", "Bark grafting", "Approach grafting"], answer: 1, explanation: "Whip & Tongue creates interlocking tongue slots on stems of identical thickness." },
+      { category: "techniques", question: "What condition indicates that citrus bark is ready for T-Budding?", options: ["Bark is dry and cracked", "Bark 'slips' easily from wood during active sap flow", "Leaves have fallen off", "Branches are fully dormant"], answer: 1, explanation: "'Slipping' bark separates cleanly from the wood layer without tearing." },
+      { category: "techniques", question: "What is the main function of Parafilm or breathable grafting tape?", options: ["Seals in moisture to prevent tissue desiccation", "Adds artificial growth hormones", "Repels wild birds", "Blocks all light from reaching the graft"], answer: 0, explanation: "Parafilm holds cut tissues together while locking in essential moisture." },
+      { category: "techniques", question: "Why must grafting tools be disinfected with 70% isopropyl alcohol between trees?", options: ["To keep blades sharp", "To prevent transmission of viral, bacterial, and fungal pathogens", "To make cuts smooth", "To cool down steel blades"], answer: 1, explanation: "Sanitizing blades prevents systemic diseases from spreading between mother trees." },
+      { category: "crop-specific", question: "Why is Arabica coffee commonly grafted onto Robusta rootstock bases?", options: ["To increase caffeine levels", "To provide resistance against soil-borne root-knot nematodes", "To make coffee beans turn red faster", "To shorten pruning time"], answer: 1, explanation: "Robusta roots offer strong natural resistance against destructive root-knot nematodes." },
+      { category: "crop-specific", question: "When is the optimal season for bench-grafting apple scions onto M9 dwarfing rootstocks?", options: ["Mid-summer during fruiting", "Late winter or early spring while scion wood is dormant", "Late autumn during leaf fall", "Any warm rainy afternoon"], answer: 1, explanation: "Deciduous trees like apples are grafted during winter dormancy just before spring bud-break." },
+      { category: "crop-specific", question: "Which grafting technique is most widely recommended for evergreen tropical Mango propagation?", options: ["Side-Veneer or Cleft Grafting", "Hardwood bench grafting", "Bridge grafting", "Simple air-layering"], answer: 0, explanation: "Side-veneer and cleft grafting on seedling rootstocks yield the highest success rates for mangoes." },
+      { category: "crop-specific", question: "What must be done to rootstock suckers that sprout below an avocado graft union?", options: ["Leave them to support growth", "Prune them off immediately so nutrients flow into the scion", "Graft them together", "Cover them in fertilizer"], answer: 1, explanation: "Rootstock suckers divert water and nutrients away from the grafted scion if not removed promptly." }
+    ];
+
+    let activeCategory = 'all';
+    let filteredQuestions = [...fullQuizData];
+    let currentQ = 0;
+    let score = 0;
+    let answered = false;
+
+    function setQuizCategory(category, buttonEl) {
+      activeCategory = category;
+      document.querySelectorAll('.quiz-filter-btn').forEach(btn => btn.classList.remove('active'));
+      buttonEl.classList.add('active');
+
+      if (category === 'all') {
+        filteredQuestions = [...fullQuizData];
+      } else {
+        filteredQuestions = fullQuizData.filter(q => q.category === category);
+      }
+
+      currentQ = 0;
+      score = 0;
+      loadQuiz();
+    }
+
+    function loadQuiz() {
+      answered = false;
+      const q = filteredQuestions[currentQ];
+      
+      document.getElementById("quiz-progress").innerText = `Question ${currentQ + 1} of ${filteredQuestions.length}`;
+      document.getElementById("quiz-score").innerText = `Score: ${score}`;
+      document.getElementById("quiz-question").innerText = q.question;
+      
+      const optDiv = document.getElementById("quiz-options");
+      optDiv.innerHTML = "";
+      document.getElementById("quiz-feedback").innerText = "";
+      document.getElementById("next-btn").style.display = "none";
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-opt";
+        btn.innerText = opt;
+        btn.onclick = () => selectAnswer(idx);
+        optDiv.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(idx) {
+      if (answered) return;
+      answered = true;
+
+      const q = filteredQuestions[currentQ];
+      const feedback = document.getElementById("quiz-feedback");
+      const buttons = document.querySelectorAll(".quiz-opt");
+
+      buttons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.answer) {
+          btn.style.background = "#2e7d32";
+          btn.style.color = "#ffffff";
+        } else if (i === idx) {
+          btn.style.background = "#c62828";
+          btn.style.color = "#ffffff";
+        }
+      });
+
+      if (idx === q.answer) {
+        score++;
+        document.getElementById("quiz-score").innerText = `Score: ${score}`;
+        feedback.innerText = `Correct! ${q.explanation}`;
+        feedback.style.color = "#8bc34a";
+      } else {
+        feedback.innerText = `Incorrect. ${q.explanation}`;
+        feedback.style.color = "#ff5252";
+      }
+
+      document.getElementById("next-btn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      currentQ = (currentQ + 1) % filteredQuestions.length;
+      if (currentQ === 0) {
+        score = 0;
+      }
+      loadQuiz();
+    }
+
+    loadQuiz();
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then(reg => reg.update()).catch(err => console.error(err));
+      });
+    }
+  </script>
+</body>
+</html>
