@@ -608,7 +608,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.85);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -617,11 +617,11 @@
 
     .modal-content {
       background: var(--card-bg);
-      padding: 30px;
+      padding: 35px;
       border-radius: 12px;
-      max-width: 700px;
+      max-width: 800px;
       width: 100%;
-      max-height: 85vh;
+      max-height: 88vh;
       overflow-y: auto;
       text-align: left;
       position: relative;
@@ -630,41 +630,53 @@
 
     .modal-content h3 {
       color: var(--accent-color);
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       margin-bottom: 15px;
     }
 
     .modal-content img {
       width: 100%;
-      max-height: 280px;
+      max-height: 320px;
       object-fit: cover;
       border-radius: 8px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
     }
 
     .modal-section {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      background: var(--bg-color);
+      padding: 18px 22px;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
     }
 
     .modal-section h4 {
-      color: var(--text-main);
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 3px;
+      color: var(--accent-color);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
     }
 
     .modal-content p, .modal-content li {
-      color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .modal-content ul, .modal-content ol {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .modal-content li {
+      margin-bottom: 6px;
     }
 
     .close-modal {
       position: absolute;
       top: 15px;
       right: 20px;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: bold;
       cursor: pointer;
       color: var(--text-muted);
@@ -781,7 +793,7 @@
   <!-- 3. FRUITS & TREE GUIDE PAGE SECTION -->
   <section id="fruit-trees" class="page-section">
     <h2 class="section-title">Fruits & Tree Guide</h2>
-    <p class="section-subtitle">Learn why we graft, the essential step-by-step principles, and explore crop propagation guides for 10 fruit varieties.</p>
+    <p class="section-subtitle">Learn why we graft, the essential step-by-step principles, and explore detailed crop propagation guides for 10 fruit varieties.</p>
     
     <!-- OVERVIEW: WHY WE GRAFT & GENERAL HOW-TO -->
     <div class="overview-box">
@@ -1281,62 +1293,306 @@
       });
     }
 
+    /* COMPREHENSIVE DETAILED GUIDES FOR ALL CROPS & METHODS */
     const guides = {
       mango: {
-        title: "Mango Grafting Guide (Mangifera indica)",
+        title: "Comprehensive Mango Grafting Guide (Mangifera indica)",
         image: "images/mango-grafting.jpg",
         fallbackImage: "images/1-mango.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Propagates uniform superior commercial mango varieties and shortens fruiting age from 8+ years to 2-3 years.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Side-Veneer Grafting or Cleft Grafting on young 6-12 month rootstocks.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Mango trees grown from seed take 8 to 10 years to bear fruit and frequently produce low-quality, stringy, or sour mangos due to genetic segregation. Grafting joins a high-performing commercial scion (such as Tommy Atkins, Kent, Ngowe, or Apple Mango) onto a hardy polyembryonic seedling rootstock. This guarantees 100% true-to-type fruit and reduces fruiting time to just 2–3 years.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock Selection & Scion Preparation</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> Use healthy 6–12 month old local wild seedlings with pencil-thin stem thickness (8–10mm diameter). Ensure active growth and firm bark.</li>
+              <li><strong>Scion Selection:</strong> Collect 10–15cm long terminal shoots from healthy, heavy-producing mother trees. Defoliate scion twigs 7–10 days prior to cutting while leaving leaf petioles intact; this forces the terminal buds to swell and prepare for growth.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Tactical Grafting Procedure</h4>
+            <ol>
+              <li><strong>The Cut (Side-Veneer or Cleft):</strong> For Side-Veneer, make a downward 3–4cm long smooth slice through the rootstock bark, exposing the green cambium layer. Cut a small notch at the base to seat the scion wedge.</li>
+              <li><strong>Scion Shaping:</strong> Cut a matching 3–4cm smooth, flat wedge on one side of the scion stem, and a short bevel on the opposite side.</li>
+              <li><strong>Joining & Cambium Alignment:</strong> Insert the scion wedge firmly into the rootstock flap. Ensure the green cambium inner rings of both tissues press together seamlessly on at least one edge.</li>
+              <li><strong>Wrapping & Sealing:</strong> Bind the cut tightly from bottom to top with Parafilm or 2cm stretch grafting tape to prevent water ingress and tissue desiccation. Enclose the top scion bud with clear plastic to maintain humidity.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Aftercare & Timeline</h4>
+            <p>Keep grafted plants under 50% shade cloth for 3–4 weeks. Bud break occurs around 21–28 days. Once scion shoots develop 2–3 leaves, gradually cut away the upper rootstock canopy above the graft union to direct all sap flow to the new graft. Remove any suckers sprouting from the rootstock base immediately.</p>
+          </div>
+        `
       },
       orange: {
-        title: "Sweet Orange Grafting Guide (Citrus sinensis)",
+        title: "Comprehensive Sweet Orange Grafting Guide (Citrus sinensis)",
         image: "images/orange-grafting.jpg",
         fallbackImage: "images/2-orange.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Combines sweet fruit scions with rootstocks resistant to Phytophthora root rot.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>T-Budding or Chip Budding during active sap flow.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Citrus trees grown on their own roots are vulnerable to soil-borne pathogens like <em>Phytophthora</em> foot rot, gummosis, and root-knot nematodes. Grafting or budding sweet orange varieties (e.g., Washington Navel, Valencia) onto specialized citrus rootstocks builds a disease-hardy, high-yielding tree with uniform sweet fruit.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock Selection & Timing</h4>
+            <ul>
+              <li><strong>Rootstock Choice:</strong> Trifoliate Orange (<em>Poncirus trifoliata</em>), Carrizo Citrange, or Rough Lemon seedlings are standard.</li>
+              <li><strong>Timing:</strong> Perform grafting during warm seasons (Spring/Early Summer) when sap flow is high and the bark "slips" (peels easily away from wood).</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step T-Budding Procedure</h4>
+            <ol>
+              <li><strong>The Rootstock Cut:</strong> Make a vertical cut about 2.5cm long on the rootstock stem, 15–20cm above soil level. Add a horizontal cut at the top to form a "T" shape. Carefully peel back the flaps of bark.</li>
+              <li><strong>Harvesting the Bud Shield:</strong> Select mature budwood sticks. Slice a 2cm shield containing a healthy plump vegetative bud, cutting smoothly through bark and a thin slice of wood.</li>
+              <li><strong>Insertion:</strong> Slide the bud shield down into the T-cut until the bud sits flat against the exposed cambium tissue. Cut off any excess shield protruding above the horizontal line.</li>
+              <li><strong>Binding:</strong> Wrap tightly with clear PVC budding tape, leaving the tip of the bud exposed or lightly covered with stretch tape.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Aftercare & Management</h4>
+            <p>Unwrap tape after 21–30 days. If the bud is green and plump, the graft has healed. Bend or sever the rootstock main trunk 5cm above the bud to break apical dominance and force the new citrus shoot into rapid growth.</p>
+          </div>
+        `
       },
       lemon: {
-        title: "Lemon & Lime Grafting Guide (Citrus limon)",
+        title: "Comprehensive Lemon & Lime Grafting Guide (Citrus limon)",
         image: "images/lemon-grafting.jpg",
         fallbackImage: "images/3-lemon.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Protects heavy-fruiting lemon cultivars against soil-borne root diseases.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Lemon and lime varieties (Eureka, Lisbon, Bearss Lime) are highly vigorous fruit producers, but direct stem cuttings suffer from weak root anchorage and collar rot in clay soils. Grafting scion buds onto disease-resistant rootstocks provides deep taproots, frost tolerance, and uniform, oil-rich citrus fruits.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock & Scion Material</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> Sour Orange or Swingle Citrumelo seedlings (8–12 months old, pencil-diameter).</li>
+              <li><strong>Scion Budwood:</strong> Select rounded green twigs from the previous growth flush containing plump dormant axillary buds. Avoid weak or thorn-heavy shoots.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Inverted T-Budding or Cleft Method</h4>
+            <ol>
+              <li><strong>Inverted T-Cut:</strong> In rainy regions, an inverted T-cut (horizontal slit at the bottom) is preferred as it prevents rainwater from trickling into the wound.</li>
+              <li><strong>Slicing & Fitting:</strong> Slice a smooth bud shield, push it upward into the inverted T-flap, and press the cambium surfaces together.</li>
+              <li><strong>Taping & Protection:</strong> Wrap tightly with poly tape from the bottom up to seal against water entry and prevent fungal spore contamination.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Aftercare</h4>
+            <p>Inspect after 3 weeks. Remove rootstock suckers weekly. Once the lemon shoot reaches 15cm in length, stake it upright to establish a straight trunk for high commercial orchard density.</p>
+          </div>
+        `
       },
       avocado: {
-        title: "Avocado Grafting Guide (Persea americana)",
+        title: "Comprehensive Avocado Grafting Guide (Persea americana)",
         image: "images/avocado-grafting.jpg",
         fallbackImage: "images/4-avocado.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Clones Hass avocado varieties and accelerates harvest from 10 years to 2.5 years.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Seedling avocado trees are genetically unpredictable, often taking up to 10 years to fruit while producing watery, small, or unmarketable crops. Cleft or Side-Tongue grafting clones market-favorite cultivars like Hass, Fuerte, or Reed onto uniform seedling rootstocks, guaranteeing early harvest within 2.5 to 3 years.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Scion Harvesting & Rootstock Conditions</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> 6–9 month old healthy avocado seedling with a stem diameter of 8–12mm. Keep plants well-hydrated prior to grafting.</li>
+              <li><strong>Scion Selection:</strong> Collect firm 10–15cm terminal shoots with well-developed plump terminal buds. Ensure the scion matches the stem diameter of the rootstock.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Cleft Grafting Procedure</h4>
+            <ol>
+              <li><strong>Decapitation & Split:</strong> Cut off the rootstock stem cleanly at 15–20cm height. Use a sharp grafting knife to slice down through the middle of the stem to a depth of 3–4cm.</li>
+              <li><strong>Wedge Cutting:</strong> Cut the bottom 3–4cm of the Hass scion into a long, smooth, symmetrical wedge.</li>
+              <li><strong>Inserting & Cambium Contact:</strong> Pry open the split rootstock slightly and insert the scion wedge. Align the inner bark cambium lines carefully. Even if stems differ slightly in width, ensure perfect cambium contact on one side.</li>
+              <li><strong>Binding & Moisture Control:</strong> Wrap the entire graft union tightly with Parafilm. Slip a clear plastic bag over the scion wood to lock in high humidity until buds begin pushing open.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Aftercare & Environmental Control</h4>
+            <p>Place grafted avocados under partial shade. Remove the protective plastic cover once new shoots are 2–3cm long. Rub off any wild rootstock buds growing below the graft joint every 10 days.</p>
+          </div>
+        `
       },
       apple: {
-        title: "Apple Grafting Guide (Malus domestica)",
+        title: "Comprehensive Apple Grafting Guide (Malus domestica)",
         image: "images/apple-grafting.jpg",
         fallbackImage: "images/5-apple.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Controls tree canopy height using dwarfing rootstocks (M9/M26) for easy picking.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Apples are obligate cross-pollinators; planting an apple seed results in a wild hybrid tree bearing unpalatable fruit. Whip-and-tongue bench grafting during late winter dormancy joins dormant scions (Fuji, Gala, Pink Lady) to dwarfing clonal rootstocks (M9, M26, MM106) to control tree size, resist woolly apple aphids, and accelerate fruiting.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Dormant Scion Wood & Clonal Rootstock</h4>
+            <ul>
+              <li><strong>Scion Collection:</strong> Cut dormant 1-year-old pencil-thin shoots during mid-winter. Store in sealed moist paper towels inside a refrigerator (1–3°C) until spring grafting.</li>
+              <li><strong>Rootstock:</strong> Use clonal dwarfing rootstock layers with well-established root systems.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Whip & Tongue Bench Grafting</h4>
+            <ol>
+              <li><strong>Diagonal Cut:</strong> Make a smooth, sloping 2.5–3cm diagonal cut at the top of the rootstock and at the base of the scion stem.</li>
+              <li><strong>Tongue Cuts:</strong> Starting one-third of the way down from the tip of each smooth cut, make a thin downward reverse slice parallel to the grain to create interlocking "tongues".</li>
+              <li><strong>Interlocking:</strong> Slide the two pieces together so the tongues interlock snugly. Match cambium layers on at least one edge.</li>
+              <li><strong>Sealing:</strong> Wrap firmly with Parafilm and seal the exposed top tip of the scion with tree wax to prevent drying out.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Aftercare & Planting</h4>
+            <p>Store grafted bench plants in moist sawdust at 7–10°C for 2 weeks to callus. Plant out in nursery beds or containers once spring soil temperatures warm up and leaves begin to break.</p>
+          </div>
+        `
       },
       coffee: {
-        title: "Coffee Grafting Guide (Coffea spp.)",
+        title: "Comprehensive Coffee Grafting Guide (Coffea spp.)",
         image: "images/coffee-grafting.jpg",
         fallbackImage: "images/6-coffee.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Fuses high-flavor Arabica scion tops with nematode-resistant Robusta rootstocks.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>High-quality <em>Coffea arabica</em> varieties yield world-class coffee beans but are extremely susceptible to soil-borne root-knot nematodes (<em>Meloidogyne spp.</em>) and fungal diseases. Grafting Arabica scions onto nematode-resistant <em>Coffea canephora</em> (Robusta) rootstocks creates a resilient plant that thrives in infested soils while maintaining premium bean quality.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Hypocotyl Grafting Setup</h4>
+            <ul>
+              <li><strong>Seedling Stage:</strong> Perform hypocotyl grafting on very young nursery seedlings at the "matchstick" or "butterfly" stage (before true leaves expand, 6–8 weeks after germination).</li>
+              <li><strong>Diameter Match:</strong> Ensure stem thickness of both Robusta base and Arabica top match precisely (2–3mm diameter).</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Hypocotyl Cleft Procedure</h4>
+            <ol>
+              <li><strong>Decapitation:</strong> Sever the Robusta rootstock stem horizontally 2–3cm above soil level. Slice a 1cm vertical slit directly down the center of the hypocotyl stem.</li>
+              <li><strong>Scion Preparation:</strong> Cut the Arabica shoot below the cotyledon leaves into a sharp 1cm wedge.</li>
+              <li><strong>Joining & Clipping:</strong> Slide the scion wedge into the rootstock slit. Secure the tiny graft union using a specialized silicon grafting clip.</li>
+              <li><strong>Humidity Chamber:</strong> Immediately place grafted trays inside a high-humidity misting tent (95%+ relative humidity) for 14–21 days to facilitate rapid cell fusion.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Acclimatization & Nursery Management</h4>
+            <p>Gradually reduce ambient humidity over a 10-day period once callusing is complete. Transplant healthy grafted coffee plants to field locations after 6 months of nursery development.</p>
+          </div>
+        `
       },
       guava: {
-        title: "Guava Grafting Guide (Psidium guajava)",
+        title: "Comprehensive Guava Grafting Guide (Psidium guajava)",
         image: "images/guava-grafting.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Combats destructive guava wilt disease and ensures uniform seedless fruit quality.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Patch Budding or Cleft Grafting on vigorous seedling stocks.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Guava plants propagated from seed show extreme variation in fruit shape, sweetness, and seed hardness, and suffer heavy losses from Guava Wilt Disease (<em>Fusarium oxysporum</em>). Patch budding or cleft grafting propagates high-value seedless or pink-fleshed varieties onto wilt-tolerant wild rootstocks.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Material Preparation</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> 9–12 month old seedling with mature wood (brownish stem bark).</li>
+              <li><strong>Scion Selection:</strong> Choose quadrangular (4-angled) young shoots from mother plants whose leaves have recently matured.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Patch Budding Procedure</h4>
+            <ol>
+              <li><strong>Patch Removal:</strong> Cut a rectangular 2cm x 1cm patch of bark away from the rootstock trunk.</li>
+              <li><strong>Bud Patch Slicing:</strong> Cut an identical rectangular patch containing a healthy, non-damaged bud from the scion twig.</li>
+              <li><strong>Placement & Binding:</strong> Fit the scion patch flush into the open rootstock rectangular cut. Seal tightly with polyethylene tape, exposing only the bud tip.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Aftercare & Callus Timeline</h4>
+            <p>Remove wrapping after 30 days. Cut off the top portion of the rootstock trunk 10cm above the bud patch to stimulate rapid shoot flush from the grafted guava bud.</p>
+          </div>
+        `
       },
       passion: {
-        title: "Passion Fruit Grafting Guide (Passiflora edulis)",
+        title: "Comprehensive Passion Fruit Grafting Guide (Passiflora edulis)",
         image: "images/passion-grafting.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Protects high-value purple passion varieties by grafting onto Fusarium-wilt-resistant yellow passion rootstock bases.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Splice Grafting or Cleft Grafting on young vine stems.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Sweet Purple Passion Fruit (<em>Passiflora edulis f. edulis</em>) is highly favored in commercial markets but dies rapidly in field soils due to Fusarium wilt and root rot. Grafting purple scions onto Yellow Passion Fruit (<em>Passiflora edulis f. flavicarpa</em>) rootstocks provides 100% wilt immunity while producing sweet, marketable purple fruits.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Splice / Cleft Setup</h4>
+            <ul>
+              <li><strong>Rootstock & Scion:</strong> Use 2–3 month old seedling vines with pencil-thin stem diameters (3–5mm).</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Splice Grafting Procedure</h4>
+            <ol>
+              <li><strong>Slicing Cuts:</strong> Make matching 1.5cm long smooth diagonal cuts on both the yellow rootstock stem and the purple scion vine.</li>
+              <li><strong>Union Placement:</strong> Overlap the two sloped cuts so the cambium lines merge smoothly.</li>
+              <li><strong>Clipping & Wrapping:</strong> Secure the graft union with a lightweight spring plastic grafting clip or stretch Parafilm tape.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Aftercare & Field Transplanting</h4>
+            <p>Place under humid shade for 10–14 days. Remove clips once the splice has fully fused. Plant grafted vines out along support trellises within 4–6 weeks.</p>
+          </div>
+        `
       },
       papaya: {
-        title: "Papaya Grafting Guide (Carica papaya)",
+        title: "Comprehensive Papaya Grafting Guide (Carica papaya)",
         image: "images/papaya-grafting.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Eliminates non-fruiting male plants by cloning verified 100% hermaphrodite mother shoots.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Side Veneer or Cleft Grafting on young seedling stems.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Papayas grown from seed yield unpredictable ratios of male (non-fruiting), female, and hermaphrodite plants. Grafting side-shoots from verified hermaphrodite mother plants guarantees 100% fruit-bearing trees with uniform elongated commercial fruit shapes.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Mother Plant Preparation</h4>
+            <ul>
+              <li><strong>Side-Shoot Induction:</strong> Behead high-yielding hermaphrodite mother papaya trees to force the main trunk to produce numerous vegetative side-shoots suitable for scions.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Side Veneer Grafting</h4>
+            <ol>
+              <li><strong>Side Cut:</strong> Make a downward slice 3cm long into the side of a 2-month-old papaya seedling rootstock.</li>
+              <li><strong>Scion Shaping:</strong> Shape the base of a 10cm hermaphrodite side-shoot into a matching wedge.</li>
+              <li><strong>Binding:</strong> Insert into the rootstock cut and wrap securely with elastic stretch tape. Cover the entire scion with a plastic bag to retain high internal humidity.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Management</h4>
+            <p>Papaya tissue is soft and hollow; handle delicately to avoid crushing vascular stems. Roots establish calluses within 18–21 days under warm nursery conditions.</p>
+          </div>
+        `
       },
       macadamia: {
-        title: "Macadamia Grafting Guide (Macadamia integrifolia)",
+        title: "Comprehensive Macadamia Grafting Guide (Macadamia integrifolia)",
         image: "images/macadamia-grafting.jpg",
-        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Propagates thin-shelled, high-oil commercial nut cultivars onto hardy taproot seedling bases.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Bark Grafting or Whip & Tongue on 18-month rootstocks.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Objectives</h4>
+            <p>Macadamia nuts possess thick, hard outer shells and take up to 12 years to bear nuts when raised from seed. Bark grafting or Whip & Tongue grafting propagates high-oil commercial cultivars (e.g., HAES 660, 741) onto vigorous seedling bases, bringing trees into commercial nut production in 4 to 5 years.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Scion Curing & Rootstock</h4>
+            <ul>
+              <li><strong>Girdling Scion Wood:</strong> Girdle (remove a ring of bark) on target branches of mother trees 6–8 weeks before grafting. This forces starch accumulation in the scion twig for high callus energy.</li>
+              <li><strong>Rootstock:</strong> Use 18-month-old sturdy seedlings with a stem diameter of 10–15mm.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Bark / Cleft Grafting</h4>
+            <ol>
+              <li><strong>Preparation:</strong> Cut the rootstock trunk at a height of 30cm. Slice a vertical 4cm slit through the thick bark.</li>
+              <li><strong>Wedge Insertion:</strong> Cut a smooth 4cm long wedge on the cured girdled scion. Push the wedge down beneath the rootstock bark flap.</li>
+              <li><strong>Sealing:</strong> Bind tightly with heavy-duty grafting tape and coat all cut surfaces with waterproof wax compound.</li>
+            </ol>
+          </div>
+          <div class="modal-section">
+            <h4>4. Nursery Management & Timeline</h4>
+            <p>Macadamias callus slowly compared to soft fruit trees. Bud burst occurs between 35 and 50 days. Stake emerging shoots firmly to protect against wind damage.</p>
+          </div>
+        `
       },
       cleft: { title: "Cleft Grafting Technique", image: "images/method-cleft.jpg", content: "<p>Classic top-working method where rootstock is split down the middle.</p>" },
       whip: { title: "Whip & Tongue Technique", image: "images/method-whip-tongue.jpg", content: "<p>Provides maximum structural contact on equal-diameter stems.</p>" },
