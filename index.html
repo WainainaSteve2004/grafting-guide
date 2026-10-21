@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grafting Solutions - Fruit Tree Grafting Guide & Interactive Tools</title>
+  <title>Grafting Solutions - Fruits & Tree Guide & Interactive Tools</title>
 
   <!-- Primary SEO Tags -->
   <meta name="description" content="Master fruit tree grafting with step-by-step crop guides, techniques, compatibility matrices, and interactive quiz games.">
-  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, lemon grafting, avocado grafting, apple grafting, coffee grafting">
+  <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, lemon grafting, avocado grafting, apple grafting, coffee grafting, macadamia grafting, guava grafting">
   <meta name="author" content="Wainaina Steve - Grafting Solutions">
 
   <!-- PWA Theme Color & Manifest Link -->
@@ -317,6 +317,36 @@
       text-align: center;
       color: var(--text-muted);
       margin-bottom: 40px;
+    }
+
+    .overview-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 15px var(--card-shadow);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .overview-card {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .overview-card h4 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
     }
 
     .card-grid {
@@ -656,7 +686,7 @@
 </head>
 <body data-theme="dark">
 
-  <!-- HEADER NAVIGATION WITH "ABOUT" TAB -->
+  <!-- HEADER NAVIGATION WITH "FRUITS & TREE GUIDE" -->
   <header>
     <a onclick="showPage('home')" class="logo-container">
       <img src="images/logo.png" alt="Grafting Solutions Logo" class="logo-img">
@@ -672,7 +702,7 @@
     <nav id="navMenu">
       <a onclick="showPage('home')" class="nav-link active-tab" id="nav-home">Home</a>
       <a onclick="showPage('about')" class="nav-link" id="nav-about">About</a>
-      <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruit Guides</a>
+      <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruits & Tree Guide</a>
       <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods</a>
       <a onclick="showPage('checklist')" class="nav-link" id="nav-checklist">Tools</a>
       <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
@@ -721,7 +751,7 @@
         </div>
       </div>
 
-      <!-- MERGED CONTACT US FORM -->
+      <!-- MERGED CONTACT FORM -->
       <div class="contact-wrapper">
         <h3 style="text-align: center; color: var(--accent-color); margin-bottom: 8px;">Get in Touch</h3>
         <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
@@ -748,11 +778,37 @@
     </div>
   </section>
 
-  <!-- 3. FEATURED FRUIT TREES PAGE SECTION -->
+  <!-- 3. FRUITS & TREE GUIDE PAGE SECTION -->
   <section id="fruit-trees" class="page-section">
-    <h2 class="section-title">Featured Fruit Trees</h2>
-    <p class="section-subtitle">Select a crop below for complete rootstock criteria, scion selection, timing, step-by-step instructions, and aftercare guidance.</p>
+    <h2 class="section-title">Fruits & Tree Guide</h2>
+    <p class="section-subtitle">Learn why we graft, the essential step-by-step principles, and explore crop propagation guides for 10 fruit varieties.</p>
     
+    <!-- OVERVIEW: WHY WE GRAFT & GENERAL HOW-TO -->
+    <div class="overview-box">
+      <h3 style="color: var(--accent-color); text-align: center; margin-bottom: 10px;">Grafting Overview: Why & How</h3>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h4>💡 Why Graft Plants?</h4>
+          <ul style="padding-left: 18px; color: var(--text-muted); font-size: 0.95rem;">
+            <li><strong>Clonal Genetic Accuracy:</strong> Seeds pass wild/unpredictable traits. Grafting produces 100% identical clone fruit.</li>
+            <li><strong>Speed to Harvest:</strong> Reduces fruiting time from 7–10 years (seedling) down to 2–3 years.</li>
+            <li><strong>Disease & Soil Resistance:</strong> Uses hardy rootstocks immune to nematodes, root rot, and soil salinity.</li>
+            <li><strong>Dwarfing & Space Efficiency:</strong> Controls canopy size for easy hand harvesting in dense orchards.</li>
+          </ul>
+        </div>
+        <div class="overview-card">
+          <h4>🛠️ General How-To Steps</h4>
+          <ol style="padding-left: 18px; color: var(--text-muted); font-size: 0.95rem;">
+            <li><strong>Select Rootstock & Scion:</strong> Choose compatible, healthy plant tissue of matching stem diameter.</li>
+            <li><strong>Align Cambium Layers:</strong> Make clean diagonal/wedge cuts so the vascular inner bark layers touch precisely.</li>
+            <li><strong>Seal & Bind:</strong> Wrap tightly with Parafilm tape to lock in humidity and prevent air/water leakage.</li>
+            <li><strong>Aftercare & Pruning:</strong> Prune all shoots growing below the graft union so nutrients nourish the scion.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- CROP CARDS GRID (10 CROPS) -->
     <div class="card-grid" id="treesGrid">
       <div class="card search-item" data-title="Mango Grafting">
         <div class="card-img-wrapper">
@@ -760,7 +816,7 @@
         </div>
         <div class="card-content">
           <h3>Mango Grafting</h3>
-          <p>Learn side-veneer and cleft grafting for uniform high-yielding mango propagation.</p>
+          <p><strong>Method:</strong> Side-Veneer / Cleft<br><strong>Why:</strong> Ensures high yield & early fruit maturity (2-3 yrs vs 8+ yrs seed).</p>
           <button onclick="openModal('mango')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
@@ -771,7 +827,7 @@
         </div>
         <div class="card-content">
           <h3>Sweet Orange Grafting</h3>
-          <p>Master T-budding and chip budding on hardy, disease-resistant citrus rootstocks.</p>
+          <p><strong>Method:</strong> T-Budding / Chip Budding<br><strong>Why:</strong> Imparts root-rot resistance and sweet fruit consistency on Trifoliate stock.</p>
           <button onclick="openModal('orange')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
@@ -782,7 +838,7 @@
         </div>
         <div class="card-content">
           <h3>Lemon & Lime Grafting</h3>
-          <p>Propagate pest-resistant citrus varieties using T-budding and cleft grafting techniques.</p>
+          <p><strong>Method:</strong> T-Budding / Cleft<br><strong>Why:</strong> Protects roots from Phytophthora fungal infections in wet soils.</p>
           <button onclick="openModal('lemon')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
@@ -793,7 +849,7 @@
         </div>
         <div class="card-content">
           <h3>Avocado Grafting</h3>
-          <p>Detailed step-by-step guide for cleft and side-tongue grafting Hass avocado scions.</p>
+          <p><strong>Method:</strong> Cleft / Side-Tongue<br><strong>Why:</strong> Clones commercial Hass scions onto disease-tolerant root bases.</p>
           <button onclick="openModal('avocado')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
@@ -804,7 +860,7 @@
         </div>
         <div class="card-content">
           <h3>Apple Grafting</h3>
-          <p>Master whip-and-tongue bench grafting on dwarfing rootstocks during winter dormancy.</p>
+          <p><strong>Method:</strong> Whip & Tongue<br><strong>Why:</strong> Controls tree height on dwarfing M9/M26 rootstocks during dormancy.</p>
           <button onclick="openModal('apple')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
@@ -815,8 +871,52 @@
         </div>
         <div class="card-content">
           <h3>Coffee Grafting</h3>
-          <p>Join disease-resistant Robusta rootstock bases with high-quality Arabica scion tops.</p>
+          <p><strong>Method:</strong> Hypocotyl Cleft<br><strong>Why:</strong> Fuses high-flavor Arabica scions with nematode-resistant Robusta roots.</p>
           <button onclick="openModal('coffee')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Guava Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/guava-grafting.jpg" alt="Guava Fruits on Tree">
+        </div>
+        <div class="card-content">
+          <h3>Guava Grafting</h3>
+          <p><strong>Method:</strong> Patch Budding / Cleft<br><strong>Why:</strong> Overcomes wilt disease and propagates seedless cultivars true-to-type.</p>
+          <button onclick="openModal('guava')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Passion Fruit Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/passion-grafting.jpg" alt="Passion Fruits on Vine">
+        </div>
+        <div class="card-content">
+          <h3>Passion Fruit Grafting</h3>
+          <p><strong>Method:</strong> Splice / Cleft<br><strong>Why:</strong> Joins purple sweet scions onto yellow Fusarium-wilt-resistant root bases.</p>
+          <button onclick="openModal('passion')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Papaya Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/papaya-grafting.jpg" alt="Papaya Tree and Fruits">
+        </div>
+        <div class="card-content">
+          <h3>Papaya Grafting</h3>
+          <p><strong>Method:</strong> Side Veneer / Cleft<br><strong>Why:</strong> Guarantees 100% hermaphrodite fruit-bearing trees without non-bearing males.</p>
+          <button onclick="openModal('papaya')" class="btn btn-secondary">Learn More</button>
+        </div>
+      </div>
+
+      <div class="card search-item" data-title="Macadamia Grafting">
+        <div class="card-img-wrapper">
+          <img src="images/macadamia-grafting.jpg" alt="Macadamia Nuts on Tree">
+        </div>
+        <div class="card-content">
+          <h3>Macadamia Grafting</h3>
+          <p><strong>Method:</strong> Bark Graft / Whip & Tongue<br><strong>Why:</strong> Propagates high-oil commercial nut cultivars onto robust taproot seedling bases.</p>
+          <button onclick="openModal('macadamia')" class="btn btn-secondary">Learn More</button>
         </div>
       </div>
     </div>
@@ -1186,37 +1286,57 @@
         title: "Mango Grafting Guide (Mangifera indica)",
         image: "images/mango-grafting.jpg",
         fallbackImage: "images/1-mango.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Grafting propagates selected superior mango varieties by joining scion wood to seedling rootstocks.</p></div><div class="modal-section"><h4>Recommended Methods</h4><p>Side-Veneer Grafting or Cleft Grafting on young 6-12 month rootstocks.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Propagates uniform superior commercial mango varieties and shortens fruiting age from 8+ years to 2-3 years.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Side-Veneer Grafting or Cleft Grafting on young 6-12 month rootstocks.</p></div>`
       },
       orange: {
         title: "Sweet Orange Grafting Guide (Citrus sinensis)",
         image: "images/orange-grafting.jpg",
         fallbackImage: "images/2-orange.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Propagates sweet orange cultivars onto hardy citrus rootstocks resistant to pathogens.</p></div><div class="modal-section"><h4>Recommended Methods</h4><p>T-Budding or Chip Budding during active sap flow.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Combines sweet fruit scions with rootstocks resistant to Phytophthora root rot.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>T-Budding or Chip Budding during active sap flow.</p></div>`
       },
       lemon: {
         title: "Lemon & Lime Grafting Guide (Citrus limon)",
         image: "images/lemon-grafting.jpg",
         fallbackImage: "images/3-lemon.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Combines heavy-fruiting lemon varieties with disease-resistant rootstock bases.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Protects heavy-fruiting lemon cultivars against soil-borne root diseases.</p></div>`
       },
       avocado: {
         title: "Avocado Grafting Guide (Persea americana)",
         image: "images/avocado-grafting.jpg",
         fallbackImage: "images/4-avocado.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Joins commercial cultivars (e.g., Hass) onto seedling rootstocks.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Clones Hass avocado varieties and accelerates harvest from 10 years to 2.5 years.</p></div>`
       },
       apple: {
         title: "Apple Grafting Guide (Malus domestica)",
         image: "images/apple-grafting.jpg",
         fallbackImage: "images/5-apple.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Bench grafting dormant scions onto dwarfing rootstocks.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Controls tree canopy height using dwarfing rootstocks (M9/M26) for easy picking.</p></div>`
       },
       coffee: {
         title: "Coffee Grafting Guide (Coffea spp.)",
         image: "images/coffee-grafting.jpg",
         fallbackImage: "images/6-coffee.jpg",
-        content: `<div class="modal-section"><h4>Overview</h4><p>Hypocotyl grafting combines disease-resistant roots with high-yielding top varieties.</p></div>`
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Fuses high-flavor Arabica scion tops with nematode-resistant Robusta rootstocks.</p></div>`
+      },
+      guava: {
+        title: "Guava Grafting Guide (Psidium guajava)",
+        image: "images/guava-grafting.jpg",
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Combats destructive guava wilt disease and ensures uniform seedless fruit quality.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Patch Budding or Cleft Grafting on vigorous seedling stocks.</p></div>`
+      },
+      passion: {
+        title: "Passion Fruit Grafting Guide (Passiflora edulis)",
+        image: "images/passion-grafting.jpg",
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Protects high-value purple passion varieties by grafting onto Fusarium-wilt-resistant yellow passion rootstock bases.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Splice Grafting or Cleft Grafting on young vine stems.</p></div>`
+      },
+      papaya: {
+        title: "Papaya Grafting Guide (Carica papaya)",
+        image: "images/papaya-grafting.jpg",
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Eliminates non-fruiting male plants by cloning verified 100% hermaphrodite mother shoots.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Side Veneer or Cleft Grafting on young seedling stems.</p></div>`
+      },
+      macadamia: {
+        title: "Macadamia Grafting Guide (Macadamia integrifolia)",
+        image: "images/macadamia-grafting.jpg",
+        content: `<div class="modal-section"><h4>Why Graft?</h4><p>Propagates thin-shelled, high-oil commercial nut cultivars onto hardy taproot seedling bases.</p></div><div class="modal-section"><h4>Recommended Method</h4><p>Bark Grafting or Whip & Tongue on 18-month rootstocks.</p></div>`
       },
       cleft: { title: "Cleft Grafting Technique", image: "images/method-cleft.jpg", content: "<p>Classic top-working method where rootstock is split down the middle.</p>" },
       whip: { title: "Whip & Tongue Technique", image: "images/method-whip-tongue.jpg", content: "<p>Provides maximum structural contact on equal-diameter stems.</p>" },
