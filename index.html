@@ -674,6 +674,15 @@
       margin-bottom: 8px;
     }
 
+    .modal-section ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+
+    .modal-section li {
+      margin-bottom: 6px;
+    }
+
     .close-modal {
       position: absolute;
       top: 15px;
@@ -905,7 +914,7 @@
       </div>
     </div>
 
-    <!-- 2. INTERACTIVE METHOD FINDER WIZARD (MOVED UNDER METHODS) -->
+    <!-- 2. INTERACTIVE METHOD FINDER WIZARD (BELOW CARDS) -->
     <div class="finder-box">
       <h3 style="color: var(--accent-color);">🔎 Interactive Method Finder Wizard</h3>
       <p style="color: var(--text-muted); font-size: 0.95rem;">Select your stem diameter and season to discover the optimal technique instantly:</p>
@@ -925,7 +934,7 @@
       <p id="finder-result" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem; color: var(--accent-color); min-height: 28px;"></p>
     </div>
 
-    <!-- 3. QUICK TECHNICAL COMPARISON TABLE (MOVED UNDER METHODS) -->
+    <!-- 3. QUICK TECHNICAL COMPARISON TABLE (BELOW CARDS) -->
     <div class="table-container">
       <h3 style="color: var(--accent-color); margin-bottom: 12px; text-align: center;">Quick Technical Comparison Table</h3>
       <table class="method-table">
@@ -1305,55 +1314,330 @@
       }
     }
 
-    /* Modal Guides Data */
+    /* Detailed Modal Guides Data */
     const guides = {
       mango: {
         title: "Comprehensive Mango Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Mango trees grown from seed take 8 to 10 years to bear fruit. Grafting joins a commercial scion onto a hardy rootstock, reducing fruiting age to 2–3 years.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Mangoes (<em>Mangifera indica</em>) grown from seed take 8–10 years to produce fruit and rarely breed true to type. Grafting clones desirable scion cultivars (such as Kent, Hass, or Tommy Atkins) onto sturdy wild seedling rootstocks. Grafted trees produce high-quality fruit within 2 to 3 years and maintain uniform canopy sizes for efficient harvesting.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock Selection & Preparation</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> Use 6 to 12-month-old wild mango seedling rootstocks with a stem thickness of 8–15mm (pencil to finger thick).</li>
+              <li><strong>Scion Selection:</strong> Collect 10–15cm scion sticks from healthy, disease-free terminal branches where terminal buds are swollen but not yet blooming.</li>
+              <li><strong>Defoliation:</strong> Strip off leaf blades 7–10 days before harvesting the scion stick while leaving petioles intact to stimulate bud swelling.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution (Side-Veneer / Cleft)</h4>
+            <ul>
+              <li><strong>Step 1:</strong> Make a clean downward cut 3–5cm long on the side of the rootstock, penetrating slightly into the wood. Create a short lip cut at the base.</li>
+              <li><strong>Step 2:</strong> Shape the scion with a matching long flat cut on one side and a short wedge cut on the opposite base.</li>
+              <li><strong>Step 3:</strong> Insert the scion into the rootstock notch, ensuring exact alignment of green cambium layers on at least one side.</li>
+              <li><strong>Step 4:</strong> Wrap tightly with Parafilm or grafting tape starting from below the cut upwards to seal moisture completely. Cover scion tips with a clear plastic bag to maintain high humidity.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Care & Callus Management</h4>
+            <ul>
+              <li>Keep grafted seedlings under 50–70% shade for 3 to 4 weeks until new shoot flushes appear.</li>
+              <li>Prune off suckers originating below the graft union on the rootstock immediately.</li>
+              <li>Once scion buds expand to 5–10cm, gradually cut back the rootstock canopy above the graft union to redirect plant energy to the scion.</li>
+            </ul>
+          </div>
+        `
       },
       orange: {
         title: "Sweet Orange Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Grafting sweet oranges onto hardy rootstocks protects against root-rot pathogens and guarantees high fruit quality.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Grafting sweet orange varieties (<em>Citrus sinensis</em>) onto specialized rootstocks (such as Trifoliate orange or Rough Lemon) provides critical resistance against Phytophthora root rot, soil salinity, and nematodes, while ensuring consistent fruit sweetness and size.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock Selection & Preparation</h4>
+            <ul>
+              <li><strong>Rootstock:</strong> Vigorous citrus seedlings with pencil-thin stem diameters (6–12mm).</li>
+              <li><strong>Scion Buds:</strong> Select plump, dormant vegetative bud wood from healthy mother trees during active growth flushes when bark slips easily.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution (T-Budding)</h4>
+            <ul>
+              <li><strong>Step 1:</strong> Slice a vertical cut 2.5cm long through the rootstock bark 10–15cm above soil level, followed by a horizontal cut at the top to form a "T".</li>
+              <li><strong>Step 2:</strong> Gently open the bark flaps using the bark lifter edge on your grafting knife.</li>
+              <li><strong>Step 3:</strong> Slice a single vegetative bud shield (1.5–2cm long) from the scion wood stick.</li>
+              <li><strong>Step 4:</strong> Slide the bud shield downward under the rootstock flaps until fully seated, and wrap firmly with grafting tape, leaving the eye of the bud exposed or lightly covered.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Care & Callus Management</h4>
+            <ul>
+              <li>Check union after 14–21 days; a green, plump bud confirms successful union formation.</li>
+              <li>Bend or notch the rootstock stem 5cm above the graft to force bud break. Cut off top rootstock stem after new scion shoot reaches 15cm.</li>
+            </ul>
+          </div>
+        `
       },
       lemon: {
         title: "Lemon & Lime Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Combines heavy-fruiting lemon cultivars with disease-resistant citrus rootstock bases.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Lemons (<em>Citrus limon</em>) and limes (<em>Citrus aurantifolia</em>) grafted onto disease-hardy citrus stocks achieve vigorous growth, heavy cropping, and superior soil adaptability compared to cuttings or seed propagation.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Rootstock Selection & Preparation</h4>
+            <ul>
+              <li>Choose Phytophthora-resistant rootstock bases like Carrizo Citrange or Trifoliate orange.</li>
+              <li>Select clean, firm, 1-year-old wood with active vegetative buds.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Execution</h4>
+            <ul>
+              <li>Perform T-budding or Cleft grafting during warm rainy months when stem sap flow is high.</li>
+              <li>Ensure 100% cambium alignment along at least one vertical stem margin.</li>
+              <li>Bind with waterproof tape to prevent rain entry into open cut surfaces.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Post-Graft Care</h4>
+            <ul>
+              <li>Remove all rootstock water sprouts emerging below the tape.</li>
+              <li>Unwrap tape after 4–5 weeks once complete healing is confirmed.</li>
+            </ul>
+          </div>
+        `
       },
       avocado: {
         title: "Avocado Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Clones commercial Hass avocado scions onto disease-tolerant seedling bases for harvest within 2.5 years.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Clones commercial Hass or Fuerte avocado (<em>Persea americana</em>) scions onto disease-tolerant seedling bases, accelerating production to 2–3 years while guaranteeing high market quality.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Step-by-Step Execution (Cleft / Side Tongue)</h4>
+            <ul>
+              <li>Select active seedling rootstocks with 8–15mm stems. Cut stem top horizontally 15cm above soil level.</li>
+              <li>Split rootstock downward through the center by 3–4cm.</li>
+              <li>Shape scion base into a double-bevel wedge 3cm long and press firmly into rootstock split.</li>
+              <li>Match cambium layers precisely; wrap with Parafilm and protect scion with a humidity bag for 21 days.</li>
+            </ul>
+          </div>
+        `
       },
       apple: {
         title: "Apple Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Bench grafting dormant scions onto dwarfing M9/M26 rootstocks during winter dormancy.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Bench-grafting apple varieties (<em>Malus domestica</em>) onto specialized dwarfing rootstocks (such as M9 or M26) controls mature tree height, enhances cold hardiness, and speeds fruit production.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Step-by-Step Execution (Whip & Tongue)</h4>
+            <ul>
+              <li>Perform in late winter while both scion and rootstock are fully dormant.</li>
+              <li>Make matching 2.5–3cm smooth slanting cuts on rootstock top and scion base.</li>
+              <li>Cut interlocking vertical tongues into both slants, slide together tightly, wrap with grafting tape, and seal with tree wax.</li>
+            </ul>
+          </div>
+        `
       },
       coffee: {
         title: "Coffee Grafting Guide",
-        content: `<div class="modal-section"><h4>1. Overview & Objectives</h4><p>Hypocotyl grafting joins Arabica tops onto nematode-resistant Robusta rootstocks.</p></div>`
+        content: `
+          <div class="modal-section">
+            <h4>1. Overview & Crop Objectives</h4>
+            <p>Hypocotyl grafting joins high-quality Arabica tops (<em>Coffea arabica</em>) onto Robusta roots (<em>Coffea canephora</em>) to provide resistance against root-knot nematodes and soil pathogens.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Step-by-Step Execution</h4>
+            <ul>
+              <li>Perform when seedlings are at the "butterfly" stage (cotyledons fully expanded).</li>
+              <li>Cut rootstock hypocotyl horizontally, make a 5mm split, shape Arabica scion into a tiny wedge, and join with micro grafting clips inside high-humidity propagation tents.</li>
+            </ul>
+          </div>
+        `
       },
       cleft: {
-        title: "Cleft Grafting Technique",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Split rootstock down middle, insert wedge-shaped scion, align cambium, seal securely.</p></div>`
+        title: "Cleft Grafting Technique Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>Cleft grafting is one of the oldest and most dependable methods for top-working mature fruit trees or joining scions to thick rootstock stems (2.5cm to 8cm diameter). It is widely used for avocados, mangoes, apples, and pears.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Late winter or early spring before active growth starts.</li>
+              <li><strong>Tools Needed:</strong> Heavy knife or grafting chisel, mallet, sharp grafting knife, Parafilm tape, and pruning wax.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Rootstock Preparation):</strong> Cut the rootstock main branch or trunk squarely across with a clean saw. Clean cut edges with a sharp knife.</li>
+              <li><strong>Step 2 (Making Split):</strong> Place grafting chisel or heavy knife across the center of cut stump and tap gently with a mallet to create a split 5–7cm deep. Drive a small wooden wedge or screwdriver into the center to hold it open.</li>
+              <li><strong>Step 3 (Scion Shaping):</strong> Prepare 10–15cm scion stick with 3–4 buds. Cut two smooth bevel cuts (3–4cm long) at the lower end to form a long narrow wedge with one edge slightly thicker than the other.</li>
+              <li><strong>Step 4 (Insertion & Alignment):</strong> Insert scion wedge into the outer edge of split so thicker side faces outward. Align green inner cambium layers of scion and rootstock precisely. Repeat on opposite side for two scions per stump.</li>
+              <li><strong>Step 5 (Sealing):</strong> Carefully remove central wooden wedge to let stock clamp scions tightly. Wrap union thoroughly with Parafilm and seal all exposed cut wood surfaces completely with grafting compound wax.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Success Tips & Troubleshooting</h4>
+            <ul>
+              <li>If scion and stock bark differ in thickness, slant the scion slightly inward so cambium rings cross each other.</li>
+              <li>Keep sealed wounds shaded from extreme afternoon sunlight to prevent tissue drying.</li>
+            </ul>
+          </div>
+        `
       },
       budding: {
-        title: "T-Budding Protocol",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Slice T-cut in active bark, slide bud shield inside, bind tightly with tape.</p></div>`
+        title: "T-Budding Technique Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>T-Budding (Shield Budding) is the gold standard propagation technique for citrus fruits, stone fruits (peaches, plums), and roses. It uses a single vegetative bud shield inserted into rootstock stem bark.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Spring through summer when trees are actively growing and bark "slips" (peels back easily without tearing).</li>
+              <li><strong>Tools Needed:</strong> Razor-sharp budding knife with bone bark lifter, Parafilm or budding tape, rubbing alcohol.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Rootstock Cut):</strong> Select smooth stem area 10–15cm above ground. Make a vertical cut 2.5–3cm long through bark. Make a top horizontal cut forming a "T".</li>
+              <li><strong>Step 2 (Opening Flaps):</strong> Use knife bark-lifter edge to gently open green bark flaps along vertical slice.</li>
+              <li><strong>Step 3 (Bud Removal):</strong> On scion stick, place knife 1.5cm below target bud. Slice smooth cut upward under bud, extending 1.5cm above bud, removing a thin slice of wood with bark shield.</li>
+              <li><strong>Step 4 (Shield Insertion):</strong> Slide bud shield down into "T" cut until top edge of shield aligns under horizontal cut.</li>
+              <li><strong>Step 5 (Wrapping):</strong> Wrap tightly with budding tape from bottom upward, securing bark flaps down while leaving bud tip exposed or wrapped lightly with Parafilm.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Success Tips & Troubleshooting</h4>
+            <ul>
+              <li>Always keep scion bud sticks moist in a damp cloth while grafting in the field.</li>
+              <li>Unwrap tape after 21 days; a plump green bud indicates a successful union.</li>
+            </ul>
+          </div>
+        `
       },
       whip: {
-        title: "Whip & Tongue Technique",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Make matching diagonal cuts with interlocking tongues for pencil-thin stems.</p></div>`
+        title: "Whip & Tongue Technique Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>Whip & Tongue grafting is an advanced bench grafting method used when scion and rootstock stems are of identical pencil-thin diameter (6mm to 12mm). It produces structural strength due to interlocking tongues and high cambium contact area. Preferred for apples, pears, walnuts, and ornamental trees.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Late winter dormancy (Jan–March) while plant stems are fully dormant.</li>
+              <li><strong>Tools Needed:</strong> Ultra-sharp grafting knife, Parafilm grafting tape, rubber budding strips, sealing wax.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Matching Cut):</strong> Make a long, smooth diagonal cut 2.5cm–3.5cm long across top of rootstock in a single slice. Make identical matching diagonal cut on base of scion stick.</li>
+              <li><strong>Step 2 (Tongue Cuts):</strong> On rootstock diagonal cut surface, place knife blade 1/3 down from upper tip. Slice downward parallel to grain about 1.5cm long to create a flexible tongue. Repeat on scion cut surface.</li>
+              <li><strong>Step 3 (Interlocking Fit):</strong> Interlock scion and rootstock tongues together by pushing stems downward so cuts slide into each other. Ensure cambium edges align perfectly on both sides.</li>
+              <li><strong>Step 4 (Wrapping & Sealing):</strong> Bind tightly with Parafilm or grafting rubber strips. Seal any open tip cuts with tree wax.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>4. Success Tips & Troubleshooting</h4>
+            <ul>
+              <li>Always execute primary diagonal cuts in one continuous knife stroke—never saw back and forth.</li>
+              <li>Keep callusing grafts stored in moist sawdust at 10–15°C for 2 weeks before field planting.</li>
+            </ul>
+          </div>
+        `
       },
       side: {
-        title: "Side Veneer Technique",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Cut side notch into rootstock trunk, insert scion wedge, bind until healed.</p></div>`
+        title: "Side Veneer Technique Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>Side Veneer grafting is widely used in tropical nurseries for evergreen trees including mangoes, avocados, papayas, and camellias. The scion is attached to the side of an intact, growing rootstock stem, minimizing stress on the root base.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Warm, humid rainy seasons when rootstocks display active growth flushes.</li>
+              <li><strong>Tools Needed:</strong> Sharp side-grafting knife, Parafilm tape, plastic humidity bags, pruners.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Rootstock Notch):</strong> On smooth lower rootstock trunk, make shallow downward cut 3–4cm long cutting slightly into wood. Make a short inward notch cut at bottom to remove bark strip, leaving a small flap/lip.</li>
+              <li><strong>Step 2 (Scion Preparation):</strong> Cut long flat bevel cut (3–4cm) on one side of scion stick base. On opposite back side, cut short 5mm wedge bevel.</li>
+              <li><strong>Step 3 (Fitting Scion):</strong> Insert scion base into rootstock side notch under bottom lip. Align green cambium layers on at least one edge.</li>
+              <li><strong>Step 4 (Wrapping & Healing):</strong> Wrap firmly with Parafilm from bottom to top. Leave rootstock canopy intact initially to feed root system.</li>
+              <li><strong>Step 5 (Canopy Reduction):</strong> Once scion buds sprout and grow 10cm, cut off rootstock main stem 5cm above graft union.</li>
+            </ul>
+          </div>
+        `
       },
       bark: {
-        title: "Bark Grafting (Top-Working)",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Top-working method for top canopy renewal on mature stumps when bark is slipping. Cut stump horizontally, slice vertical slits down bark, and slip scion wedges underneath.</p></div>`
+        title: "Bark Grafting (Top-Working) Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>Bark grafting is a top-working technique designed to change fruit varieties on mature, thick tree stumps (5cm to 15cm+ diameter). It is ideal for orchard canopy renewal in apples, pears, plums, and pecans.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Early spring when rootstock sap flows and bark slips easily from wood.</li>
+              <li><strong>Tools Needed:</strong> Pruning saw, grafting knife, small flat wooden wedges, Parafilm tape, pruning sealant wax.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Stump Preparation):</strong> Saw mature tree branch or trunk horizontally at desired top-working height. Smooth cut surface edge with knife.</li>
+              <li><strong>Step 2 (Bark Slits):</strong> Make 3–5cm vertical slit through bark down side of stump for each scion. Carefully lift bark edges along upper cut.</li>
+              <li><strong>Step 3 (Scion Bevel):</strong> Shape scion base with long 3–4cm flat bevel cut on inside face and short 5mm slant cut on outside base.</li>
+              <li><strong>Step 4 (Insertion):</strong> Slip scion wedge downward between bark flap and inner wood until top bevel shoulder rests on cut stump surface. Insert 2–4 scions per stump.</li>
+              <li><strong>Step 5 (Sealing):</strong> Wrap stump circumference tightly with heavy grafting tape. Seal top cut stump face and scion tips completely with grafting wax.</li>
+            </ul>
+          </div>
+        `
       },
       chip: {
-        title: "Chip Budding",
-        content: `<div class="modal-section"><h4>1. Overview & Protocol</h4><p>Versatile budding method used anytime during active or dormant seasons when bark won't slip. Remove a small chip from rootstock and replace with matching scion chip.</p></div>`
+        title: "Chip Budding Technique Guide",
+        content: `
+          <div class="modal-section">
+            <h4>1. Method Overview & Suitable Crops</h4>
+            <p>Chip budding is a versatile budding method that does not require active bark slipping. It can be performed during spring, late summer, or winter dormancy on apples, grapes, citrus, and stone fruits.</p>
+          </div>
+          <div class="modal-section">
+            <h4>2. Tool Preparation & Timing</h4>
+            <ul>
+              <li><strong>Best Timing:</strong> Anytime during active season or late summer dry periods when bark won't slip easily.</li>
+              <li><strong>Tools Needed:</strong> Razor-sharp budding knife, Parafilm or elastic budding strips.</li>
+            </ul>
+          </div>
+          <div class="modal-section">
+            <h4>3. Step-by-Step Procedure</h4>
+            <ul>
+              <li><strong>Step 1 (Rootstock Cut):</strong> On rootstock stem, cut downward 45° angle notch into wood. Starting 2–2.5cm above notch, cut downward to meet notch cut, removing a chip of bark and wood.</li>
+              <li><strong>Step 2 (Scion Chip Cut):</strong> Make matching 45° base cut on scion stick below target bud. Cut downward starting 2cm above bud to remove matching scion chip.</li>
+              <li><strong>Step 3 (Placement):</strong> Fit scion chip into rootstock notch. Match cambium lines precisely on at least one edge.</li>
+              <li><strong>Step 4 (Wrapping):</strong> Wrap firmly with Parafilm or budding tape, covering chip completely to hold in place and retain moisture.</li>
+            </ul>
+          </div>
+        `
       }
     };
 
