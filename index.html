@@ -378,7 +378,7 @@
       margin-bottom: 15px;
     }
 
-    /* ABOUT US SECTION STYLES */
+    /* ABOUT SECTION STYLES */
     .about-box {
       max-width: 900px;
       margin: 0 auto;
@@ -406,6 +406,12 @@
     .about-feature h4 {
       color: var(--accent-color);
       margin-bottom: 8px;
+    }
+
+    .contact-wrapper {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
     }
 
     /* CHECKLIST GRID */
@@ -650,7 +656,7 @@
 </head>
 <body data-theme="dark">
 
-  <!-- HEADER NAVIGATION WITH HIGH-VISIBILITY LOGO -->
+  <!-- HEADER NAVIGATION WITH "ABOUT" TAB -->
   <header>
     <a onclick="showPage('home')" class="logo-container">
       <img src="images/logo.png" alt="Grafting Solutions Logo" class="logo-img">
@@ -665,13 +671,12 @@
 
     <nav id="navMenu">
       <a onclick="showPage('home')" class="nav-link active-tab" id="nav-home">Home</a>
-      <a onclick="showPage('about')" class="nav-link" id="nav-about">About Us</a>
+      <a onclick="showPage('about')" class="nav-link" id="nav-about">About</a>
       <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruit Guides</a>
       <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods</a>
       <a onclick="showPage('checklist')" class="nav-link" id="nav-checklist">Tools</a>
       <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
       <a onclick="showPage('quiz')" class="nav-link" id="nav-quiz">Quiz</a>
-      <a onclick="showPage('contact')" class="nav-link" id="nav-contact">Contact Us</a>
       <button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">Light Mode</button>
     </nav>
   </header>
@@ -691,7 +696,7 @@
     </div>
   </section>
 
-  <!-- 2. ABOUT US PAGE SECTION -->
+  <!-- 2. ABOUT PAGE SECTION (INCLUDES CONTACT FORM) -->
   <section id="about" class="page-section">
     <h2 class="section-title">About Grafting Solutions</h2>
     <p class="section-subtitle">Empowering farmers, horticulturists, and gardeners with sustainable plant propagation tools.</p>
@@ -714,6 +719,31 @@
           <h4>📱 100% Offline PWA</h4>
           <p>Install directly to your smartphone home screen and access full nursery guides even in remote farming fields without internet.</p>
         </div>
+      </div>
+
+      <!-- MERGED CONTACT US FORM -->
+      <div class="contact-wrapper">
+        <h3 style="text-align: center; color: var(--accent-color); margin-bottom: 8px;">Get in Touch</h3>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
+
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name:</label>
+            <input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
+          </div>
+
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Email:</label>
+            <input type="email" name="email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
+          </div>
+
+          <div>
+            <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message / Suggestion:</label>
+            <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="cursor: pointer; width: 100%;">Send Message</button>
+        </form>
       </div>
     </div>
   </section>
@@ -966,31 +996,6 @@
       <p id="quiz-feedback" style="margin-top: 15px; font-weight: bold; min-height: 24px; line-height: 1.5;"></p>
       <button id="next-btn" class="btn btn-primary" style="margin-top: 15px; display: none;" onclick="nextQuestion()">Next Question</button>
     </div>
-  </section>
-
-  <!-- 8. CONTACT US & FEEDBACK PAGE SECTION -->
-  <section id="contact" class="page-section">
-    <h2 class="section-title">Contact Us & Feedback</h2>
-    <p class="section-subtitle">Have questions or feature suggestions? Send a direct message to Grafting Solutions.</p>
-
-    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; text-align: left;">
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Name:</label>
-        <input type="text" name="name" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
-      </div>
-
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Your Email:</label>
-        <input type="email" name="email" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);">
-      </div>
-
-      <div>
-        <label style="display: block; margin-bottom: 5px; font-weight: bold;">Message / Suggestion:</label>
-        <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-main);"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary" style="cursor: pointer; width: 100%;">Send Message</button>
-    </form>
   </section>
 
   <!-- MODAL POPUP FOR DETAILED GUIDES -->
