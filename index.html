@@ -1126,6 +1126,7 @@
   </footer>
 
   <script>
+    /* Navigation Handling */
     function showPage(pageId) {
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => {
@@ -1167,6 +1168,7 @@
       }
     }
 
+    /* Theme Toggle */
     function initTheme() {
       const savedTheme = localStorage.getItem('theme') || 'dark';
       document.body.setAttribute('data-theme', savedTheme);
@@ -1186,6 +1188,7 @@
 
     initTheme();
 
+    /* Equipment Checklist Progress */
     function updateChecklistProgress() {
       const checkboxes = document.querySelectorAll('.checklist-grid input[type="checkbox"]');
       let checkedCount = 0;
@@ -1218,6 +1221,7 @@
 
     document.addEventListener('DOMContentLoaded', loadChecklistState);
 
+    /* Search Input Filter */
     function filterContent() {
       const input = document.getElementById("searchInput").value.toLowerCase();
       const items = document.querySelectorAll(".search-item");
@@ -1226,13 +1230,14 @@
         const title = item.getAttribute("data-title") ? item.getAttribute("data-title").toLowerCase() : "";
         const text = item.innerText.toLowerCase();
         if (title.includes(input) || text.includes(input)) {
-          item.style.display = "";
+          item.style.display = "flex";
         } else {
           item.style.display = "none";
         }
       });
     }
 
+    /* Botanical Compatibility Logic */
     function checkCompatibility() {
       const scion = document.getElementById("scion-select").value;
       const rootstock = document.getElementById("rootstock-select").value;
@@ -1269,6 +1274,7 @@
       }
     }
 
+    /* Seasonal Filter */
     function filterSeason() {
       const selected = document.getElementById("season-select").value;
       const items = document.querySelectorAll("#season-list li");
@@ -1288,16 +1294,20 @@
       btn.classList.add('active');
 
       const cards = document.querySelectorAll('.method-card');
+      const searchInput = document.getElementById("searchInput");
+      if (searchInput) searchInput.value = ""; // reset search box if typing
+
       cards.forEach(card => {
         const tags = (card.getAttribute('data-tags') || '').toLowerCase();
         if (category === 'all' || tags.includes(category.toLowerCase())) {
-          card.style.display = '';
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
       });
     }
 
+    /* Method Finder Wizard */
     function runMethodFinder() {
       const stem = document.getElementById('finder-stem').value;
       const season = document.getElementById('finder-season').value;
@@ -1321,6 +1331,7 @@
       }
     }
 
+    /* Modal Guides Data */
     const guides = {
       mango: {
         title: "Comprehensive Mango Grafting Guide",
@@ -1392,6 +1403,7 @@
       }
     }
 
+    /* Quiz Module Data & Handlers */
     const fullQuizData = [
       { category: "fundamentals", question: "Which specific tissue layer must align precisely between rootstock and scion for graft vascular healing?", options: ["Pith", "Cambium layer", "Outer bark", "Epidermis"], answer: 1, explanation: "The cambium layer contains actively dividing meristematic cells responsible for fusing new vascular connections." },
       { category: "fundamentals", question: "In botanical terms, what does the 'Scion' represent in a grafted tree?", options: ["The lower root system base", "The upper shoot/bud portion that determines fruit variety", "The plastic tape binding the stem", "A wild seedling root"], answer: 1, explanation: "The scion is the selected upper vegetative shoot that grows into the fruit-bearing canopy." },
