@@ -10,6 +10,23 @@
   <meta name="keywords" content="fruit tree grafting, cleft grafting, T-budding, mango grafting, orange grafting, lemon grafting, avocado grafting, apple grafting, coffee grafting, macadamia grafting, guava grafting">
   <meta name="author" content="Wainaina Steve - Grafting Solutions">
 
+  <!-- Open Graph / WhatsApp Social Preview Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grafting Solutions - Fruit Tree & Nursery Guides">
+  <meta property="og:description" content="Master scientific fruit tree grafting with step-by-step guides, crop compatibility matrices, and seasonal calendars.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:url" content="https://graftingsolutions.co.ke">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Grafting Solutions">
+  <meta name="twitter:description" content="Master fruit tree grafting with step-by-step crop guides & interactive tools.">
+  <meta name="twitter:image" content="images/logo.png">
+
+  <!-- Favicon & Mobile App Icons -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+
   <!-- PWA Theme Color & Manifest Link -->
   <meta name="theme-color" content="#174d2a">
   <link rel="manifest" href="manifest.json">
@@ -711,7 +728,6 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* DETAILED TOOLS GRID UNDER METHODS */
     .tools-detailed-section {
       margin-top: 55px;
       background: var(--card-bg);
@@ -919,6 +935,31 @@
       color: var(--text-main);
     }
 
+    /* FLOATING WHATSAPP BUTTON STYLING */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1eb857;
+      transform: translateY(-3px) scale(1.03);
+    }
+
     footer {
       background-color: var(--card-bg);
       text-align: center;
@@ -945,7 +986,6 @@
     </button>
 
     <nav id="navMenu">
-      <!-- ABOUT HOVER DROPDOWN MENU -->
       <div class="dropdown">
         <a onclick="showPage('about')" class="nav-link" id="nav-about">About <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i></a>
         <div class="dropdown-content">
@@ -954,7 +994,6 @@
         </div>
       </div>
 
-      <!-- LINKS & PARTNERS HOVER DROPDOWN MENU -->
       <div class="dropdown">
         <a class="nav-link" id="nav-partners">Links & Partners <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 4px;"></i></a>
         <div class="dropdown-content">
@@ -1460,7 +1499,6 @@
     <h2 class="section-title">Compatibility Matrix & Propagation Calendar</h2>
     <p class="section-subtitle">Check rootstock affinity, learn botanical compatibility rules, and master seasonal timing before taking cuts.</p>
 
-    <!-- INTERACTIVE TOOLS -->
     <div class="tools-container">
       <div class="tool-box">
         <h3>🧪 Rootstock Match Checker</h3>
@@ -1640,6 +1678,12 @@
     </div>
   </section>
 
+  <!-- FLOATING DIRECT WHATSAPP ACTION BUTTON -->
+  <a href="https://wa.me/254700000000?text=Hello%20Grafting%20Solutions,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Chat directly with Grafting Solutions on WhatsApp">
+    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+    <span>WhatsApp Us</span>
+  </a>
+
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Grafting Solutions - Educational Plant Propagation Guide.</p>
@@ -1690,7 +1734,7 @@
 
         <div class="modal-form-group">
           <label for="bookingPhone">Phone Number</label>
-          <input type="tel" id="bookingPhone" placeholder="+1 (555) 000-0000">
+          <input type="tel" id="bookingPhone" placeholder="+254 700 000000">
         </div>
 
         <div class="modal-form-group">
@@ -1708,31 +1752,26 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     function showPage(pageId) {
-      // 1. Hide all sections safely
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => {
         sec.classList.remove('active-page');
         sec.style.display = 'none';
       });
 
-      // 2. Show the target section
       const targetSection = document.getElementById(pageId);
       if (targetSection) {
         targetSection.classList.add('active-page');
         targetSection.style.display = 'block';
       }
 
-      // 3. Clear active states on navigation tabs
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => link.classList.remove('active-tab'));
 
-      // 4. Highlight current navigation tab if it exists
       const activeNav = document.getElementById(`nav-${pageId}`);
       if (activeNav) {
         activeNav.classList.add('active-tab');
       }
 
-      // 5. Close mobile navigation menu if open
       const navMenu = document.getElementById('navMenu');
       const hamburgerBtn = document.getElementById('hamburgerBtn');
       if (navMenu && navMenu.classList.contains('nav-active')) {
@@ -1740,7 +1779,6 @@
         if (hamburgerBtn) hamburgerBtn.classList.remove('open');
       }
 
-      // 6. Smooth scroll to top of page
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -2268,6 +2306,15 @@
       } else {
         resultEl.innerText = 'Recommended: Cleft Grafting or Side-Veneer Grafting';
       }
+    }
+
+    // REGISTER PWA SERVICE WORKER FOR OFFLINE FUNCTIONALITY
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('PWA Service Worker registered successfully:', reg.scope))
+          .catch(err => console.log('PWA Service Worker registration failed:', err));
+      });
     }
 
     // Initialize home page display on load
