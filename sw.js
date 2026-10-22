@@ -1,24 +1,20 @@
-const CACHE_NAME = 'grafting-cache-v5';
-const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  './manifest.json',
-  './logo.png.png',
-  './images/hero-bg.jpg',
-  './images/1-mango.jpg',
-  './images/2-orange.jpg',
-  './images/3-lemon.jpg',
-  './images/4-avocado.jpg',
-  './images/5-apple.jpg',
-  './images/6-coffee.jpg',
-  './images/mango-grafting.jpg',
-  './images/orange-grafting.jpg',
-  './images/lemon-grafting.jpg',
-  './images/avocado-grafting.jpg',
-  './images/apple-grafting.jpg',
-  './images/coffee-grafting.jpg',
-  './images/method-cleft.jpg',
-  './images/method-budding.jpg',
-  './images/method-whip-tongue.jpg',
-  './images/method-side-veneer.jpg'
+const CACHE_NAME = 'grafting-solutions-v1';
+const ASSETS = [
+  '/',
+  'index.html',
+  'manifest.json',
+  'images/logo.png',
+  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(response => response || fetch(event.request))
+  );
+});
