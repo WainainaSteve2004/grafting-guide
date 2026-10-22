@@ -649,49 +649,91 @@
       border-top: 1px solid var(--border-color);
     }
 
-    .checklist-grid {
-      max-width: 800px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 15px;
-      text-align: left;
+    /* ENHANCED DETAILED TOOLS GRID UNDER METHODS */
+    .tools-detailed-section {
+      margin-top: 55px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 8px 25px var(--card-shadow);
     }
 
-    .checklist-item {
-      background: var(--card-bg);
-      padding: 15px 20px;
-      border-radius: 8px;
-      border-left: 4px solid var(--accent-color);
+    .tools-detailed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .tool-detail-card {
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 22px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tool-detail-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+    }
+
+    .tool-card-header {
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    .tool-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      background: rgba(139, 195, 74, 0.15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .tool-card-header h4 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+    }
+
+    .tool-detail-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .tool-checkbox-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border-color);
       cursor: pointer;
-      transition: transform 0.2s ease;
     }
 
-    .checklist-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .checklist-item input[type="checkbox"] {
+    .tool-checkbox-wrap input[type="checkbox"] {
       width: 18px;
       height: 18px;
       accent-color: var(--accent-color);
       cursor: pointer;
     }
 
-    .checklist-item label {
+    .tool-checkbox-wrap label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent-color);
       cursor: pointer;
-      font-size: 1rem;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    .checklist-item input[type="checkbox"]:checked + label {
-      text-decoration: line-through;
-      color: var(--text-muted);
-      opacity: 0.75;
     }
 
     .tools-container {
@@ -841,10 +883,10 @@
     </button>
 
     <nav id="navMenu">
+      <!-- Tools menu item removed and relocated under Methods -->
       <a onclick="showPage('about')" class="nav-link" id="nav-about">About</a>
       <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruits & Tree Guide</a>
-      <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods</a>
-      <a onclick="showPage('checklist')" class="nav-link" id="nav-checklist">Tools</a>
+      <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods & Tools</a>
       <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
       <button class="btn-book-nav" onclick="openBookingModal()">
         <i class="fa-solid fa-calendar-check"></i>
@@ -1123,10 +1165,10 @@
     </div>
   </section>
 
-  <!-- 4. METHODS SECTION PAGE -->
+  <!-- 4. METHODS & TOOLS SECTION PAGE -->
   <section id="methods" class="page-section">
-    <h2 class="section-title">Grafting Methods Masterclass</h2>
-    <p class="section-subtitle">Compare techniques or use our interactive Method Finder.</p>
+    <h2 class="section-title">Grafting Methods & Tools Masterclass</h2>
+    <p class="section-subtitle">Explore techniques, find the right method for your branch size, and inspect required field equipment.</p>
 
     <!-- METHOD FINDER WIZARD -->
     <div class="finder-box">
@@ -1193,42 +1235,95 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 5. TOOLS & CHECKLIST PAGE -->
-  <section id="checklist" class="page-section">
-    <h2 class="section-title">Tools & Nursery Equipment</h2>
-    <p class="section-subtitle">Ensure you have all necessary propagation gear ready before field grafting.</p>
-    
-    <div class="checklist-grid">
-      <div class="checklist-item">
-        <input type="checkbox" id="tool1">
-        <label for="tool1">Grafting Knife (Razor Sharp)</label>
+    <!-- EXPANDED DETAILED TOOLS & NURSERY EQUIPMENT SECTION -->
+    <div class="tools-detailed-section">
+      <div style="text-align: center;">
+        <h3 style="font-size: 1.8rem; color: var(--accent-color); margin-bottom: 8px;">
+          🧰 Essential Nursery Equipment & Preparation Checklist
+        </h3>
+        <p style="color: var(--text-muted); max-width: 750px; margin: 0 auto;">
+          High graft success rates demand precise surgical cuts and sterile tools. Check off each item below as you prepare your propagation kit before stepping into the orchard.
+        </p>
       </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="tool2">
-        <label for="tool2">Parafilm / Stretchable Budding Tape</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="tool3">
-        <label for="tool3">Pruning Shears / Secateurs</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="tool4">
-        <label for="tool4">Grafting Wax or Tree Wound Sealant</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="tool5">
-        <label for="tool5">Rubbing Alcohol (Sanitization)</label>
-      </div>
-      <div class="checklist-item">
-        <input type="checkbox" id="tool6">
-        <label for="tool6">Humidity Polybags & Tags</label>
+
+      <div class="tools-detailed-grid">
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-scissors"></i></div>
+            <h4>Razor-Sharp Grafting Knife</h4>
+          </div>
+          <p>Single-bevel or carbon steel blades allow flat, smooth cuts without crushing wood fibers or tearing delicate cambium cells. Ensure blades are razor-honed prior to use.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard1">
+            <label for="tcard1">Knife Sharpened & Ready</label>
+          </div>
+        </div>
+
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-tape"></i></div>
+            <h4>Parafilm & Stretchable Budding Tape</h4>
+          </div>
+          <p>Breathable, moisture-proof film that expands as buds swell. Seals the graft union to prevent moisture evaporation while keeping rain water and bacterial rot out.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard2">
+            <label for="tcard2">Parafilm Rolls Packed</label>
+          </div>
+        </div>
+
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
+            <h4>Rubbing Alcohol (Sanitation)</h4>
+          </div>
+          <p>70%+ Isopropyl alcohol or disinfectant wipes. Sterilize knife blades between cuts to prevent transferring viral or fungal diseases across different parent trees.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard3">
+            <label for="tcard3">Disinfectant Prepared</label>
+          </div>
+        </div>
+
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-shield-cat"></i></div>
+            <h4>Tree Wound Sealant / Grafting Wax</h4>
+          </div>
+          <p>Coats thick cut ends during top-working or cleft grafting on heavy stumps, locking in moisture and preventing fungal decay from entering open cut surfaces.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard4">
+            <label for="tcard4">Grafting Wax Ready</label>
+          </div>
+        </div>
+
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-box-tissue"></i></div>
+            <h4>Clear Polybags & Shade Cover</h4>
+          </div>
+          <p>Creates a mini micro-climate humidity tent over young scions (especially tropical varieties like Mango and Avocado) during the critical first 3 weeks of vascular healing.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard5">
+            <label for="tcard5">Humidity Polybags Ready</label>
+          </div>
+        </div>
+
+        <div class="tool-detail-card">
+          <div class="tool-card-header">
+            <div class="tool-icon-wrapper"><i class="fa-solid fa-tag"></i></div>
+            <h4>Nursery Tags & Waterproof Markers</h4>
+          </div>
+          <p>Track scion variety cultivars, rootstock type, and exact grafting date. Proper labeling avoids cultivar mix-ups when managing commercial nursery stock.</p>
+          <div class="tool-checkbox-wrap">
+            <input type="checkbox" id="tcard6">
+            <label for="tcard6">Tags & Marker Ready</label>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 6. COMPATIBILITY & CALENDAR PAGE -->
+  <!-- 5. COMPATIBILITY & CALENDAR PAGE -->
   <section id="interactive-tools" class="page-section">
     <h2 class="section-title">Compatibility Matrix & Propagation Calendar</h2>
     <p class="section-subtitle">Check rootstock affinity, learn botanical compatibility rules, and master seasonal timing before taking cuts.</p>
@@ -1476,7 +1571,7 @@
     </div>
   </div>
 
-  <!-- FIXED JAVASCRIPT LOGIC FOR PAGE SWITCHING -->
+  <!-- JAVASCRIPT LOGIC FOR PAGE SWITCHING -->
   <script>
     function showPage(pageId) {
       // 1. Hide all sections safely
