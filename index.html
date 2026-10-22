@@ -127,6 +127,47 @@
       background-color: rgba(139, 195, 74, 0.15);
     }
 
+    /* ABOUT HOVER DROPDOWN MENU */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--card-bg);
+      min-width: 240px;
+      box-shadow: 0px 8px 20px var(--card-shadow);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      z-index: 200;
+      padding: 8px 0;
+    }
+
+    .dropdown-content a {
+      color: var(--text-main);
+      padding: 12px 18px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(139, 195, 74, 0.15);
+      color: var(--accent-color);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .theme-toggle {
       background: var(--accent-color);
       color: #fff;
@@ -207,6 +248,13 @@
 
       nav.nav-active {
         right: 0;
+      }
+
+      .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        padding-left: 10px;
       }
 
       .hamburger-btn.open span:nth-child(1) {
@@ -615,11 +663,11 @@
     }
 
     .about-box {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
       background: var(--card-bg);
       padding: 35px;
-      border-radius: 12px;
+      border-radius: 16px;
       border: 1px solid var(--border-color);
       box-shadow: 0 5px 20px var(--card-shadow);
     }
@@ -649,7 +697,7 @@
       border-top: 1px solid var(--border-color);
     }
 
-    /* ENHANCED DETAILED TOOLS GRID UNDER METHODS */
+    /* DETAILED TOOLS GRID UNDER METHODS */
     .tools-detailed-section {
       margin-top: 55px;
       background: var(--card-bg);
@@ -883,8 +931,15 @@
     </button>
 
     <nav id="navMenu">
-      <!-- Tools menu item removed and relocated under Methods -->
-      <a onclick="showPage('about')" class="nav-link" id="nav-about">About</a>
+      <!-- ABOUT HOVER DROPDOWN MENU -->
+      <div class="dropdown">
+        <a onclick="showPage('about')" class="nav-link" id="nav-about">About <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; margin-left: 4px;"></i></a>
+        <div class="dropdown-content">
+          <a onclick="openModal('nursery')"><i class="fa-solid fa-house-plants" style="color: var(--accent-color);"></i> Nursery Management</a>
+          <a onclick="openModal('planting')"><i class="fa-solid fa-tree" style="color: var(--accent-color);"></i> Tree Planting</a>
+        </div>
+      </div>
+
       <a onclick="showPage('fruit-trees')" class="nav-link" id="nav-fruit-trees">Fruits & Tree Guide</a>
       <a onclick="showPage('methods')" class="nav-link" id="nav-methods">Methods & Tools</a>
       <a onclick="showPage('interactive-tools')" class="nav-link" id="nav-interactive-tools">Compatibility & Calendar</a>
@@ -1540,7 +1595,9 @@
             <option value="" disabled selected>-- Choose Service --</option>
             <option value="Training">1. Training</option>
             <option value="Grafting">2. Grafting</option>
-            <option value="General Contact">3. General Contact</option>
+            <option value="Nursery Management">3. Nursery Management</option>
+            <option value="Tree Planting">4. Tree Planting Services</option>
+            <option value="General Contact">5. General Contact</option>
           </select>
         </div>
 
@@ -1571,7 +1628,7 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT LOGIC FOR PAGE SWITCHING -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     function showPage(pageId) {
       // 1. Hide all sections safely
@@ -1745,7 +1802,7 @@
             <li>Clear polybags (for humidity chamber)</li>
           </ul>
 
-          <h4 style="color: var(--accent-color); margin-bottom: 5px;">3. Step-by-Step Surgical Procedure</h4>
+          <h4 style="color: var(--accent-color); margin-bottom: 15px;">3. Step-by-Step Surgical Procedure</h4>
           <div style="background: var(--bg-color); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-color); margin-bottom: 15px;">
             <p style="margin-bottom: 8px;"><strong>Step 1 (Rootstock Cut):</strong> Make a shallow downward slice (3–4 cm long) through the side of the rootstock bark, ending in a short inward notch flap at the base.</p>
             <p style="margin-bottom: 8px;"><strong>Step 2 (Scion Cut):</strong> Cut a long flat wedge on one side of the scion base, and a short 45-degree angle cut on the opposite side tip.</p>
@@ -1756,6 +1813,38 @@
           <h4 style="color: var(--accent-color); margin-bottom: 5px;">4. Essential Pro-Tips for Success</h4>
           <p style="margin-bottom: 6px;">• Defoliate parent scion twigs on the tree 10 to 14 days prior to harvesting to swell terminal buds with energy.</p>
           <p style="margin-bottom: 6px;">• Cut off the rootstock stem above the graft union in two stages once the scion shoot hardens into mature leaf growth.</p>
+        `
+      },
+      'nursery': {
+        title: '🏡 Nursery Management — Complete Masterclass Guide',
+        content: `
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">1. Professional Potting Mixes & Substrate Formulations</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">A successful nursery relies on well-draining, nutrient-rich media. Mix 40% composted organic manure, 40% coconut coir/peat moss, and 20% coarse river sand or perlite. This ensures high aeration while locking in essential soil moisture for young rootlets.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">2. Phytosanitary Protocols & Soil Sterilization</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">Prevent damping-off fungal rot and root-knot nematodes by solarizing potting soil under clear plastic sheeting for 4 weeks in direct sunlight prior to pot filling, or treat media with beneficial Trichoderma bio-fungicides.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">3. Micro-Climate & Humidity Tents</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">Newly grafted seedlings require 80%–90% relative humidity to prevent scion desiccation while vascular callus tissues heal. Construct shade-cloth structures (50% shade) equipped with automated misting nozzles or plastic poly-tunnels.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">4. Batch Tracking & Scion Lineage Records</h4>
+          <p style="margin-bottom: 10px; color: var(--text-muted);">Maintain rigorous batch records by tagging every row with rootstock variety, scion mother-tree source ID, graft date, and technician initials to prevent cultivar mix-ups.</p>
+        `
+      },
+      'planting': {
+        title: '🌳 Tree Planting & Orchard Establishment Guide',
+        content: `
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">1. Field Hole Preparation & Dimensions</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">Dig planting holes measuring 60cm x 60cm x 60cm at least 2 to 4 weeks prior to field planting. Separate topsoil from subsoil. Mix topsoil with 15–20kg of well-rotted manure and 200g of rock phosphate or bone meal before refilling.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">2. The Critical Graft Union Elevation Rule</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);"><b>Crucial Step:</b> Never bury the graft union below soil level. Plant the seedling so the swollen graft union sits at least 10cm to 15cm ABOVE the soil line to prevent the scion from sending down wild roots and to avoid collar rot fungal infections.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">3. Staking, Mulching & Wind Protection</h4>
+          <p style="margin-bottom: 15px; color: var(--text-muted);">Drive a sturdy wooden stake alongside the young tree and tie it loosely with soft cloth tape to protect the fresh graft union from wind shear. Apply a 10cm layer of organic mulch (straw or woodchips) around the drip line, keeping mulch 5cm away from the trunk.</p>
+
+          <h4 style="color: var(--accent-color); margin-bottom: 8px;">4. Initial Watering & Canopy Training</h4>
+          <p style="margin-bottom: 10px; color: var(--text-muted);">Water heavily immediately after planting (20 Liters per tree). Prune away lower rootstock suckers weekly and head back the primary shoot at 60cm to encourage a balanced open-center framework of main scaffold branches.</p>
         `
       }
     };
@@ -1897,7 +1986,7 @@
           <div style="background: var(--bg-color); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent-color); margin: 15px 0;">
             <p style="margin-bottom: 8px;"><b>Step A (Beheading):</b> Slice off the Robusta rootstock stem 2.5 cm above soil using a razor blade. Make a 1 cm vertical split down center.</p>
             <p style="margin-bottom: 8px;"><b>Step B (Scion Shaping):</b> Cut the Arabica seedling stem and carve the base into a 1 cm wedge.</p>
-            <p><b>Step C (Joining):</b> Slide Arabica wedge into Robusta slit and clip together using a tiny grafting clip.</p>
+            <p><b>Step C (Joining):</b> Slide Arabica wedge into Robusta slit and clamp with a tiny grafting clip.</p>
           </div>
 
           <h4 style="color: var(--accent-color); margin-bottom: 5px;">4. Post-Grafting Aftercare & Nursery Management</h4>
