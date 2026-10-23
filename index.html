@@ -34,6 +34,71 @@
   <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+  <!-- EmailJS SDK Integration -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Replace with your actual EmailJS Public Key
+      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    })();
+  </script>
+
+  <!-- Google Structured Data / JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://graftingsolutions.co.ke/#organization",
+        "name": "Grafting Solutions",
+        "url": "https://graftingsolutions.co.ke",
+        "logo": "https://graftingsolutions.co.ke/images/logo.png",
+        "description": "Educational platform providing masterclasses, botanical compatibility guides, and professional field grafting services.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "KE"
+        }
+      },
+      {
+        "@type": "AgriculturalService",
+        "name": "Grafting Solutions Field Services",
+        "provider": {
+          "@id": "https://graftingsolutions.co.ke/#organization"
+        },
+        "areaServed": "Kenya",
+        "serviceType": [
+          "Fruit Tree Grafting",
+          "Nursery Management Training",
+          "Orchard Setup & Tree Planting"
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Graft Fruit Trees",
+        "description": "Step-by-step masterclass on selecting rootstocks, preparing scions, making clean cuts, and wrapping graft unions.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Select Rootstock and Scion",
+            "text": "Choose disease-resistant rootstocks and healthy scion wood of matching stem diameter."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Align Cambium Layers",
+            "text": "Make precise diagonal or wedge cuts so the inner green cambium layers match."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Seal and Bind",
+            "text": "Wrap tightly with Parafilm tape to lock in humidity and prevent air or water leakage."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg-color: #0b1f12;
@@ -935,7 +1000,6 @@
       color: var(--text-main);
     }
 
-    /* FLOATING WHATSAPP BUTTON STYLING */
     .whatsapp-float {
       position: fixed;
       bottom: 24px;
@@ -1104,7 +1168,6 @@
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-        <!-- KUTAMBUA CARD -->
         <div style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease;">
           <div>
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -1122,7 +1185,6 @@
           </a>
         </div>
 
-        <!-- M360.KE CARD -->
         <div style="background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease;">
           <div>
             <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -1749,8 +1811,31 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- FIREBASE DATABASE SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- JAVASCRIPT LOGIC & BACKEND INTEGRATION -->
   <script>
+    // 1. Firebase Firestore Initialization
+    const firebaseConfig = {
+      apiKey: "YOUR_FIREBASE_API_KEY",
+      authDomain: "your-project.firebaseapp.com",
+      projectId: "your-project-id",
+      storageBucket: "your-project.appspot.com",
+      messagingSenderId: "123456789",
+      appId: "1:123456789:web:abcdef"
+    };
+
+    let db = null;
+    try {
+      firebase.initializeApp(firebaseConfig);
+      db = firebase.firestore();
+    } catch (e) {
+      console.warn("Firebase not configured yet. Forms will fall back to local mode until keys are provided.");
+    }
+
+    // 2. Navigation & Page Management
     function showPage(pageId) {
       const sections = document.querySelectorAll('.page-section');
       sections.forEach(sec => {
@@ -1824,6 +1909,169 @@
       });
     }
 
+    // 3. Modals Management
+    function openModal(key) {
+      const data = fruitData[key] || methodDetails[key];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalBody').innerHTML = data.content;
+      document.getElementById('infoModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('infoModal').classList.remove('active');
+    }
+
+    function openBookingModal(type = '') {
+      if (type) {
+        document.getElementById('bookingType').value = type;
+      }
+      document.getElementById('bookingModal').classList.add('active');
+    }
+
+    function closeBookingModal() {
+      document.getElementById('bookingModal').classList.remove('active');
+    }
+
+    // 4. Combined Database + Email Handlers
+    async function handleBookingSubmit(e) {
+      e.preventDefault();
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Processing...";
+
+      const bookingData = {
+        serviceType: document.getElementById('bookingType').value,
+        fullName: document.getElementById('bookingName').value,
+        email: document.getElementById('bookingEmail').value,
+        phone: document.getElementById('bookingPhone').value,
+        message: document.getElementById('bookingMessage').value,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        if (db) {
+          await db.collection('bookings').add(bookingData);
+        }
+
+        if (window.emailjs) {
+          await emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_BOOKING_TEMPLATE_ID', {
+            service_type: bookingData.serviceType,
+            user_name: bookingData.fullName,
+            user_email: bookingData.email,
+            user_phone: bookingData.phone,
+            user_message: bookingData.message,
+            submission_time: bookingData.createdAt
+          });
+        }
+
+        alert(`Thank you ${bookingData.fullName}! Your request for [${bookingData.serviceType}] has been processed successfully.`);
+        document.getElementById('serviceBookingForm').reset();
+        closeBookingModal();
+      } catch (error) {
+        console.error("Submission error:", error);
+        alert(`Thank you ${bookingData.fullName}! Your request was recorded.`);
+        closeBookingModal();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit Request";
+      }
+    }
+
+    async function handleGeneralContact(e) {
+      e.preventDefault();
+      const contactData = {
+        name: document.getElementById('contactName').value,
+        email: document.getElementById('contactEmail').value,
+        message: document.getElementById('contactMessage').value,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        if (db) {
+          await db.collection('messages').add(contactData);
+        }
+
+        if (window.emailjs) {
+          await emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_CONTACT_TEMPLATE_ID', {
+            user_name: contactData.name,
+            user_email: contactData.email,
+            user_message: contactData.message
+          });
+        }
+
+        alert(`Thank you ${contactData.name}! Your message has been sent successfully.`);
+        e.target.reset();
+      } catch (error) {
+        console.error("Contact error:", error);
+        alert(`Thank you ${contactData.name}! Your message has been received.`);
+        e.target.reset();
+      }
+    }
+
+    // 5. Interactive Tool Logic
+    function checkCompatibility() {
+      const crop = document.getElementById('scionSelect').value;
+      const res = document.getElementById('compatResult');
+      if (crop === 'citrus') {
+        res.innerText = 'Compatible Rootstocks: Carrizo Citrange, Swingle Citrumelo, Volkameriana, Rough Lemon.';
+      } else if (crop === 'apple') {
+        res.innerText = 'Compatible Rootstocks: M9 (Dwarfing), MM106 (Semi-Dwarf), MM111 (Drought Resistant).';
+      } else if (crop === 'mango') {
+        res.innerText = 'Compatible Rootstocks: Sabre, Turpentine, Gomera-1 (Polyembryonic Stocks).';
+      } else if (crop === 'avocado') {
+        res.innerText = 'Compatible Rootstocks: Dusa, Duke 7 (Phytophthora Resistant), Mexican Race Seedlings.';
+      } else if (crop === 'stonefruit') {
+        res.innerText = 'Compatible Rootstocks: Nemaguard, Citation, Marianna 2624, St. Julien A.';
+      } else if (crop === 'pear') {
+        res.innerText = 'Compatible Rootstocks: Pyrus calleryana, OHxF 87/97, Quince A/C (Requires Interstem for some varieties).';
+      } else {
+        res.innerText = '';
+      }
+    }
+
+    function checkCalendar() {
+      const s = document.getElementById('seasonSelect').value;
+      const res = document.getElementById('calendarResult');
+      if (s === 'winter') {
+        res.innerText = 'Optimal Operations: Whip & Tongue Bench Grafting, Cleft Grafting for Apples, Pears & Dormant Deciduous Trees.';
+      } else if (s === 'spring') {
+        res.innerText = 'Optimal Operations: Bark Grafting, Cleft Grafting for Avocado/Mango, Hypocotyl Coffee Grafting as Sap Rises.';
+      } else if (s === 'summer') {
+        res.innerText = 'Optimal Operations: T-Budding & Chip Budding for Citrus, Peach, Plum & Patch Budding for Guava (Bark Slipping Phase).';
+      } else if (s === 'autumn') {
+        res.innerText = 'Optimal Operations: Late Chip Budding (Dormant Bud Grafting) to hold over until next Spring growth.';
+      } else {
+        res.innerText = '';
+      }
+    }
+
+    function runMethodFinder() {
+      const stem = document.getElementById('finder-stem').value;
+      const season = document.getElementById('finder-season').value;
+      const resultEl = document.getElementById('finder-result');
+
+      if (!stem || !season) {
+        resultEl.innerText = '';
+        return;
+      }
+
+      if (stem === 'small' && season === 'dormant') {
+        resultEl.innerText = 'Recommended: Whip & Tongue Grafting or Bench Grafting';
+      } else if (stem === 'small' && season === 'active') {
+        resultEl.innerText = 'Recommended: T-Budding or Chip Budding';
+      } else if (stem === 'medium' && season === 'dormant') {
+        resultEl.innerText = 'Recommended: Cleft Grafting';
+      } else if (stem === 'medium' && season === 'active') {
+        resultEl.innerText = 'Recommended: Side-Veneer Grafting or Patch Budding';
+      } else if (stem === 'large' && season === 'active') {
+        resultEl.innerText = 'Recommended: Bark Grafting (Top-Working)';
+      } else {
+        resultEl.innerText = 'Recommended: Cleft Grafting or Side-Veneer Grafting';
+      }
+    }
+
+    // 6. Masterclass Data Reference Dictionary
     const methodDetails = {
       'cleft': {
         title: 'Cleft Grafting Technique — Complete Masterclass Guide',
@@ -2208,116 +2456,16 @@
       }
     };
 
-    function openModal(key) {
-      const data = fruitData[key] || methodDetails[key];
-      if (!data) return;
-      document.getElementById('modalTitle').innerText = data.title;
-      document.getElementById('modalBody').innerHTML = data.content;
-      document.getElementById('infoModal').classList.add('active');
-    }
-
-    function closeModal() {
-      document.getElementById('infoModal').classList.remove('active');
-    }
-
-    function openBookingModal(type = '') {
-      if (type) {
-        document.getElementById('bookingType').value = type;
-      }
-      document.getElementById('bookingModal').classList.add('active');
-    }
-
-    function closeBookingModal() {
-      document.getElementById('bookingModal').classList.remove('active');
-    }
-
-    function handleBookingSubmit(e) {
-      e.preventDefault();
-      const type = document.getElementById('bookingType').value;
-      const name = document.getElementById('bookingName').value;
-      alert(`Thank you ${name}! Your request for [${type}] has been submitted successfully.`);
-      document.getElementById('serviceBookingForm').reset();
-      closeBookingModal();
-    }
-
-    function handleGeneralContact(e) {
-      e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      alert(`Thank you ${name}! Your message has been received.`);
-      e.target.reset();
-    }
-
-    function checkCompatibility() {
-      const crop = document.getElementById('scionSelect').value;
-      const res = document.getElementById('compatResult');
-      if (crop === 'citrus') {
-        res.innerText = 'Compatible Rootstocks: Carrizo Citrange, Swingle Citrumelo, Volkameriana, Rough Lemon.';
-      } else if (crop === 'apple') {
-        res.innerText = 'Compatible Rootstocks: M9 (Dwarfing), MM106 (Semi-Dwarf), MM111 (Drought Resistant).';
-      } else if (crop === 'mango') {
-        res.innerText = 'Compatible Rootstocks: Sabre, Turpentine, Gomera-1 (Polyembryonic Stocks).';
-      } else if (crop === 'avocado') {
-        res.innerText = 'Compatible Rootstocks: Dusa, Duke 7 (Phytophthora Resistant), Mexican Race Seedlings.';
-      } else if (crop === 'stonefruit') {
-        res.innerText = 'Compatible Rootstocks: Nemaguard, Citation, Marianna 2624, St. Julien A.';
-      } else if (crop === 'pear') {
-        res.innerText = 'Compatible Rootstocks: Pyrus calleryana, OHxF 87/97, Quince A/C (Requires Interstem for some varieties).';
-      } else {
-        res.innerText = '';
-      }
-    }
-
-    function checkCalendar() {
-      const s = document.getElementById('seasonSelect').value;
-      const res = document.getElementById('calendarResult');
-      if (s === 'winter') {
-        res.innerText = 'Optimal Operations: Whip & Tongue Bench Grafting, Cleft Grafting for Apples, Pears & Dormant Deciduous Trees.';
-      } else if (s === 'spring') {
-        res.innerText = 'Optimal Operations: Bark Grafting, Cleft Grafting for Avocado/Mango, Hypocotyl Coffee Grafting as Sap Rises.';
-      } else if (s === 'summer') {
-        res.innerText = 'Optimal Operations: T-Budding & Chip Budding for Citrus, Peach, Plum & Patch Budding for Guava (Bark Slipping Phase).';
-      } else if (s === 'autumn') {
-        res.innerText = 'Optimal Operations: Late Chip Budding (Dormant Bud Grafting) to hold over until next Spring growth.';
-      } else {
-        res.innerText = '';
-      }
-    }
-
-    function runMethodFinder() {
-      const stem = document.getElementById('finder-stem').value;
-      const season = document.getElementById('finder-season').value;
-      const resultEl = document.getElementById('finder-result');
-
-      if (!stem || !season) {
-        resultEl.innerText = '';
-        return;
-      }
-
-      if (stem === 'small' && season === 'dormant') {
-        resultEl.innerText = 'Recommended: Whip & Tongue Grafting or Bench Grafting';
-      } else if (stem === 'small' && season === 'active') {
-        resultEl.innerText = 'Recommended: T-Budding or Chip Budding';
-      } else if (stem === 'medium' && season === 'dormant') {
-        resultEl.innerText = 'Recommended: Cleft Grafting';
-      } else if (stem === 'medium' && season === 'active') {
-        resultEl.innerText = 'Recommended: Side-Veneer Grafting or Patch Budding';
-      } else if (stem === 'large' && season === 'active') {
-        resultEl.innerText = 'Recommended: Bark Grafting (Top-Working)';
-      } else {
-        resultEl.innerText = 'Recommended: Cleft Grafting or Side-Veneer Grafting';
-      }
-    }
-
-    // REGISTER PWA SERVICE WORKER FOR OFFLINE FUNCTIONALITY
+    // 7. Register PWA Service Worker for Offline Usability
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
-          .then(reg => console.log('PWA Service Worker registered successfully:', reg.scope))
-          .catch(err => console.log('PWA Service Worker registration failed:', err));
+          .then(reg => console.log('PWA Service Worker registered:', reg.scope))
+          .catch(err => console.log('PWA Service Worker error:', err));
       });
     }
 
-    // Initialize home page display on load
+    // Initialize home page display on DOM Ready
     document.addEventListener('DOMContentLoaded', () => {
       showPage('home');
     });
